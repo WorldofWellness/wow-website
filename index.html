@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>WOW Lake Nona</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap">
+<style>
+/* Layout: 1440 frame, 32px gutters. Dark ink stages alternate with logo-rainbow colour blocks; giant condensed caps carry the voice. */
+:root{
+  --ink:#0A090D; --ink-2:#17151D; --ink-3:#262330; --cream:#FFF8EE; --page:#0A090D; --white:#FFFFFF;
+  --mag:#FF2BD6; --pink:#FF3D8A; --orange:#FF6A1A; --yellow:#FFE234; --lime:#B8F45A; --cyan:#19EFE4;
+  --scrim:rgba(15,14,19,.5);
+  --display:'Anton','Impact','Arial Narrow Bold',sans-serif;
+  --body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--page);color:var(--white);font-family:var(--body);font-size:18px;line-height:1.5;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--page)}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1440px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:700px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+.cap{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:0;line-height:.9;margin:0;text-wrap:balance}
+.h2{font-size:clamp(52px,8vw,132px)}
+.h3{font-size:clamp(36px,4.2vw,64px)}
+.lede{font-size:clamp(18px,1.5vw,21px);line-height:1.5;max-width:40ch;margin:0}
+.sec{padding-block:clamp(80px,10vw,150px) 0}
+.flex{display:flex;flex-wrap:wrap;gap:40px}
+.flex>*{min-width:0}
+.block{border-radius:44px;padding:clamp(28px,5vw,80px);color:var(--ink)}
+.dark{background:var(--ink-2);color:var(--white)}
+.stripe{display:flex;height:10px;border-radius:999px;overflow:hidden}
+.stripe i{flex:1}
+.stripe i:nth-child(1){background:var(--mag)}.stripe i:nth-child(2){background:var(--pink)}.stripe i:nth-child(3){background:var(--orange)}.stripe i:nth-child(4){background:var(--yellow)}.stripe i:nth-child(5){background:var(--lime)}.stripe i:nth-child(6){background:var(--cyan)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;border:0;font:inherit;font-weight:800;font-size:17px;text-decoration:none;cursor:pointer;transition:transform .2s cubic-bezier(.2,.8,.2,1),background-color .2s,color .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px) rotate(-1.5deg)}
+.btn:active{transform:translateY(1px) scale(.96)}
+.btn .arr{display:inline-block;transition:transform .25s}
+.btn:hover .arr{transform:translate(4px,-4px) rotate(-45deg)}
+.b-lime{background:var(--lime);color:var(--ink)}.b-lime:hover{background:var(--yellow)}
+.b-ink{background:var(--ink);color:var(--white)}.b-ink:hover{background:var(--mag)}
+.b-out{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2.5px var(--ink)}.b-out:hover{background:var(--ink);color:var(--white)}
+.b-outw{background:transparent;color:var(--white);box-shadow:inset 0 0 0 2.5px var(--white)}.b-outw:hover{background:var(--white);color:var(--ink)}
+.pill{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;box-shadow:inset 0 0 0 2px currentColor;transition:background-color .2s,color .2s,transform .2s}
+.pill:hover{transform:translateY(-2px)}
+.dark .pill:hover,.panel .pill:hover{background:var(--white);color:var(--ink)}
+:focus-visible{outline:3px solid var(--mag);outline-offset:3px}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(10,9,13,.88);backdrop-filter:saturate(1.4)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:inline-flex;transition:transform .2s}.brand:hover{transform:scale(1.04) rotate(-1deg)}
+.brand img{display:block;height:42px;width:auto}
+.links{display:flex;gap:6px;align-items:center}
+.nl{font-weight:700;font-size:16px;text-decoration:none;padding:10px 14px;border-radius:999px;transition:background-color .2s}
+.nl:hover{background:var(--yellow);color:var(--ink)}
+.nl[aria-current="page"]{background:var(--lime);color:var(--ink)}
+.burger{display:none;min-height:46px;padding:0 14px}
+.nav-cta{min-height:46px;padding:0 20px;font-size:16px}
+@media (max-width:980px){
+  .burger{display:inline-flex}
+  .links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:4px;background:var(--ink-2);padding:14px max(16px,env(safe-area-inset-right,0px)) 22px max(16px,env(safe-area-inset-left,0px))}
+  .links.open{display:flex}
+  .links .nl{color:var(--white);font-family:var(--display);font-size:34px;text-transform:uppercase;font-weight:400;padding:8px 6px}
+  .links .nl:hover,.links .nl[aria-current="page"]{background:transparent;color:var(--lime)}
+}
+@media (max-width:420px){.nav-cta{display:none}}
+
+/* HERO */
+.hero{position:relative;background:var(--ink);color:var(--white);border-radius:44px;margin-top:8px;padding:clamp(24px,4vw,56px);overflow:hidden;isolation:isolate}
+.hero-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start}
+.hero-intro{font-size:clamp(18px,1.6vw,22px);max-width:30ch;margin:0}
+.hero-logo{display:block;width:100%;height:auto;margin-top:clamp(32px,5vw,64px);position:relative;z-index:1}
+.hero-photo{position:absolute;z-index:2;right:clamp(18px,6vw,110px);top:clamp(150px,13vw,210px);width:clamp(200px,28vw,420px);aspect-ratio:4/5;border-radius:28px;overflow:hidden;transform:rotate(5deg);animation:float 6s ease-in-out infinite;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-photo .tag{position:absolute;left:14px;bottom:14px;background:var(--cyan);color:var(--ink);font-weight:800;font-size:14px;padding:6px 12px;border-radius:999px}
+@keyframes float{50%{transform:rotate(3deg) translateY(-14px)}}
+.hero-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px;margin-top:clamp(28px,4vw,48px);position:relative;z-index:3}
+.when{font-family:var(--display);text-transform:uppercase;font-size:clamp(40px,6vw,96px);line-height:.92;margin:0}
+.when span{display:block;color:var(--lime)}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.cd{display:flex;gap:8px;flex-wrap:wrap}
+.tick{background:var(--ink-2);border-radius:20px;padding:12px 16px;min-width:84px;transition:transform .25s,background-color .25s}
+.tick:hover{transform:translateY(-5px) rotate(-2deg);background:var(--mag)}
+.tick b{display:block;font-family:var(--display);font-weight:400;font-size:44px;line-height:1;font-variant-numeric:tabular-nums}
+.tick span{font-size:14px;font-weight:700}
+@media (max-width:760px){.hero-photo{position:relative;right:auto;top:auto;width:62%;margin:-6% 0 0 auto;display:block}}
+
+/* video hero */
+.hv{position:relative;overflow:hidden;isolation:isolate;padding-block:clamp(28px,4vw,56px) clamp(40px,5vw,72px)}
+.hv-bg{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;opacity:.22;z-index:-1;animation:drift 26s ease-in-out infinite alternate}
+.hv::after{content:"";position:absolute;inset:auto 0 0 0;height:10px;background:linear-gradient(90deg,var(--mag) 0 16.6%,var(--pink) 0 33.3%,var(--orange) 0 50%,var(--yellow) 0 66.6%,var(--lime) 0 83.3%,var(--cyan) 0)}
+@keyframes drift{from{transform:scale(1.04)}to{transform:scale(1.14) translate(-1.5%,-1%)}}
+.hv-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(24px,4vw,64px);align-items:center}
+.hv-copy{display:flex;flex-direction:column;gap:clamp(18px,2.4vw,30px);min-width:0}
+.hv .hero-logo{margin:0}
+.reel{position:relative;margin:0;justify-self:end;width:100%;max-width:420px;aspect-ratio:9/16;max-height:82vh;border-radius:36px;overflow:hidden;transform:rotate(3deg);box-shadow:0 0 0 4px var(--lime),0 40px 80px rgba(0,0,0,.6);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.reel:hover{transform:rotate(0) scale(1.02);box-shadow:0 0 0 4px var(--mag),0 40px 80px rgba(0,0,0,.6)}
+.reel video{width:100%;height:100%;object-fit:cover;display:block;background:var(--ink-2)}
+.reel-tag{position:absolute;left:16px;top:16px;background:var(--cyan);color:var(--ink);font-weight:800;font-size:14px;padding:6px 12px;border-radius:999px}
+.reel-ctl{position:absolute;left:14px;right:14px;bottom:14px;display:flex;justify-content:space-between;gap:10px}
+.reel-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 18px;border:0;border-radius:999px;background:var(--white);color:var(--ink);font:inherit;font-weight:800;font-size:16px;cursor:pointer;transition:transform .2s,background-color .2s}
+.reel-btn:hover{transform:scale(1.06);background:var(--lime)}
+.round-sm{width:48px;padding:0;justify-content:center}
+.reel-tap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:10px;min-height:64px;padding:0 26px;border:0;border-radius:999px;background:var(--lime);color:var(--ink);font:inherit;font-weight:800;font-size:18px;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,.4);animation:pulse 1.8s ease-in-out infinite}
+.reel-tap:hover{background:var(--yellow)}
+@keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.06)}}
+@media (max-width:860px){
+  .hv-grid{grid-template-columns:minmax(0,1fr)}
+  .reel{justify-self:center;max-width:none;max-height:none;transform:rotate(0);border-radius:28px}
+  .reel:hover{transform:none}
+}
+
+/* word reveal */
+.words .w{display:inline-block;animation:wordIn .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*70ms + 150ms)}
+@keyframes wordIn{from{opacity:0;transform:translateY(40%);filter:blur(8px)}}
+.in{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.in.d1{animation-delay:.15s}.in.d2{animation-delay:.3s}.in.d3{animation-delay:.45s}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}}
+@supports (animation-timeline: view()){
+  .rv{animation:rise linear both;animation-timeline:view();animation-range:entry 5% entry 40%}
+  .rv.d1{animation-range:entry 10% entry 45%}.rv.d2{animation-range:entry 15% entry 50%}
+}
+
+/* marquee */
+.marq-wrap{overflow:hidden;padding-block:20px}
+.marq{display:flex;gap:40px;width:max-content;animation:marq 30s linear infinite;font-family:var(--display);text-transform:uppercase;white-space:nowrap;align-items:center}
+.marq-wrap:hover .marq{animation-play-state:paused}
+.marq .dot{width:.42em;height:.42em;border-radius:50%;display:inline-block}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* headline with photos inside it */
+.loud{font-family:var(--display);text-transform:uppercase;font-size:clamp(52px,9vw,160px);line-height:.98;margin:0;text-align:center;text-wrap:balance}
+.pic{display:inline-block;width:1.5em;height:.78em;border-radius:.2em;overflow:hidden;vertical-align:.02em;margin:0 .06em;transform:rotate(-4deg);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.pic:nth-of-type(even){transform:rotate(4deg)}
+.pic img{width:100%;height:100%;object-fit:cover;display:block}
+.loud:hover .pic{transform:rotate(0) scale(1.12)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{color:var(--ink);border-radius:32px;padding:28px 26px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.stat:hover{transform:translateY(-8px) rotate(-1.5deg)}
+.stat b{font-family:var(--display);font-weight:400;font-size:clamp(64px,7vw,112px);line-height:.9;font-variant-numeric:tabular-nums}
+.stat span{font-weight:700;font-size:18px}
+
+/* pinned story */
+.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,64px)}
+.steps{display:flex;flex-direction:column}
+.step{min-height:78vh;display:flex;flex-direction:column;justify-content:center;gap:18px;opacity:.3;transition:opacity .5s}
+.step.on{opacity:1}
+.step .cap{font-size:clamp(64px,9vw,150px)}
+.step p{margin:0;font-size:20px;line-height:1.5;max-width:34ch}
+.media{position:sticky;box-shadow:0 0 0 1px var(--ink-3);top:calc(env(safe-area-inset-top,0px) + 96px);height:min(76vh,720px);border-radius:40px;overflow:hidden;align-self:start;background:var(--ink-2)}
+.media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity .7s,transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.media img.on{opacity:1;transform:scale(1)}
+.media .badge{position:absolute;left:20px;top:20px;z-index:2;font-family:var(--display);text-transform:uppercase;font-size:28px;padding:8px 18px 6px;border-radius:999px;color:var(--ink);transition:background-color .5s}
+@media (max-width:860px){
+  .story{grid-template-columns:minmax(0,1fr)}
+  .media{order:-1;top:calc(env(safe-area-inset-top,0px) + 72px);height:42vh;z-index:2}
+  .step{min-height:60vh}
+}
+
+/* experience cards */
+.rail{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:40px 6px 50px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.card{flex:0 0 clamp(270px,26vw,360px);scroll-snap-align:center;border-radius:36px;overflow:hidden;display:flex;flex-direction:column;transform:rotate(var(--r,-3deg));transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.card:nth-child(even){--r:3deg}
+.card:hover{transform:rotate(0) translateY(-14px) scale(1.03)}
+.card .ph{aspect-ratio:4/3.4;overflow:hidden;position:relative}
+.card .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.card:hover .ph img{transform:scale(1.08)}
+.card .tx{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card .cap{font-size:44px}
+.card p{margin:0;font-size:17px;line-height:1.45}
+.card .tagline{font-weight:800}
+.rail-ctl{display:flex;gap:10px}
+.round{width:56px;height:56px;border-radius:50%;border:0;background:var(--ink);color:var(--white);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s,background-color .2s}
+.round:hover{transform:scale(1.1);background:var(--mag)}
+.jj{background:var(--ink-3);display:flex;align-items:center;justify-content:center}
+.jj span{font-family:var(--display);font-size:120px;color:var(--yellow);line-height:1;transform:rotate(-8deg)}
+
+/* tickets */
+.tix-grid{display:flex;flex-wrap:wrap;gap:12px}
+.tix-left{flex:1 1 420px;display:flex;flex-direction:column;justify-content:space-between;gap:30px}
+.tix-right{flex:1 1 420px;background:var(--ink-3);border-radius:32px;padding:clamp(22px,3.4vw,40px);display:flex;flex-direction:column;gap:24px}
+.price{font-family:var(--display);font-size:clamp(110px,15vw,240px);line-height:.85;color:var(--lime);margin:0}
+.chk{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;font-size:20px;font-weight:700}
+.chk li{display:flex;gap:12px;align-items:center}
+.meter{height:14px;border-radius:999px;background:var(--ink);overflow:hidden}
+.meter i{display:block;height:100%;width:32%;border-radius:999px;background:var(--orange);animation:fill 1.6s cubic-bezier(.2,.8,.2,1) both .3s}
+@keyframes fill{from{width:0}}
+.qty{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--ink);border-radius:22px;padding:14px 18px}
+.step-btn{width:50px;height:50px;border-radius:50%;border:0;background:var(--cream);color:var(--ink);font:inherit;font-size:26px;font-weight:800;cursor:pointer;transition:transform .15s,background-color .15s}
+.step-btn:hover{transform:scale(1.1);background:var(--yellow)}
+.step-btn:active{transform:scale(.9)}
+.num{font-family:var(--display);font-size:44px;min-width:2ch;text-align:center;font-variant-numeric:tabular-nums}
+.total{font-family:var(--display);font-size:40px;color:var(--yellow);margin-left:8px;font-variant-numeric:tabular-nums}
+
+/* dark panels */
+.panel{background:var(--ink-2);color:var(--white);border-radius:40px;padding:clamp(26px,4vw,56px);display:flex;flex-wrap:wrap;gap:32px;align-items:center;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.panel:hover{transform:translateY(-6px)}
+.panel>div{flex:1 1 380px;min-width:0}
+.panel .shot{flex:1 1 380px;aspect-ratio:16/10;border-radius:28px;overflow:hidden;transform:rotate(2deg);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.panel:nth-child(even) .shot{transform:rotate(-2deg)}
+.panel:hover .shot{transform:rotate(0) scale(1.02)}
+.panel .shot img{width:100%;height:100%;object-fit:cover;display:block}
+.kicker{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;margin:0 0 14px}
+.kicker::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--k,var(--orange))}
+.panel p:not(.kicker){margin:16px 0 22px;font-size:19px;max-width:40ch}
+
+/* faq */
+.qa{display:flex;flex-direction:column;gap:10px;flex:999 1 520px;min-width:0}
+.qa button{display:flex;justify-content:space-between;align-items:center;gap:20px;width:100%;padding:22px 26px;border:0;border-radius:26px;background:var(--ink-2);font:inherit;font-size:20px;font-weight:800;color:var(--white);text-align:left;cursor:pointer;transition:background-color .2s,transform .2s,color .2s}
+.qa button:hover{background:var(--yellow);color:var(--ink);transform:translateX(6px)}
+.qa .pl{transition:transform .3s;flex:0 0 auto}
+.qa button[aria-expanded="true"]{background:var(--lime);color:var(--ink)}
+.qa button[aria-expanded="true"] .pl{transform:rotate(45deg)}
+.qa .ans{margin:0;padding:14px 26px 20px;font-size:19px;line-height:1.55}
+
+/* forms */
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.form .full{grid-column:1/-1}
+@media (max-width:640px){.form{grid-template-columns:minmax(0,1fr)}}
+.f label{display:block;font-weight:700;font-size:16px;margin:0 0 8px 8px}
+.f input,.f textarea{width:100%;min-height:58px;padding:14px 22px;border-radius:22px;border:0;background:var(--white);font:inherit;font-size:18px;color:var(--ink);transition:box-shadow .2s}
+.f textarea{min-height:140px;resize:vertical}
+.f input:focus,.f textarea:focus{outline:none;box-shadow:inset 0 0 0 3px var(--ink)}
+.req{color:var(--pink)}
+.err{grid-column:1/-1;margin:0;font-weight:700}
+.done{background:var(--ink-2);color:var(--white);border-radius:32px;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:16px}
+.done pre{white-space:pre-wrap;word-break:break-word;background:var(--ink);border-radius:20px;padding:18px 20px;margin:0;font:inherit;font-size:16px;max-height:260px;overflow:auto}
+.addr{font-family:var(--display);font-size:clamp(26px,3vw,40px);color:var(--lime);user-select:all;word-break:break-all;margin:0}
+.pop{animation:pop .5s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes pop{from{transform:scale(.94);opacity:.2}}
+
+/* inner page hero */
+.phero{position:relative;background:var(--ink-2);color:var(--white);border-radius:44px;margin-top:8px;padding:clamp(26px,4vw,56px);overflow:hidden;min-height:580px;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.phero .big{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(72px,12.5vw,210px);line-height:.86;margin:0;position:relative;z-index:1}
+.phero .intro{max-width:34ch;font-size:clamp(18px,1.6vw,21px);margin:0;position:relative;z-index:3}
+.phero .shot{position:absolute;right:clamp(18px,5vw,90px);top:clamp(24px,4vw,56px);width:clamp(190px,26vw,380px);aspect-ratio:4/5;border-radius:28px;overflow:hidden;transform:rotate(-5deg);z-index:2;animation:float2 7s ease-in-out infinite}
+.phero .shot img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes float2{50%{transform:rotate(-3deg) translateY(-12px)}}
+.phero .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;position:relative;z-index:3}
+@media (max-width:760px){.phero .shot{position:relative;right:auto;top:auto;width:58%;align-self:flex-end}}
+.blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.blk{color:var(--ink);border-radius:32px;padding:28px;font-size:21px;font-weight:800;line-height:1.3;min-height:150px;display:flex;align-items:flex-end;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.blk:nth-child(odd){transform:rotate(-1deg)}.blk:nth-child(even){transform:rotate(1deg)}
+.blk:hover{transform:rotate(0) translateY(-8px) scale(1.02)}
+.role{color:var(--ink);background:var(--white);border-radius:32px;padding:28px 30px;transition:transform .3s}
+.role:hover{transform:translateY(-8px) rotate(-1deg)}
+.role h3{margin:0 0 10px;font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:36px;line-height:1}
+.role p{margin:0;font-size:18px}
+.flow{counter-reset:s;margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.flow li{counter-increment:s;background:var(--ink-2);color:var(--white);border-radius:32px;padding:26px 28px;font-size:19px;font-weight:700;transition:transform .3s}
+.flow li:hover{transform:translateY(-8px) rotate(1deg)}
+.flow li::before{content:counter(s);display:block;font-family:var(--display);font-size:80px;line-height:1;margin-bottom:10px;color:var(--c)}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.mate{color:var(--ink);border-radius:36px;padding:28px;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .3s}
+.mate:hover{transform:translateY(-10px) rotate(2deg)}
+.mate .cap{font-size:clamp(60px,6vw,96px)}
+
+/* footer */
+.foot{padding-block:clamp(80px,10vw,150px) 40px}
+.wordmark{display:block;width:100%;height:auto;margin-top:56px;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.wordmark:hover{transform:scale(1.015) rotate(-.5deg)}
+
+.page[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.step{opacity:1}}
+</style>
+<style>.sp-buy{width:min(100%,340px);border-radius:12px;overflow:hidden}.sp-nav{width:190px}@media (max-width:420px){.sp-nav{display:none}}</style>
+<!-- Sweatpals widget begin -->
+<script src="https://sweatpals.com/static/embed/event/checkout/script.js?enableAutoEmbed=false&eventAlias=wow-winter-park-nov-22&colorHex=000000&fontFamily=Poppins&priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4"></script>
+<!-- Sweatpals widget end -->
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#home" aria-label="WOW World of Wellness home"><img src="img/logo-white.png" alt="" width="123" height="42"></a>
+      <div class="links" id="links">
+        <a class="nl" href="#home" data-nav="home">Event</a>
+        <a class="nl" href="#sponsor" data-nav="sponsor">Sponsors</a>
+        <a class="nl" href="#volunteer" data-nav="volunteer">Volunteer</a>
+        <a class="nl" href="#creators" data-nav="creators">Creators</a>
+        <a class="nl" href="#about" data-nav="about">About</a>
+        <a class="nl" href="#contact" data-nav="contact">Contact</a>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <div class="sp-buy sp-nav"><!-- Sweatpals widget begin --><iframe title="Buy WOW tickets" style="width: 100%; max-height: 50px; height: 50px; border: 0;" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=000000&fontFamily=Poppins&loader=false"></iframe><!-- Sweatpals widget end --></div>
+        <button class="btn b-outw burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="links">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HOME ================= -->
+<div class="page" data-page="home">
+
+  <section class="hv" aria-labelledby="hero-title">
+    <img class="hv-bg" src="img/p64.jpg" alt="">
+    <div class="wrap hv-grid">
+      <div class="hv-copy">
+        <p class="hero-intro words" data-words>A wellness festival in Winter Park's Central Park. Sauna, cold plunge, biohacking, fitness classes and 30+ brands in one afternoon.</p>
+        <h1 id="hero-title" class="in d1" style="margin:0"><img class="hero-logo" src="img/logo-white.png" alt="WOW World of Wellness" width="2323" height="797"></h1>
+        <p class="when in d2">Sun, Nov 22 · Winter Park<span>12–4pm · Central Park</span></p>
+        <div class="cta-row in d3">
+          <div class="sp-buy"><!-- Sweatpals widget begin --><iframe title="Buy WOW tickets" style="width: 100%; max-height: 50px; height: 50px; border: 0;" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=000000&fontFamily=Poppins&loader=false"></iframe><!-- Sweatpals widget end --></div>
+          <a class="btn b-outw" href="#sponsor">Become a sponsor</a>
+        </div>
+        <div class="cd in d3" role="timer" aria-label="Time until doors open">
+          <div class="tick"><b id="cd-d">00</b><span>days</span></div>
+          <div class="tick"><b id="cd-h">00</b><span>hours</span></div>
+          <div class="tick"><b id="cd-m">00</b><span>mins</span></div>
+          <div class="tick"><b id="cd-s">00</b><span>secs</span></div>
+        </div>
+      </div>
+      <figure class="reel in d2">
+        <video id="reel" src="img/recap.mp4" poster="img/recap-poster.jpg" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-label="WOW May 2026 recap video"></video>
+        <figcaption class="reel-tag">May 2026 recap</figcaption>
+        <button type="button" class="reel-tap" id="reel-tap" hidden><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>Play the recap</button>
+        <div class="reel-ctl">
+          <button type="button" class="reel-btn" id="reel-sound" aria-pressed="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path id="snd-on" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" style="display:none"/><path id="snd-off" d="M17 9l5 6M22 9l-5 6"/></svg><span id="reel-sound-label">Sound on</span></button>
+          <button type="button" class="reel-btn round-sm" id="reel-play" aria-label="Pause video"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path id="ic-pause" d="M7 5h3v14H7zM14 5h3v14h-3z"/><path id="ic-play" d="M8 5l11 7-11 7z" style="display:none"/></svg></button>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <div class="marq-wrap" aria-hidden="true" style="margin-top:24px">
+    <div class="marq" style="font-size:clamp(40px,5vw,72px)">
+      <span>Biohacking</span><i class="dot" style="background:var(--mag)"></i><span>Sauna</span><i class="dot" style="background:var(--orange)"></i><span>Cold plunge</span><i class="dot" style="background:var(--cyan)"></i><span>Great food</span><i class="dot" style="background:var(--yellow)"></i><span>Fitness challenges</span><i class="dot" style="background:var(--lime)"></i><span>Live DJ</span><i class="dot" style="background:var(--mag)"></i><span>AI fitness</span><i class="dot" style="background:var(--orange)"></i>
+      <span>Biohacking</span><i class="dot" style="background:var(--mag)"></i><span>Sauna</span><i class="dot" style="background:var(--orange)"></i><span>Cold plunge</span><i class="dot" style="background:var(--cyan)"></i><span>Great food</span><i class="dot" style="background:var(--yellow)"></i><span>Fitness challenges</span><i class="dot" style="background:var(--lime)"></i><span>Live DJ</span><i class="dot" style="background:var(--mag)"></i><span>AI fitness</span><i class="dot" style="background:var(--orange)"></i>
+    </div>
+  </div>
+
+  <section class="wrap sec" style="padding-top:clamp(56px,7vw,100px)" aria-labelledby="loud-title">
+    <div class="block" style="background:var(--yellow)">
+      <h2 id="loud-title" class="loud rv">Sweat <span class="pic"><img src="img/p118.jpg" alt="" loading="lazy"></span> plunge <span class="pic"><img src="img/p163.jpg" alt="" loading="lazy"></span> move <span class="pic"><img src="img/p143.jpg" alt="" loading="lazy"></span> refuel <span class="pic"><img src="img/p93.jpg" alt="" loading="lazy"></span> repeat</h2>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:40px;text-align:center">
+        <p class="lede rv d1">Not a booth crawl. Classes, demos, recovery and a crowd that wants to level up as much as you do.</p>
+        <a class="btn b-ink rv d2" href="#tickets">See what's included <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec" aria-labelledby="num-title">
+    <h2 id="num-title" class="cap h2 rv">The numbers</h2>
+    <div class="stats" style="margin-top:40px">
+      <div class="stat rv" style="background:var(--mag)"><b data-count="30" data-suffix="+">30+</b><span>Brands and vendors</span></div>
+      <div class="stat rv d1" style="background:var(--cyan)"><b data-count="7">7</b><span>Experiences in one ticket</span></div>
+      <div class="stat rv d2" style="background:var(--orange)"><b data-count="4">4</b><span>Hours of wellness</span></div>
+      <div class="stat rv" style="background:var(--lime)"><b>$49.97</b><span>General admission</span></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="story-title">
+    <div class="dark" style="padding-block:clamp(70px,8vw,120px);border-radius:44px;margin-inline:max(8px,env(safe-area-inset-left,0px))">
+      <div class="wrap">
+        <h2 id="story-title" class="cap h2 rv" style="max-width:12ch">Your afternoon at WOW</h2>
+        <div class="story" style="margin-top:20px">
+          <div class="steps">
+            <div class="step on" data-badge="Heat" data-color="#FF6A1A"><p class="cap" style="color:var(--orange)">Heat</p><p>Start in the barrel sauna. Sweat out the stress, loosen up and let the week melt off. Unlimited sessions with every ticket.</p></div>
+            <div class="step" data-badge="Cold" data-color="#19EFE4"><p class="cap" style="color:var(--cyan)">Cold</p><p>Then brave the plunge. Energy spikes, inflammation drops and you earn the bragging rights. Unlimited plunges too.</p></div>
+            <div class="step" data-badge="Move" data-color="#FF2BD6"><p class="cap" style="color:var(--mag)">Move</p><p>Spin, dance cardio, trampoline challenges and mat classes. Every fitness level welcome.</p></div>
+            <div class="step" data-badge="Refuel" data-color="#B8F45A"><p class="cap" style="color:var(--lime)">Refuel</p><p>Performance food, supplement samples and the live DJ keeping the energy up until the last rep.</p></div>
+          </div>
+          <div class="media" aria-hidden="true">
+            <span class="badge" id="badge" style="background:var(--orange)">Heat</span>
+            <img class="on" src="img/p118.jpg" alt="">
+            <img src="img/p123.jpg" alt="">
+            <img src="img/p141.jpg" alt="">
+            <img src="img/p93.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="experiences" aria-labelledby="exp-title">
+    <div class="wrap" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px">
+      <h2 id="exp-title" class="cap h2 rv" style="max-width:10ch">Seven experiences</h2>
+      <div class="rail-ctl">
+        <button class="round" type="button" id="prev" aria-label="Previous experiences"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button class="round" type="button" id="next" aria-label="Next experiences"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="wrap"><div class="rail" id="rail" tabindex="0" aria-label="Experiences, scroll sideways"></div></div>
+  </section>
+
+  <section class="wrap sec" id="tickets" aria-labelledby="tix-title" style="padding-top:clamp(40px,6vw,90px)">
+    <div class="block dark tix-grid">
+      <div class="tix-left">
+        <div>
+          <h2 id="tix-title" class="cap h3 rv">General admission</h2>
+          <p class="price rv d1">$49.97</p>
+        </div>
+        <p class="lede rv d2">Sunday, Nov 22, 12–4pm at Central Park, West Morse Blvd, Winter Park. Checkout is handled securely by SweatPals.</p>
+      </div>
+      <div class="tix-right rv d1">
+        <ul class="chk">
+          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B8F45A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Full event access</li>
+          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B8F45A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Unlimited cold plunge and sauna</li>
+          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B8F45A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Free sponsor samples</li>
+        </ul>
+        <div class="sp-buy"><!-- Sweatpals widget begin --><iframe title="Buy WOW tickets" style="width: 100%; max-height: 50px; height: 50px; border: 0;" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=000000&fontFamily=Poppins&loader=false"></iframe><!-- Sweatpals widget end --></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="sp-title" style="padding-top:clamp(60px,7vw,110px)">
+    <div class="wrap flex" style="justify-content:space-between;align-items:flex-end;gap:24px">
+      <h2 id="sp-title" class="cap h2 rv" style="max-width:11ch">30+ brands on the lawn</h2>
+      <p class="lede rv d1">Free demos, samples and classes from the names shaping how Central Florida trains and recovers.</p>
+    </div>
+    <div class="marq-wrap" style="margin-top:44px;background:var(--pink);padding-block:30px;transform:rotate(-1.5deg);margin-inline:-20px">
+      <div class="marq" style="font-size:clamp(44px,6vw,90px);gap:56px;animation-duration:24s;color:var(--ink)">
+        <span>Spartan</span><span>AG1</span><span>OXEFIT</span><span>Upgrade Labs</span><span>LNPC</span><span>Serotonin Centers</span><span>Monster Energy</span><span>Herbalist Farm</span>
+        <span aria-hidden="true">Spartan</span><span aria-hidden="true">AG1</span><span aria-hidden="true">OXEFIT</span><span aria-hidden="true">Upgrade Labs</span><span aria-hidden="true">LNPC</span><span aria-hidden="true">Serotonin Centers</span><span aria-hidden="true">Monster Energy</span><span aria-hidden="true">Herbalist Farm</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec" aria-labelledby="gi-title">
+    <h2 id="gi-title" class="cap h2 rv">Be part of it</h2>
+    <div style="display:flex;flex-direction:column;gap:14px;margin-top:40px">
+      <article class="panel rv">
+        <div><p class="kicker" style="--k:var(--orange)">Sponsors and vendors</p><h3 class="cap h3">Put your brand on the lawn</h3><p>Demos, sampling and face time with Central Florida's most health-focused crowd.</p><a class="pill" href="#sponsor">Sponsor WOW <span aria-hidden="true">↗</span></a></div>
+        <div class="shot"><img src="img/p106.jpg" alt="A brand booth with guests at WOW" loading="lazy"></div>
+      </article>
+      <article class="panel rv">
+        <div><p class="kicker" style="--k:var(--cyan)">Volunteers</p><h3 class="cap h3">Join the crew</h3><p>Earn a free ticket, volunteer-only merch and behind-the-scenes access.</p><a class="pill" href="#volunteer">Volunteer <span aria-hidden="true">↗</span></a></div>
+        <div class="shot"><img src="img/p110.jpg" alt="WOW crew members in matching red shirts" loading="lazy"></div>
+      </article>
+      <article class="panel rv">
+        <div><p class="kicker" style="--k:var(--mag)">Creators</p><h3 class="cap h3">Join the creator squad</h3><p>Share WOW with your followers and earn commission on every ticket through your link.</p><a class="pill" href="#creators">Apply <span aria-hidden="true">↗</span></a></div>
+        <div class="shot"><img src="img/p101.jpg" alt="Two guests posing for a photo at WOW" loading="lazy"></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap sec flex" id="faq" aria-labelledby="faq-title">
+    <h2 id="faq-title" class="cap h2 rv" style="flex:1 1 320px">Good to know</h2>
+    <div class="qa" id="qa"></div>
+  </section>
+
+  <section class="wrap sec" aria-labelledby="su-title">
+    <div class="block flex" style="background:var(--cyan);align-items:center">
+      <div style="flex:1 1 400px">
+        <h2 id="su-title" class="cap h2 rv">Never miss a drop</h2>
+        <p class="lede rv d1" style="margin-top:18px">Ticket tiers sell out within hours. Get early access to the next one.</p>
+      </div>
+      <div style="flex:1 1 400px">
+        <form class="form" data-form="Early access list" data-to="info@wowlakenona.com" novalidate>
+          <div class="f full"><label for="su-email">Email address <span class="req" aria-hidden="true">*</span></label><input id="su-email" name="Email" type="email" autocomplete="email" required placeholder="you@email.com"></div>
+          <div class="full"><button class="btn b-ink" type="submit">Get early access <span class="arr" aria-hidden="true">→</span></button></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= SPONSOR ================= -->
+<div class="page" data-page="sponsor" hidden>
+  <section class="wrap" aria-labelledby="sp-h1">
+    <div class="phero">
+      <p class="intro in">Your brand, felt, tasted and tried by Central Florida's most health-focused crowd. At WOW you're part of the experience, not another booth.</p>
+      <div class="shot"><img src="img/p106.jpg" alt="A wellness brand booth with guests at WOW"></div>
+      <div>
+        <h1 id="sp-h1" class="big words" data-words>Sponsor WOW</h1>
+        <div class="row" style="margin-top:22px"><a class="btn b-lime" href="#sponsor-apply">Apply to sponsor <span class="arr" aria-hidden="true">→</span></a></div>
+      </div>
+    </div>
+  </section>
+  <section class="wrap sec" aria-labelledby="gain-title">
+    <h2 id="gain-title" class="cap h2 rv">What your brand gets</h2>
+    <div class="blocks" style="margin-top:40px">
+      <div class="blk rv" style="background:var(--lime)">A targeted, health-focused audience</div>
+      <div class="blk rv d1" style="background:var(--cyan)">Hands-on demos, trials and sampling</div>
+      <div class="blk rv d2" style="background:var(--pink)">Face time with people ready to buy</div>
+      <div class="blk rv" style="background:var(--yellow)">A seat beside leading wellness brands</div>
+      <div class="blk rv d1" style="background:var(--ink-2);color:var(--white)">Leads, email sign-ups and repeat customers</div>
+      <div class="blk rv d2" style="background:var(--orange)">Trust built in person, not in an ad</div>
+    </div>
+  </section>
+  <section class="wrap sec" aria-labelledby="fit-title">
+    <article class="panel">
+      <div><p class="kicker" style="--k:var(--lime)">Built for</p><h2 id="fit-title" class="cap h3">Launches, content and partnerships</h2><p>Product launches and showcases, creator content on the spot, B2B relationships, and credibility in the wellness space.</p></div>
+      <div class="shot"><img src="img/p64.jpg" alt="The WOW crowd on the lawn surrounded by brand tents" loading="lazy"></div>
+    </article>
+  </section>
+  <section class="wrap sec flex" id="sponsor-apply" aria-labelledby="spa-title">
+    <div style="flex:1 1 360px">
+      <h2 id="spa-title" class="cap h2 rv">Apply to sponsor</h2>
+      <p class="lede rv d1" style="margin-top:20px">Tell us about your brand. Approved sponsors get the full event deck with every promotional benefit.</p>
+    </div>
+    <div style="flex:999 1 520px;min-width:0">
+      <form class="form" data-form="Sponsor application" data-to="info@wowlakenona.com" novalidate>
+        <div class="f"><label for="sp-first">First name <span class="req" aria-hidden="true">*</span></label><input id="sp-first" name="First name" required autocomplete="given-name"></div>
+        <div class="f"><label for="sp-last">Last name <span class="req" aria-hidden="true">*</span></label><input id="sp-last" name="Last name" required autocomplete="family-name"></div>
+        <div class="f"><label for="sp-email">Email <span class="req" aria-hidden="true">*</span></label><input id="sp-email" name="Email" type="email" required autocomplete="email"></div>
+        <div class="f"><label for="sp-phone">Phone</label><input id="sp-phone" name="Phone" type="tel" autocomplete="tel"></div>
+        <div class="f"><label for="sp-ig">Instagram</label><input id="sp-ig" name="Instagram" placeholder="@yourbrand"></div>
+        <div class="f"><label for="sp-li">LinkedIn</label><input id="sp-li" name="LinkedIn"></div>
+        <div class="f full"><label for="sp-why">Why do you want to sponsor WOW? <span class="req" aria-hidden="true">*</span></label><textarea id="sp-why" name="Why sponsor" required></textarea></div>
+        <div class="full"><button class="btn b-lime" type="submit">Send application <span class="arr" aria-hidden="true">→</span></button></div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- ================= VOLUNTEER ================= -->
+<div class="page" data-page="volunteer" hidden>
+  <section class="wrap" aria-labelledby="vo-h1">
+    <div class="phero">
+      <p class="intro in">Volunteer at WOW, earn a free ticket and exclusive crew swag, and help your community level up.</p>
+      <div class="shot"><img src="img/p110.jpg" alt="WOW crew members in matching red shirts"></div>
+      <div>
+        <h1 id="vo-h1" class="big words" data-words>Join the crew</h1>
+        <div class="row" style="margin-top:22px"><a class="btn b-lime" href="#volunteer-apply">Apply to volunteer <span class="arr" aria-hidden="true">→</span></a></div>
+      </div>
+    </div>
+  </section>
+  <section class="wrap sec" aria-labelledby="vperk-title">
+    <h2 id="vperk-title" class="cap h2 rv">What you get</h2>
+    <div class="blocks" style="margin-top:40px">
+      <div class="blk rv" style="background:var(--lime)">Free admission to WOW</div>
+      <div class="blk rv d1" style="background:var(--orange)">Volunteer-only merch</div>
+      <div class="blk rv d2" style="background:var(--mag)">Behind-the-scenes access</div>
+      <div class="blk rv" style="background:var(--yellow)">Meet brands, experts and athletes</div>
+      <div class="blk rv d1" style="background:var(--ink-2);color:var(--white)">A community that gets it</div>
+    </div>
+  </section>
+  <section class="wrap sec" aria-labelledby="roles-title">
+    <div class="block" style="background:var(--cyan)">
+      <h2 id="roles-title" class="cap h2 rv">Pick your role</h2>
+      <div class="blocks" style="margin-top:36px">
+        <div class="role rv"><h3>Check-in</h3><p>Greet guests, hand out passes and get people settled. No experience needed; training in your first 30 minutes.</p></div>
+        <div class="role rv d1"><h3>Setup and teardown</h3><p>Build stations, vendor areas, tents and signage. Includes lunch and a $50 online store credit.</p></div>
+        <div class="role rv d2"><h3>Event operations</h3><p>Keep the plunges cold, manage lines, referee fitness challenges and help wherever needed.</p></div>
+        <div class="role rv"><h3>Merch team</h3><p>Run the merch displays, help guests find sizes, handle sales and keep the booth tidy.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="wrap sec flex" id="volunteer-apply" aria-labelledby="voa-title">
+    <div style="flex:1 1 360px">
+      <h2 id="voa-title" class="cap h2 rv">Apply to volunteer</h2>
+      <p class="lede rv d1" style="margin-top:20px">You'll hear back with role options, schedules and next steps. Questions? <span style="font-weight:800;user-select:all">volunteer@wowlakenona.com</span></p>
+    </div>
+    <div style="flex:999 1 520px;min-width:0">
+      <form class="form" data-form="Volunteer application" data-to="volunteer@wowlakenona.com" novalidate>
+        <div class="f"><label for="vo-first">First name <span class="req" aria-hidden="true">*</span></label><input id="vo-first" name="First name" required autocomplete="given-name"></div>
+        <div class="f"><label for="vo-last">Last name <span class="req" aria-hidden="true">*</span></label><input id="vo-last" name="Last name" required autocomplete="family-name"></div>
+        <div class="f"><label for="vo-email">Email <span class="req" aria-hidden="true">*</span></label><input id="vo-email" name="Email" type="email" required autocomplete="email"></div>
+        <div class="f"><label for="vo-phone">Phone</label><input id="vo-phone" name="Phone" type="tel" autocomplete="tel"></div>
+        <div class="f full"><label for="vo-ig">Instagram</label><input id="vo-ig" name="Instagram" placeholder="@you"></div>
+        <div class="f full"><label for="vo-why">Why do you want to volunteer? <span class="req" aria-hidden="true">*</span></label><textarea id="vo-why" name="Why volunteer" required></textarea></div>
+        <div class="full"><button class="btn b-lime" type="submit">Send application <span class="arr" aria-hidden="true">→</span></button></div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- ================= CREATORS ================= -->
+<div class="page" data-page="creators" hidden>
+  <section class="wrap" aria-labelledby="cr-h1">
+    <div class="phero">
+      <p class="intro in">Live the lifestyle and create content? Share WOW with your followers and earn commission on every ticket sold through your link.</p>
+      <div class="shot"><img src="img/p101.jpg" alt="Two guests posing for a photo at WOW"></div>
+      <div>
+        <h1 id="cr-h1" class="big words" data-words>Creator squad</h1>
+        <div class="row" style="margin-top:22px"><a class="btn b-lime" href="#creators-apply">Apply now <span class="arr" aria-hidden="true">→</span></a></div>
+      </div>
+    </div>
+  </section>
+  <section class="wrap sec" aria-labelledby="how-title">
+    <h2 id="how-title" class="cap h2 rv">How it works</h2>
+    <ol class="flow" style="margin-top:40px">
+      <li class="rv" style="--c:var(--mag)">Apply. It takes two minutes.</li>
+      <li class="rv d1" style="--c:var(--orange)">Get approved and receive your Influencer Pack and affiliate link.</li>
+      <li class="rv d2" style="--c:var(--yellow)">Share WOW content and your ticket link.</li>
+      <li class="rv" style="--c:var(--cyan)">Earn commission on every sale.</li>
+    </ol>
+  </section>
+  <section class="wrap sec" aria-labelledby="crp-title">
+    <div class="block" style="background:var(--mag)">
+      <h2 id="crp-title" class="cap h2 rv">The perks</h2>
+      <div class="blocks" style="margin-top:36px">
+        <div class="blk rv" style="background:var(--white)">Commission on every ticket, plus a bonus at 21 sales</div>
+        <div class="blk rv d1" style="background:var(--white)">A free ticket and a WOW merch pack</div>
+        <div class="blk rv d2" style="background:var(--white)">VIP and backstage content, activations and interviews</div>
+        <div class="blk rv" style="background:var(--white)">Partner perks: InBody scans, fitness passes, recovery sessions</div>
+        <div class="blk rv d1" style="background:var(--ink-2);color:var(--white)">Shoutouts on WOW's channels and a code for your followers</div>
+      </div>
+    </div>
+  </section>
+  <section class="wrap sec" aria-labelledby="fitc-title">
+    <h2 id="fitc-title" class="cap h2 rv">You're a fit if you</h2>
+    <div class="blocks" style="margin-top:40px">
+      <div class="blk rv" style="background:var(--cyan)">Have 5K–100K followers on any platform</div>
+      <div class="blk rv d1" style="background:var(--yellow)">Live in or near Lake Nona or Orlando</div>
+      <div class="blk rv d2" style="background:var(--orange)">Create fitness, wellness or growth content</div>
+      <div class="blk rv" style="background:var(--lime)">Share positive, healthy messaging</div>
+    </div>
+  </section>
+  <section class="wrap sec flex" id="creators-apply" aria-labelledby="cra-title">
+    <div style="flex:1 1 360px">
+      <h2 id="cra-title" class="cap h2 rv">Apply to the squad</h2>
+      <p class="lede rv d1" style="margin-top:20px">Approved creators get next steps, a personal affiliate link, perks and a media kit.</p>
+    </div>
+    <div style="flex:999 1 520px;min-width:0">
+      <form class="form" data-form="Creator application" data-to="info@wowlakenona.com" novalidate>
+        <div class="f"><label for="cr-first">First name <span class="req" aria-hidden="true">*</span></label><input id="cr-first" name="First name" required autocomplete="given-name"></div>
+        <div class="f"><label for="cr-last">Last name <span class="req" aria-hidden="true">*</span></label><input id="cr-last" name="Last name" required autocomplete="family-name"></div>
+        <div class="f"><label for="cr-email">Email <span class="req" aria-hidden="true">*</span></label><input id="cr-email" name="Email" type="email" required autocomplete="email"></div>
+        <div class="f"><label for="cr-phone">Phone</label><input id="cr-phone" name="Phone" type="tel" autocomplete="tel"></div>
+        <div class="f"><label for="cr-ig">Instagram</label><input id="cr-ig" name="Instagram" placeholder="@you"></div>
+        <div class="f"><label for="cr-tt">TikTok or other platform</label><input id="cr-tt" name="Other platform"></div>
+        <div class="f full"><label for="cr-why">Why do you want to join? <span class="req" aria-hidden="true">*</span></label><textarea id="cr-why" name="Why join" required></textarea></div>
+        <div class="full"><button class="btn b-lime" type="submit">Send application <span class="arr" aria-hidden="true">→</span></button></div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<div class="page" data-page="about" hidden>
+  <section class="wrap" aria-labelledby="ab-h1">
+    <div class="phero">
+      <p class="intro in">What if the best wellness experiences in the world came together in one high-energy, community-driven day? We built it.</p>
+      <div class="shot"><img src="img/p66.jpg" alt="The WOW crowd working out together on the lawn"></div>
+      <h1 id="ab-h1" class="big words" data-words>Born from a bold idea</h1>
+    </div>
+  </section>
+  <section class="wrap sec" aria-labelledby="what-title">
+    <div class="block" style="background:var(--yellow)">
+      <h2 id="what-title" class="loud rv">Not an expo <span class="pic"><img src="img/p64.jpg" alt="" loading="lazy"></span> not a gym <span class="pic"><img src="img/p123.jpg" alt="" loading="lazy"></span></h2>
+      <p class="lede rv d1" style="margin:32px auto 0;text-align:center">A full-scale wellness experience. Try new modalities, push your limits, eat well, recover, and connect with people who are serious about growth.</p>
+    </div>
+  </section>
+  <section class="wrap sec" aria-labelledby="mission-title">
+    <article class="panel">
+      <div><p class="kicker" style="--k:var(--lime)">Our mission</p><h2 id="mission-title" class="cap h3">Tools to live stronger, one event at a time</h2><p>Cold plunges, biohacking labs, fitness classes, live DJs, premium food and AI-powered fitness, all in one place, for everyone.</p><div class="sp-buy"><!-- Sweatpals widget begin --><iframe title="Buy WOW tickets" style="width: 100%; max-height: 50px; height: 50px; border: 0;" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=000000&fontFamily=Poppins&loader=false"></iframe><!-- Sweatpals widget end --></div></div>
+      <div class="shot"><img src="img/p143.jpg" alt="A dance cardio class at WOW" loading="lazy"></div>
+    </article>
+  </section>
+  <section class="wrap sec" aria-labelledby="team-title">
+    <h2 id="team-title" class="cap h2 rv">The co-founders</h2>
+    <div class="team" style="margin-top:40px">
+      <div class="mate rv" style="background:var(--mag)"><p class="cap">Mike</p><p style="margin:8px 0 0;font-weight:700">Co-founder</p></div>
+      <div class="mate rv d1" style="background:var(--orange)"><p class="cap">Graham</p><p style="margin:8px 0 0;font-weight:700">Co-founder</p></div>
+      <div class="mate rv d2" style="background:var(--cyan)"><p class="cap">Duncan</p><p style="margin:8px 0 0;font-weight:700">Co-founder</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= CONTACT ================= -->
+<div class="page" data-page="contact" hidden>
+  <section class="wrap" aria-labelledby="ct-h1">
+    <div class="phero">
+      <p class="intro in">Questions, collaborations, or want in on the movement? Attendees, sponsors, vendors, volunteers and creators all welcome.</p>
+      <div class="shot"><img src="img/p165.jpg" alt="Trampoline workout class at WOW"></div>
+      <div>
+        <h1 id="ct-h1" class="big words" data-words>Talk to WOW</h1>
+        <div class="row" style="margin-top:22px">
+          <p class="cap" style="font-size:clamp(26px,3vw,42px);user-select:all;word-break:break-all;color:var(--lime);margin:0">info@wowlakenona.com</p>
+          <button class="btn b-outw" type="button" data-copy="info@wowlakenona.com">Copy email</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wrap sec flex" aria-labelledby="msg-title">
+    <div style="flex:1 1 360px">
+      <h2 id="msg-title" class="cap h2 rv">Send a message</h2>
+      <p class="lede rv d1" style="margin-top:20px">We reply fast. Let's make wellness WOW together.</p>
+    </div>
+    <div style="flex:999 1 520px;min-width:0">
+      <form class="form" data-form="Message" data-to="info@wowlakenona.com" novalidate>
+        <div class="f"><label for="ct-name">Name</label><input id="ct-name" name="Name" autocomplete="name"></div>
+        <div class="f"><label for="ct-email">Email <span class="req" aria-hidden="true">*</span></label><input id="ct-email" name="Email" type="email" required autocomplete="email"></div>
+        <div class="f full"><label for="ct-phone">Phone</label><input id="ct-phone" name="Phone" type="tel" autocomplete="tel"></div>
+        <div class="f full"><label for="ct-msg">Message <span class="req" aria-hidden="true">*</span></label><textarea id="ct-msg" name="Message" required></textarea></div>
+        <div class="full"><button class="btn b-lime" type="submit">Send message <span class="arr" aria-hidden="true">→</span></button></div>
+      </form>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="wrap foot">
+  <div class="stripe" aria-hidden="true" style="margin-bottom:40px"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="flex" style="justify-content:space-between;align-items:flex-end;gap:24px">
+    <p style="margin:0;font-size:20px;max-width:30ch;font-weight:700">Where wellness comes to life. Lake Nona, Orlando.</p>
+    <div style="display:flex;gap:4px;flex-wrap:wrap">
+      <a class="nl" href="#home">Event</a><a class="nl" href="#sponsor">Sponsors</a><a class="nl" href="#volunteer">Volunteer</a><a class="nl" href="#creators">Creators</a><a class="nl" href="#about">About</a><a class="nl" href="#contact">Contact</a><a class="nl" href="https://wowlakenona.com/policies/privacy-policy">Privacy</a>
+    </div>
+  </div>
+  <img class="wordmark" src="img/logo-color.png" alt="WOW World of Wellness" width="2323" height="797" loading="lazy">
+  <p style="margin:24px 0 0;font-size:15px">© 2026 WOW · World of Wellness</p>
+</footer>
+
+<script>
+(function(){
+  var EXPS=[
+    {n:'Biohacking',t:'Unlock your potential',c:'#FF2BD6',i:'img/p135.jpg',d:'Red-light therapy, recovery tools and tech stations you can test on the spot.'},
+    {n:'Sauna',t:'Heat that heals',c:'#FF6A1A',i:'img/p118.jpg',d:'Sweat out the stress in the barrel sauna. Unlimited sessions with every ticket.'},
+    {n:'Cold plunge',t:'The chill that thrills',c:'#19EFE4',i:'img/p123.jpg',d:'Energy up, inflammation down, bragging rights included. Unlimited plunges.'},
+    {n:'Great food',t:'Fuel to feel amazing',c:'#FFE234',i:'img/p93.jpg',d:'Performance snacks, functional treats and supplement samples everywhere.'},
+    {n:'Fitness challenges',t:'Compete. Improve. Win.',c:'#B8F45A',i:'img/p163.jpg',d:'Strength tests, race-the-clock workouts and surprise challenges, with prizes.'},
+    {n:'Live DJ',t:'Energy you can feel',c:'#FF3D8A',i:'img/p143.jpg',d:'Beats from doors open to last rep. Part fitness fest, part party.'},
+    {n:'AI fitness',t:'Train smarter',c:'#19EFE4',i:'img/p141.jpg',d:'AI trainers, real-time form feedback and workouts that adapt to you.'}
+  ];
+  var FAQS=[
+    ['When and where is it?','Sunday, November 22, from 12 to 4pm at Central Park on West Morse Boulevard in Winter Park.'],
+    ['What does general admission include?','Full event access, unlimited cold plunge and sauna, and free sponsor samples.'],
+    ['Do I need to be fit to come?','No. Classes, challenges and recovery sessions are open to every fitness level, from first-timers to athletes.'],
+    ['How do I become a sponsor or vendor?','Apply on the Sponsors page and the WOW team will send you the full event deck.'],
+    ['Can I volunteer instead of buying a ticket?','Yes. Volunteers get free admission, crew merch and behind-the-scenes access. Apply on the Volunteer page.']
+  ];
+  function $(s,r){return (r||document).querySelector(s)}
+  function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+  function el(tag,attrs,text){var e=document.createElement(tag);for(var k in attrs){e.setAttribute(k,attrs[k])}if(text!=null)e.textContent=text;return e}
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  $$('[data-words]').forEach(function(n){var words=n.textContent.trim().split(/\s+/);n.textContent='';words.forEach(function(w,i){var s=el('span',{class:'w'},w);s.style.setProperty('--i',i);n.appendChild(s);n.appendChild(document.createTextNode(' '))})});
+
+  var PAGES=['home','sponsor','volunteer','creators','about','contact'];
+  var SUB={'sponsor-apply':'sponsor','volunteer-apply':'volunteer','creators-apply':'creators'};
+  function route(){
+    var h=(location.hash||'#home').slice(1);
+    var page=PAGES.indexOf(h)>-1?h:(SUB[h]||'home');
+    $$('.page').forEach(function(p){p.hidden=p.getAttribute('data-page')!==page});
+    $$('[data-nav]').forEach(function(a){if(a.getAttribute('data-nav')===page){a.setAttribute('aria-current','page')}else{a.removeAttribute('aria-current')}});
+    closeMenu();
+    var target=PAGES.indexOf(h)>-1?null:document.getElementById(h);
+    if(target){requestAnimationFrame(function(){target.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})})}else{window.scrollTo(0,0)}
+    if(page==='home'){requestAnimationFrame(storyTick)}
+  }
+  window.addEventListener('hashchange',route);
+
+  var burger=$('#burger'),links=$('#links');
+  function closeMenu(){links.classList.remove('open');burger.setAttribute('aria-expanded','false')}
+  burger.addEventListener('click',function(){var o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o?'true':'false')});
+
+  var TARGET=new Date('2026-11-22T12:00:00-05:00').getTime();
+  function pad(n){return (n<10?'0':'')+n}
+  function tick(){var d=Math.max(0,TARGET-Date.now());
+    $('#cd-d').textContent=pad(Math.floor(d/864e5));$('#cd-h').textContent=pad(Math.floor(d/36e5)%24);
+    $('#cd-m').textContent=pad(Math.floor(d/6e4)%60);$('#cd-s').textContent=pad(Math.floor(d/1e3)%60)}
+  tick();setInterval(tick,1000);
+
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);
+      var b=e.target,to=+b.getAttribute('data-count'),pre=b.getAttribute('data-prefix')||'',suf=b.getAttribute('data-suffix')||'',t0=performance.now();
+      (function f(t){var p=Math.min(1,(t-t0)/1100),v=Math.round(to*(1-Math.pow(1-p,3)));b.textContent=pre+v+suf;if(p<1)requestAnimationFrame(f)})(t0);
+    })},{threshold:.6});
+    $$('[data-count]').forEach(function(b){io.observe(b)});
+  }
+
+  var steps=$$('.step'),imgs=$$('.media img'),badge=$('#badge');
+  function storyTick(){
+    if(!steps.length||steps[0].offsetParent===null)return;
+    var mid=innerHeight*0.5,best=0,bd=1e9;
+    steps.forEach(function(s,i){var r=s.getBoundingClientRect(),c=r.top+r.height/2,dd=Math.abs(c-mid);if(dd<bd){bd=dd;best=i}});
+    steps.forEach(function(s,i){s.classList.toggle('on',i===best)});
+    imgs.forEach(function(m,i){m.classList.toggle('on',i===best)});
+    badge.textContent=steps[best].getAttribute('data-badge');badge.style.background=steps[best].getAttribute('data-color');
+  }
+  var ticking=false;window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;storyTick()})}},{passive:true});
+
+  var rail=$('#rail');
+  EXPS.forEach(function(e){
+    var dark=e.c==='#0F0E13';
+    var card=el('article',{class:'card'});card.style.background=e.c;card.style.color=dark?'#FFFFFF':'#0F0E13';
+    var ph=el('div',{class:'ph'+(e.i?'':' jj')});
+    ph.appendChild(el('img',{src:e.i,alt:e.n+' at WOW in May 2026',loading:'lazy'}))
+    var tx=el('div',{class:'tx'});tx.appendChild(el('h3',{class:'cap'},e.n));tx.appendChild(el('p',{class:'tagline'},e.t));tx.appendChild(el('p',{},e.d));
+    card.appendChild(ph);card.appendChild(tx);rail.appendChild(card);
+  });
+  function slide(dir){rail.scrollBy({left:dir*Math.min(rail.clientWidth*0.8,760),behavior:reduce?'auto':'smooth'})}
+  $('#prev').addEventListener('click',function(){slide(-1)});$('#next').addEventListener('click',function(){slide(1)});
+  rail.addEventListener('keydown',function(ev){if(ev.key==='ArrowRight'){ev.preventDefault();slide(1)}if(ev.key==='ArrowLeft'){ev.preventDefault();slide(-1)}});
+
+
+  var qa=$('#qa');
+  FAQS.forEach(function(f,i){
+    var w=el('div');var b=el('button',{type:'button','aria-expanded':i===0?'true':'false','aria-controls':'ans-'+i});
+    b.appendChild(el('span',{},f[0]));
+    b.insertAdjacentHTML('beforeend','<svg class="pl" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>');
+    var p=el('p',{class:'ans pop',id:'ans-'+i},f[1]);p.hidden=i!==0;
+    b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',o?'false':'true');p.hidden=o});
+    w.appendChild(b);w.appendChild(p);qa.appendChild(w);
+  });
+
+  function copy(text,btn){
+    function done(){var o=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=o},1600)}
+    try{navigator.clipboard.writeText(text).then(done,function(){btn.textContent='Select the text to copy'})}catch(e){btn.textContent='Select the text to copy'}
+  }
+  document.addEventListener('click',function(ev){var b=ev.target.closest('[data-copy]');if(b){copy(b.getAttribute('data-copy'),b)}});
+
+  $$('form[data-form]').forEach(function(f){
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      var old=$('.err',f);if(old)old.remove();
+      var bad=$$('[required]',f).filter(function(x){return !x.value.trim()||(x.type==='email'&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(x.value.trim()))});
+      if(bad.length){
+        var lab=$('label[for="'+bad[0].id+'"]',f).firstChild.nodeValue.trim();
+        f.insertBefore(el('p',{class:'err',role:'alert'},'Fill in '+lab.toLowerCase()+(bad[0].type==='email'?' with a valid address':'')+' to continue.'),f.lastElementChild);
+        bad[0].focus();return;
+      }
+      var kind=f.getAttribute('data-form'),to=f.getAttribute('data-to');
+      var body=$$('input,textarea',f).filter(function(x){return x.value.trim()}).map(function(x){return x.name+': '+x.value.trim()}).join('\n');
+      var box=el('div',{class:'done pop',role:'status'});
+      box.appendChild(el('p',{class:'cap',style:'font-size:clamp(36px,4vw,56px)'},'Ready to send'));
+      box.appendChild(el('p',{style:'margin:0;font-size:18px'},'Send this '+kind.toLowerCase()+' to:'));
+      box.appendChild(el('p',{class:'addr'},to));
+      box.appendChild(el('pre',{},'Subject: WOW '+kind+'\n\n'+body));
+      var row=el('div',{class:'cta-row'});
+      row.appendChild(el('a',{class:'btn b-lime',href:'mailto:'+to+'?subject='+encodeURIComponent('WOW '+kind)+'&body='+encodeURIComponent(body)},'Open in email'));
+      var cp=el('button',{class:'btn b-outw',type:'button'},'Copy message');cp.addEventListener('click',function(){copy('To: '+to+'\nSubject: WOW '+kind+'\n\n'+body,cp)});
+      var back=el('button',{class:'btn b-outw',type:'button'},'Edit');back.addEventListener('click',function(){box.remove();f.hidden=false});
+      row.appendChild(cp);row.appendChild(back);box.appendChild(row);
+      f.hidden=true;f.parentNode.appendChild(box);
+    });
+  });
+
+  /* hero video: muted inline autoplay, with fallbacks for iOS (Low Power Mode, servers without byte ranges) */
+  var reel=$('#reel');
+  if(reel){
+    var sb=$('#reel-sound'),pb=$('#reel-play'),tap=$('#reel-tap'),userPaused=false,swapped=false;
+    reel.muted=true;reel.defaultMuted=true;reel.setAttribute('muted','');reel.playsInline=true;reel.setAttribute('playsinline','');reel.setAttribute('webkit-playsinline','');
+    function syncPlay(){var paused=reel.paused;$('#ic-pause').style.display=paused?'none':'';$('#ic-play').style.display=paused?'':'none';pb.setAttribute('aria-label',paused?'Play video':'Pause video');if(!paused)tap.hidden=true}
+    function tryPlay(){var pr;try{pr=reel.play()}catch(e){tap.hidden=false;return}if(pr&&pr.then){pr.then(function(){tap.hidden=true}).catch(function(){tap.hidden=false})}}
+    function toBlob(){if(swapped)return;swapped=true;
+      fetch(reel.getAttribute('src')).then(function(r){if(!r.ok)throw 0;return r.blob()}).then(function(b){reel.src=URL.createObjectURL(b);reel.load();tryPlay()}).catch(function(){tap.hidden=false})}
+    reel.addEventListener('error',toBlob);
+    setTimeout(function(){if(reel.readyState===0)toBlob()},4000);
+    reel.addEventListener('loadedmetadata',function(){if(!userPaused)tryPlay()});
+    reel.addEventListener('canplay',function(){if(reel.paused&&!userPaused)tryPlay()});
+    ['touchstart','pointerdown','scroll','keydown'].forEach(function(evn){document.addEventListener(evn,function once(){document.removeEventListener(evn,once,true);if(reel.paused&&!userPaused)tryPlay()},{passive:true,capture:true})});
+    document.addEventListener('visibilitychange',function(){if(!document.hidden&&reel.paused&&!userPaused)tryPlay()});
+    tap.addEventListener('click',function(){userPaused=false;tryPlay()});
+    sb.addEventListener('click',function(){reel.muted=!reel.muted;if(!reel.muted){try{reel.currentTime=0}catch(e){}}userPaused=false;tryPlay();
+      sb.setAttribute('aria-pressed',reel.muted?'false':'true');$('#reel-sound-label').textContent=reel.muted?'Sound on':'Mute';
+      $('#snd-on').style.display=reel.muted?'none':'';$('#snd-off').style.display=reel.muted?'':'none'});
+    pb.addEventListener('click',function(){if(reel.paused){userPaused=false;tryPlay()}else{userPaused=true;reel.pause()}});
+    reel.addEventListener('play',syncPlay);reel.addEventListener('pause',syncPlay);reel.addEventListener('playing',syncPlay);syncPlay();
+    tryPlay();
+  }
+
+  route();
+})();
+</script>
+
+</body>
+</html>
