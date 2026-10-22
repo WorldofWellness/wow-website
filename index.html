@@ -410,6 +410,13 @@ img{max-width:100%}
 .buybar b{font-size:22px;color:var(--white)}
 .buybar .btn{padding:0 18px;font-size:16px}
 @media (max-width:380px){.buybar b{font-size:18px}.buybar .btn{padding:0 14px;font-size:15px}}
+.tix-head{flex-basis:100%;padding:clamp(6px,1vw,12px) clamp(6px,1vw,12px) 8px}
+.tix-left{gap:12px}
+.tix-left .tcard{flex:1 1 auto}
+#tickets .tk-wrap{align-self:stretch}
+#tickets .tk{align-self:stretch;justify-content:space-between}
+.tix-code{flex-basis:100%;margin:6px 0;padding:0 clamp(6px,1vw,12px);font-size:17px}
+@media (max-width:600px){.tix-head,.tix-code{padding-inline:6px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.step{opacity:1}}
 </style>
 <style>
@@ -566,7 +573,6 @@ img{max-width:100%}
       <figure class="pf rv"><img src="img/p118.jpg" alt="A guest in the cold plunge in front of the barrel sauna" loading="lazy"></figure>
       <figure class="pf rv d1"><img src="img/p72.jpg" alt="Two friends smiling at WOW" loading="lazy"></figure>
       <figure class="pf rv d2"><img src="img/p55.jpg" alt="A mat class on the lawn" loading="lazy"></figure>
-      <figure class="pf rv"><img src="img/p45.jpg" alt="Guests making heart hands during a class" loading="lazy"></figure>
     </div>
     <div class="buy-center rv">
       <a class="btn b-lime btn-xl" href="#tickets" data-cta="proof">Don't miss <span data-ev="month"></span> · <span data-ev="price"></span> <span class="arr" aria-hidden="true">→</span></a>
@@ -638,11 +644,11 @@ img{max-width:100%}
 
   <section class="wrap sec" id="tickets" aria-labelledby="tix-title" style="padding-top:clamp(40px,6vw,90px)">
     <div class="block dark tix-grid">
-      <div class="tix-left" style="justify-content:flex-start">
-        <div>
+      <div class="tix-head">
           <h2 id="tix-title" class="cap h3 rv">Lock in your spot</h2>
           <p class="tix-cap rv d1">Capped at <span data-ev="capacity"></span>. Prices rise as we get closer. <span data-if="priceStepNote" hidden><span data-ev="priceStepNote"></span></span></p>
-        </div>
+      </div>
+      <div class="tix-left" style="justify-content:flex-start">
         <div class="tcard rv d1">
           <p class="tcard-h">General Admission · <span data-ev="price"></span></p>
           <ul class="chk">
@@ -657,7 +663,6 @@ img{max-width:100%}
           <p class="tcard-h">Squad of 4 · <span data-ev="squadPrice"></span> <span class="tbadge">Best value</span></p>
           <p style="margin:0;font-size:18px">Everything above for you and three friends. Wellness is better with your people.</p>
         </div>
-        <p style="margin:0;font-size:17px">Have a code? Enter it at checkout. Pick your tickets, check out right here, done in about a minute.</p>
       </div>
       <div class="tk-wrap rv d1">
         <div class="tk">
@@ -669,6 +674,7 @@ img{max-width:100%}
           <iframe class="tk-buy" title="Choose quantity and buy WOW tickets" allowtransparency="true" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=00FFFF&backgroundHex=000000&fontFamily=Poppins&loader=false"></iframe>
         </div>
       </div>
+      <p class="tix-code">Have a code? Enter it at checkout. Pick your tickets, check out right here, done in about a minute.</p>
       <div class="risk">
         <p class="risk-h"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Your ticket is protected</p>
         <ul>
