@@ -10,9 +10,11 @@
 <style>
 /* Layout: 1440 frame, 32px gutters. Dark ink stages alternate with logo-rainbow colour blocks; giant condensed caps carry the voice. */
 :root{
-  --ink:#0A090D; --ink-2:#17151D; --ink-3:#262330; --cream:#FFF8EE; --page:#0A090D; --white:#FFFFFF;
-  --mag:#C86BFF; --pink:#FF4FB8; --orange:#FF1F8E; --yellow:#9D6BFF; --lime:#22E3FF; --cyan:#0A8CFF;
-  --hot:#FF1F8E; --blue:#0A8CFF; --violet:#9D6BFF; --aqua:#22E3FF;
+  /* Heat & Ice: near-black ground, warm bone text, ember for every buy action, ice as the only second accent */
+  --ink:#0B0B0D; --ink-2:#161619; --ink-3:#232328; --cream:#F4EFE9; --page:#0B0B0D; --white:#F4EFE9;
+  --heat:#FF5A1F; --ice:#7FD8FF; --bone:#F4EFE9;
+  --mag:var(--heat); --pink:var(--heat); --orange:var(--heat); --yellow:var(--bone); --lime:var(--ice); --cyan:var(--ice);
+  --hot:var(--heat); --blue:var(--ice); --violet:var(--bone); --aqua:var(--ice);
   --scrim:rgba(15,14,19,.5);
   --display:'Anton','Impact','Arial Narrow Bold',sans-serif;
   --body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -39,7 +41,7 @@ img{max-width:100%}
 .flex>*{min-width:0}
 .block{border-radius:44px;padding:clamp(28px,5vw,80px);color:var(--ink)}
 .dark{background:var(--ink-2);color:var(--white)}
-.stripe{display:flex;height:10px;border-radius:999px;overflow:hidden;background:linear-gradient(90deg,var(--aqua) 0 25%,var(--blue) 0 50%,var(--violet) 0 75%,var(--hot) 0)}
+.stripe{display:flex;height:10px;border-radius:999px;overflow:hidden;background:linear-gradient(90deg,var(--heat) 0 50%,var(--ice) 0)}
 .stripe i{display:none}
 .stripe i{flex:1}
 .stripe i:nth-child(1){background:var(--mag)}.stripe i:nth-child(2){background:var(--pink)}.stripe i:nth-child(3){background:var(--orange)}.stripe i:nth-child(4){background:var(--yellow)}.stripe i:nth-child(5){background:var(--lime)}.stripe i:nth-child(6){background:var(--cyan)}
@@ -103,7 +105,7 @@ img{max-width:100%}
 /* video hero */
 .hv{position:relative;overflow:hidden;isolation:isolate;padding-block:clamp(28px,4vw,56px) clamp(40px,5vw,72px)}
 .hv-bg{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;opacity:.22;z-index:-1;animation:drift 26s ease-in-out infinite alternate}
-.hv::after{content:"";position:absolute;inset:auto 0 0 0;height:10px;background:linear-gradient(90deg,var(--aqua) 0 25%,var(--blue) 0 50%,var(--violet) 0 75%,var(--hot) 0)}
+.hv::after{content:"";position:absolute;inset:auto 0 0 0;height:10px;background:linear-gradient(90deg,var(--heat) 0 50%,var(--ice) 0)}
 .hv-grid{position:relative;z-index:1}
 @keyframes drift{from{transform:scale(1.04)}to{transform:scale(1.14) translate(-1.5%,-1%)}}
 .hv-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(24px,4vw,64px);align-items:center}
@@ -130,7 +132,7 @@ img{max-width:100%}
 .hero-logo-sm{display:block;width:clamp(120px,13vw,190px);height:auto}
 .hv .hv-copy{gap:clamp(14px,1.6vw,22px)}
 .hv .when{font-size:clamp(24px,2.4vw,38px)}
-.hv .when span{display:inline;margin-left:.35em}
+.hv .when span{display:inline;margin-left:.35em;color:var(--ice)}
 .hv .when span::before{content:'· ';color:var(--white)}
 .hv-h1{font-size:clamp(42px,5.4vw,88px);line-height:.92;max-width:13ch}
 .hv-sub{margin:0;font-size:clamp(18px,1.7vw,23px);line-height:1.45;max-width:36ch;font-weight:500}
@@ -148,10 +150,10 @@ img{max-width:100%}
 .vs-ic{flex:0 0 40px;height:40px;border-radius:50%;background:var(--lime);color:var(--ink);display:flex;align-items:center;justify-content:center}
 .vs-list b{display:block;font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(24px,2.2vw,32px);line-height:1}
 .vs-list div>span{display:block;margin-top:6px;font-size:17px;line-height:1.45;color:#D4D1DC}
-.vs-total{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;background:var(--hot);color:var(--ink);border-radius:30px;padding:clamp(20px,3vw,32px)}
+.vs-total{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;background:var(--ink);color:var(--white);box-shadow:inset 0 0 0 2px var(--ink-3);border-radius:30px;padding:clamp(20px,3vw,32px)}
 .vs-total p{margin:0;font-weight:800;font-size:18px}
-.vs-total b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(64px,8vw,120px);line-height:.9}
-.vs-total .btn{background:var(--blue);color:var(--ink);box-shadow:none}.vs-total .btn:hover{background:var(--white)}
+.vs-total b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(64px,8vw,120px);line-height:.9;color:var(--heat)}
+.vs-total .btn{background:var(--heat);color:var(--ink);box-shadow:none}.vs-total .btn:hover{background:var(--ice)}
 .proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px);gap:12px;margin-top:40px}
 .pf{margin:0;border-radius:24px;overflow:hidden}
 .pf img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
@@ -164,7 +166,7 @@ img{max-width:100%}
 @media (max-width:760px){.risk ul{grid-template-columns:minmax(0,1fr)}}
 .risk li{background:var(--ink-2);border-radius:20px;padding:16px 18px;font-size:17px;line-height:1.45}
 .risk b{color:var(--white)}
-.final{color:var(--ink)}
+.final{color:var(--white)}
 .buybar{position:fixed;left:0;right:0;bottom:0;z-index:35;display:none;align-items:center;justify-content:space-between;gap:14px;background:rgba(10,9,13,.96);box-shadow:0 -1px 0 var(--ink-3);padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .buybar b{display:block;font-family:var(--display);font-weight:400;font-size:30px;line-height:1;color:var(--lime)}
 .buybar span{font-size:14px;font-weight:700}
@@ -431,11 +433,11 @@ img{max-width:100%}
   </div>
 
   <section class="wrap sec" style="padding-top:clamp(56px,7vw,100px)" aria-labelledby="loud-title">
-    <div class="block" style="background:var(--blue)">
+    <div class="block" style="background:var(--ink-2);color:var(--white)">
       <h2 id="loud-title" class="loud rv">Sweat <span class="pic"><img src="img/p118.jpg" alt="" loading="lazy"></span> plunge <span class="pic"><img src="img/p163.jpg" alt="" loading="lazy"></span> move <span class="pic"><img src="img/p143.jpg" alt="" loading="lazy"></span> refuel <span class="pic"><img src="img/p93.jpg" alt="" loading="lazy"></span> repeat</h2>
       <div style="display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:40px;text-align:center">
         <p class="lede rv d1">This isn't a booth crawl. You don't walk around collecting flyers. You plunge, sweat, train, taste and leave feeling better than when you walked in.</p>
-        <a class="btn b-ink rv d2" href="#included">See everything you get <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn b-outw rv d2" href="#included">See everything you get <span class="arr" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -485,10 +487,10 @@ img{max-width:100%}
         <h2 id="story-title" class="cap h2 rv" style="max-width:12ch">Your afternoon at WOW</h2>
         <div class="story" style="margin-top:20px">
           <div class="steps">
-            <div class="step on" data-badge="Heat" data-color="#FF1F8E"><p class="cap" style="color:var(--orange)">Heat</p><p>Start in the barrel sauna. Sweat out the stress, loosen up and let the week melt off. Unlimited sessions with every ticket.</p></div>
-            <div class="step" data-badge="Cold" data-color="#0A8CFF"><p class="cap" style="color:var(--cyan)">Cold</p><p>Then brave the plunge. Energy spikes, inflammation drops and you earn the bragging rights. Unlimited plunges too.</p></div>
-            <div class="step" data-badge="Move" data-color="#C86BFF"><p class="cap" style="color:var(--mag)">Move</p><p>Spin, dance cardio, trampoline challenges and mat classes. Every fitness level welcome.</p></div>
-            <div class="step" data-badge="Refuel" data-color="#22E3FF"><p class="cap" style="color:var(--lime)">Refuel</p><p>Performance food, supplement samples and the live DJ keeping the energy up until the last rep.</p></div>
+            <div class="step on" data-badge="Heat" data-color="#FF5A1F"><p class="cap" style="color:var(--orange)">Heat</p><p>Start in the barrel sauna. Sweat out the stress, loosen up and let the week melt off. Unlimited sessions with every ticket.</p></div>
+            <div class="step" data-badge="Cold" data-color="#7FD8FF"><p class="cap" style="color:var(--cyan)">Cold</p><p>Then brave the plunge. Energy spikes, inflammation drops and you earn the bragging rights. Unlimited plunges too.</p></div>
+            <div class="step" data-badge="Move" data-color="#FF5A1F"><p class="cap" style="color:var(--mag)">Move</p><p>Spin, dance cardio, trampoline challenges and mat classes. Every fitness level welcome.</p></div>
+            <div class="step" data-badge="Refuel" data-color="#7FD8FF"><p class="cap" style="color:var(--lime)">Refuel</p><p>Performance food, supplement samples and the live DJ keeping the energy up until the last rep.</p></div>
           </div>
           <div class="media" aria-hidden="true">
             <span class="badge" id="badge" style="background:var(--orange)">Heat</span>
@@ -533,10 +535,10 @@ img{max-width:100%}
           <p class="price rv d1">$49.97</p>
         </div>
         <ul class="chk rv d2">
-          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22E3FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Full event access</li>
-          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22E3FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Unlimited cold plunge and sauna</li>
-          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22E3FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Free sponsor samples</li>
-          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22E3FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Classes, challenges and a live DJ</li>
+          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7FD8FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Full event access</li>
+          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7FD8FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Unlimited cold plunge and sauna</li>
+          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7FD8FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Free sponsor samples</li>
+          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7FD8FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Classes, challenges and a live DJ</li>
         </ul>
         <p style="margin:0;font-size:17px">Pick your quantity, tap Buy Ticket and check out securely on this page. No account needed to browse.</p>
       </div>
@@ -547,7 +549,7 @@ img{max-width:100%}
             <div class="tk-fact"><dt>Where</dt><dd>Central Park<small>W Morse Blvd, Winter Park, FL</small></dd></div>
             <div class="tk-fact"><dt>Price</dt><dd>$49.97<small>General admission</small></dd></div>
           </dl>
-          <iframe class="tk-buy" title="Choose quantity and buy WOW tickets" allowtransparency="true" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=FF1F8E&backgroundHex=000000&fontFamily=Poppins&loader=false"></iframe>
+          <iframe class="tk-buy" title="Choose quantity and buy WOW tickets" allowtransparency="true" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=FF5A1F&backgroundHex=000000&fontFamily=Poppins&loader=false"></iframe>
           <button type="button" class="tk-more" id="tk-more" aria-expanded="false" aria-controls="tk-drawer"><span id="tk-more-label">See event details</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="tk-drawer" id="tk-drawer"><div><div class="tk-inner">
             <p><strong>Sauna, cold plunge, biohacking, great food, fitness challenges, live DJ, premium experiences and AI fitness.</strong> At WOW you're not just browsing booths, you're leveling up: interactive experiences, expert-led workshops and classes like Pilates Burn by HiLi, AI equipment and live demos.</p>
@@ -599,7 +601,7 @@ img{max-width:100%}
   </section>
 
   <section class="wrap sec" aria-labelledby="final-title">
-    <div class="block final" style="background:var(--aqua)">
+    <div class="block final" style="background:var(--ink-2);color:var(--white);box-shadow:inset 0 0 0 2px var(--ink-3)">
       <h2 id="final-title" class="cap h2 rv" style="max-width:14ch">Nov 22 is happening with or without you</h2>
       <p class="lede rv d1" style="margin-top:20px;max-width:46ch">Unlimited sauna and cold plunge, 30+ brands, classes, challenges and a live DJ, for less than a night out. Grab your ticket now so you don't forget.</p>
       <div class="flex" style="align-items:center;gap:20px;margin-top:30px">
@@ -628,7 +630,7 @@ img{max-width:100%}
   </section>
 
   <section class="wrap sec" aria-labelledby="su-title">
-    <div class="block flex" style="background:var(--violet);align-items:center">
+    <div class="block flex" style="background:var(--bone);align-items:center">
       <div style="flex:1 1 400px">
         <h2 id="su-title" class="cap h2 rv">Not ready yet?</h2>
         <p class="lede rv d1" style="margin-top:18px">Drop your email and we'll send you a reminder before Nov 22, plus first access to future WOW events.</p>
@@ -891,13 +893,13 @@ img{max-width:100%}
 <script>
 (function(){
   var EXPS=[
-    {n:'Biohacking',t:'Unlock your potential',c:'#C86BFF',i:'img/p135.jpg',d:'Red-light therapy, recovery tools and tech stations you can test on the spot.'},
-    {n:'Sauna',t:'Heat that heals',c:'#FF1F8E',i:'img/p118.jpg',d:'Sweat out the stress in the barrel sauna. Unlimited sessions with every ticket.'},
-    {n:'Cold plunge',t:'The chill that thrills',c:'#0A8CFF',i:'img/p123.jpg',d:'Energy up, inflammation down, bragging rights included. Unlimited plunges.'},
-    {n:'Great food',t:'Fuel to feel amazing',c:'#9D6BFF',i:'img/p93.jpg',d:'Performance snacks, functional treats and supplement samples everywhere.'},
-    {n:'Fitness challenges',t:'Compete. Improve. Win.',c:'#22E3FF',i:'img/p163.jpg',d:'Strength tests, race-the-clock workouts and surprise challenges, with prizes.'},
-    {n:'Live DJ',t:'Energy you can feel',c:'#FF4FB8',i:'img/p143.jpg',d:'Beats from doors open to last rep. Part fitness fest, part party.'},
-    {n:'AI fitness',t:'Train smarter',c:'#0A8CFF',i:'img/p141.jpg',d:'AI trainers, real-time form feedback and workouts that adapt to you.'}
+    {n:'Biohacking',t:'Unlock your potential',c:'#FF5A1F',i:'img/p135.jpg',d:'Red-light therapy, recovery tools and tech stations you can test on the spot.'},
+    {n:'Sauna',t:'Heat that heals',c:'#FF5A1F',i:'img/p118.jpg',d:'Sweat out the stress in the barrel sauna. Unlimited sessions with every ticket.'},
+    {n:'Cold plunge',t:'The chill that thrills',c:'#7FD8FF',i:'img/p123.jpg',d:'Energy up, inflammation down, bragging rights included. Unlimited plunges.'},
+    {n:'Great food',t:'Fuel to feel amazing',c:'#F4EFE9',i:'img/p93.jpg',d:'Performance snacks, functional treats and supplement samples everywhere.'},
+    {n:'Fitness challenges',t:'Compete. Improve. Win.',c:'#7FD8FF',i:'img/p163.jpg',d:'Strength tests, race-the-clock workouts and surprise challenges, with prizes.'},
+    {n:'Live DJ',t:'Energy you can feel',c:'#FF5A1F',i:'img/p143.jpg',d:'Beats from doors open to last rep. Part fitness fest, part party.'},
+    {n:'AI fitness',t:'Train smarter',c:'#7FD8FF',i:'img/p141.jpg',d:'AI trainers, real-time form feedback and workouts that adapt to you.'}
   ];
   var FAQS=[
     ['When and where is it?','Sunday, November 22, from 12 to 4pm at Central Park on West Morse Boulevard in Winter Park.'],
