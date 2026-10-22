@@ -3,7 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>WOW Lake Nona</title>
+<title>WOW World of Wellness · Sauna, Cold Plunge and Fitness Events in Central Florida</title>
+<meta name="description" content="Unlimited sauna and cold plunge, 30+ wellness brands, expert-led classes, fitness challenges and a live DJ. One afternoon, one ticket.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WOW World of Wellness · Sauna, Cold Plunge and Fitness Events in Central Florida">
+<meta property="og:description" content="Unlimited sauna and cold plunge, 30+ wellness brands, expert-led classes, fitness challenges and a live DJ. One afternoon, one ticket.">
+<meta property="og:image" content="https://wow-website.hg-0f1.workers.dev/img/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="event.json" as="fetch" crossorigin="anonymous">
+<script>document.documentElement.className+=' ev-wait'</script>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap">
@@ -349,6 +357,59 @@ img{max-width:100%}
   .steps>.step:first-child{padding-top:28px}
   .step .cap{font-size:clamp(56px,16vw,96px)}
 }
+/* copy v2 components */
+[hidden]{display:none!important}
+.ev-wait [data-ev]{visibility:hidden}
+.eyebrow{margin:0;font-weight:800;font-size:clamp(15px,1.3vw,18px);line-height:1.4;color:var(--heat)}
+.hv-h1{font-size:clamp(36px,4.2vw,68px);max-width:17ch}
+.guar{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px;font-weight:700;line-height:1.45;color:#D6D6D6}
+.guar li{display:flex;align-items:baseline;gap:6px}
+.guar li::before{content:"\2713";color:var(--volt);font-weight:800}
+.buy-stack{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-width:0}
+.buy-center{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:36px;text-align:center}
+.buy-center .guar{justify-content:center}
+.cd-label{margin:0 0 8px;font-weight:800;font-size:15px}
+.proofbar{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:20px 0 0}
+.proofbar>span{background:var(--ink-2);box-shadow:inset 0 0 0 1px var(--ink-3);border-radius:999px;padding:10px 20px;font-weight:700;font-size:16px;line-height:1.3}
+.proofbar b{font-family:var(--display);font-weight:400;font-size:24px;color:var(--heat);vertical-align:-2px}
+.vs-list b{font-family:var(--body);font-weight:800;text-transform:none;font-size:clamp(18px,1.5vw,21px);line-height:1.35;padding-top:7px}
+.vs-list div>span{color:var(--heat);font-weight:700;font-size:15px}
+.vs-note{margin:0;font-size:17px;color:#D2D2D2}
+.vs-total .guar{max-width:46ch}
+.belong{font-family:var(--display);text-transform:uppercase;font-size:clamp(38px,5vw,80px);line-height:.95;margin:56px 0 0;max-width:20ch;text-wrap:balance}
+.big-belong{margin:0 auto;text-align:center}
+.squad-call{margin:28px 0 0;font-size:19px;font-weight:700}
+.squad-call a{color:var(--heat)}
+.logos{margin-top:40px}
+.logos-h{margin:0 0 16px;font-weight:800;font-size:17px}
+.logo-grid{display:flex;flex-wrap:wrap;gap:12px}
+.logo-grid img{height:64px;width:auto;max-width:180px;object-fit:contain;background:var(--white);border-radius:18px;padding:12px 18px}
+.tix-cap{margin:14px 0 0;font-size:19px;font-weight:700;line-height:1.4}
+.tcard{background:var(--ink-3);border-radius:28px;padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:16px}
+.tcard-h{margin:0;font-family:var(--display);text-transform:uppercase;font-size:clamp(26px,2.4vw,34px);line-height:1}
+.tcard .chk{font-size:18px;gap:10px}
+.tcard .chk li{align-items:flex-start;line-height:1.35}
+.tcard .chk svg{flex:0 0 24px}
+.tbadge{display:inline-block;background:var(--volt);color:var(--ink);font-family:var(--body);text-transform:none;font-size:13px;font-weight:800;padding:5px 10px;border-radius:999px;vertical-align:middle;margin-left:6px}
+.risk ul{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.risk ul.pol{grid-template-columns:minmax(0,1fr)}
+.risk-link{display:inline-block;margin-top:16px;color:var(--heat);font-weight:800;font-size:17px}
+.phero .big.long{font-size:clamp(40px,4.6vw,76px);line-height:.95;max-width:18ch}
+.phero .under{margin:16px 0 0;font-weight:700;font-size:15px;color:#CFCFCF;position:relative;z-index:3}
+.example{margin:32px 0 0;font-size:clamp(22px,2vw,28px);font-weight:800;line-height:1.3;max-width:40ch}
+.flow li b{font-weight:800}
+.f label.cbx{display:flex;align-items:center;gap:12px;margin:0;font-weight:600;font-size:17px;cursor:pointer}
+.f .cbx input{flex:0 0 22px;width:22px;height:22px;min-height:0;padding:0;border-radius:6px;accent-color:var(--heat)}
+.cbx-group{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:12px 24px;min-width:0}
+.cbx-group legend{float:left;width:100%;padding:0;font-weight:700;font-size:16px;margin:0 0 4px 8px}
+.f select{width:100%;min-height:58px;padding:14px 48px 14px 22px;border-radius:22px;border:0;background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%230A0A0A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 18px center;font:inherit;font-size:18px;color:var(--ink);-webkit-appearance:none;appearance:none}
+.f select:focus{outline:none;box-shadow:inset 0 0 0 3px var(--ink)}
+.form-small{margin:10px 0 0;font-size:14px;font-weight:600}
+.quick{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:19px;font-weight:700}
+.quick a{color:var(--heat)}
+.buybar b{font-size:22px;color:var(--white)}
+.buybar .btn{padding:0 18px;font-size:16px}
+@media (max-width:380px){.buybar b{font-size:18px}.buybar .btn{padding:0 14px;font-size:15px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.step{opacity:1}}
 </style>
 <style>
@@ -415,22 +476,21 @@ img{max-width:100%}
     <div class="wrap hv-grid">
       <div class="hv-copy">
         <img class="hero-logo-sm in" src="img/wow-white.png" alt="WOW World of Wellness" width="1400" height="389">
-        <h1 id="hero-title" class="cap hv-h1 words" data-words>The best $49.97 you'll spend on your health this year</h1>
-        <p class="hv-sub in d1">Unlimited sauna and cold plunge, 30+ wellness brands, classes, fitness challenges and a live DJ. One afternoon. One ticket.</p>
-        <p class="when in d2">Sun, Nov 22 · Winter Park<span>12–4pm · Central Park</span></p>
+        <p class="eyebrow in"><span data-ev="dateLong"></span> · <span data-ev="time"></span> · <span data-ev="venue"></span></p>
+        <h1 id="hero-title" class="cap hv-h1 words" data-words-after>Unlimited sauna. Unlimited cold plunge. <span data-ev="brands"></span> wellness brands. One afternoon, one ticket.</h1>
+        <p class="hv-sub in d1">Sweat, plunge, train and eat well alongside hundreds of people who want to feel better too. Expert-led classes, fitness challenges with prizes, biohacking and a live DJ.</p>
         <div class="cta-row in d3">
-          <a class="btn b-lime btn-xl" href="#tickets" data-cta="hero">Get my ticket · $49.97 <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn b-lime btn-xl" href="#tickets" data-cta="hero">Get my ticket · <span data-ev="price"></span> <span class="arr" aria-hidden="true">→</span></a>
         </div>
-        <ul class="trust in d3">
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Secure checkout</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Free ticket transfers</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Full refund if we cancel</li>
-        </ul>
-        <div class="cd in d3" role="timer" aria-label="Time until doors open">
-          <div class="tick"><b id="cd-d">00</b><span>days</span></div>
-          <div class="tick"><b id="cd-h">00</b><span>hours</span></div>
-          <div class="tick"><b id="cd-m">00</b><span>mins</span></div>
-          <div class="tick"><b id="cd-s">00</b><span>secs</span></div>
+        <ul class="guar"><li>Full refund within 24 hours</li><li>Something came up? Move your ticket to the next WOW</li><li>If we cancel, you're refunded automatically</li></ul>
+        <div class="in d3">
+          <p class="cd-label">Doors open in</p>
+          <div class="cd" role="timer" aria-label="Time until doors open">
+            <div class="tick"><b id="cd-d">00</b><span>days</span></div>
+            <div class="tick"><b id="cd-h">00</b><span>hours</span></div>
+            <div class="tick"><b id="cd-m">00</b><span>mins</span></div>
+            <div class="tick"><b id="cd-s">00</b><span>secs</span></div>
+          </div>
         </div>
       </div>
       <figure class="reel in d2">
@@ -444,18 +504,22 @@ img{max-width:100%}
     </div>
   </section>
 
-  <div class="marq-wrap" aria-hidden="true" style="margin-top:24px">
+  <div class="wrap">
+    <p class="proofbar"><span><b data-ev="totalGuests"></b> guests across our first <span data-ev="eventsHeld"></span> events</span><span><b data-ev="lastEventGuests"></b> at the last one</span><span>Capped at <b data-ev="capacity"></b></span></p>
+  </div>
+
+  <div class="marq-wrap" aria-hidden="true" style="margin-top:20px">
     <div class="marq" style="font-size:clamp(40px,5vw,72px)">
-      <span>Biohacking</span><i class="dot" style="background:var(--mag)"></i><span>Sauna</span><i class="dot" style="background:var(--orange)"></i><span>Cold plunge</span><i class="dot" style="background:var(--cyan)"></i><span>Great food</span><i class="dot" style="background:var(--yellow)"></i><span>Fitness challenges</span><i class="dot" style="background:var(--lime)"></i><span>Live DJ</span><i class="dot" style="background:var(--mag)"></i><span>AI fitness</span><i class="dot" style="background:var(--orange)"></i>
-      <span>Biohacking</span><i class="dot" style="background:var(--mag)"></i><span>Sauna</span><i class="dot" style="background:var(--orange)"></i><span>Cold plunge</span><i class="dot" style="background:var(--cyan)"></i><span>Great food</span><i class="dot" style="background:var(--yellow)"></i><span>Fitness challenges</span><i class="dot" style="background:var(--lime)"></i><span>Live DJ</span><i class="dot" style="background:var(--mag)"></i><span>AI fitness</span><i class="dot" style="background:var(--orange)"></i>
+      <span>Sauna</span><i class="dot" style="background:var(--mag)"></i><span>Cold plunge</span><i class="dot" style="background:var(--heat)"></i><span>Pilates</span><i class="dot" style="background:var(--volt)"></i><span>Dance cardio</span><i class="dot" style="background:var(--mag)"></i><span>Fitness challenges</span><i class="dot" style="background:var(--heat)"></i><span>Biohacking</span><i class="dot" style="background:var(--volt)"></i><span>AI fitness</span><i class="dot" style="background:var(--mag)"></i><span>Recovery tech</span><i class="dot" style="background:var(--heat)"></i><span>Live DJ</span><i class="dot" style="background:var(--volt)"></i>
+      <span>Sauna</span><i class="dot" style="background:var(--mag)"></i><span>Cold plunge</span><i class="dot" style="background:var(--heat)"></i><span>Pilates</span><i class="dot" style="background:var(--volt)"></i><span>Dance cardio</span><i class="dot" style="background:var(--mag)"></i><span>Fitness challenges</span><i class="dot" style="background:var(--heat)"></i><span>Biohacking</span><i class="dot" style="background:var(--volt)"></i><span>AI fitness</span><i class="dot" style="background:var(--mag)"></i><span>Recovery tech</span><i class="dot" style="background:var(--heat)"></i><span>Live DJ</span><i class="dot" style="background:var(--volt)"></i>
     </div>
   </div>
 
   <section class="wrap sec" style="padding-top:clamp(56px,7vw,100px)" aria-labelledby="loud-title">
     <div class="block" style="background:var(--ink-2);color:var(--white)">
-      <h2 id="loud-title" class="loud rv">Sweat <span class="pic"><img src="img/sauna.jpg" alt="" loading="lazy"></span> plunge <span class="pic"><img src="img/p163.jpg" alt="" loading="lazy"></span> move <span class="pic"><img src="img/p143.jpg" alt="" loading="lazy"></span> refuel <span class="pic"><img src="img/p93.jpg" alt="" loading="lazy"></span> repeat</h2>
+      <h2 id="loud-title" class="loud rv">Sweat <span class="pic"><img src="img/sauna.jpg" alt="" loading="lazy"></span> plunge <span class="pic"><img src="img/p123.jpg" alt="" loading="lazy"></span> move <span class="pic"><img src="img/p143.jpg" alt="" loading="lazy"></span> refuel <span class="pic"><img src="img/p93.jpg" alt="" loading="lazy"></span> repeat</h2>
       <div style="display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:40px;text-align:center">
-        <p class="lede rv d1">This isn't a booth crawl. You don't walk around collecting flyers. You plunge, sweat, train, taste and leave feeling better than when you walked in.</p>
+        <p class="lede rv d1" style="max-width:52ch">This isn't a booth crawl. Nobody hands you a tote bag and a flyer. You sweat in a barrel sauna, plunge into ice-cold water, train with Central Florida's best coaches, and walk out feeling better than you walked in.</p>
         <a class="btn b-outw rv d2" href="#included">See everything you get <span class="arr" aria-hidden="true">→</span></a>
       </div>
     </div>
@@ -464,22 +528,25 @@ img{max-width:100%}
   <section class="wrap sec" id="included" aria-labelledby="vs-title">
     <div class="vs">
       <div class="vs-head">
-        <h2 id="vs-title" class="cap h2 rv">Everything your ticket gets you</h2>
-        <p class="lede rv d1">Try all of this on your own and you'd be driving around town for weeks, paying for each one. At WOW it's one lawn, one afternoon, one price.</p>
+        <h2 id="vs-title" class="cap h2 rv">Here's what <span data-ev="price"></span> gets you</h2>
+        <p class="lede rv d1">Doing all of this on your own means a month of weekends, five different apps and a few hundred dollars. At WOW it's one lawn, one afternoon, one ticket.</p>
       </div>
       <ul class="vs-list">
-            <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Unlimited sauna</b><span>Sweat it out as many times as you want.</span></div></li>
-            <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Unlimited cold plunge</b><span>Go in. Get out. Go back in again.</span></div></li>
-            <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>30+ wellness brands</b><span>Free demos, samples and products to try on the spot.</span></div></li>
-            <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Expert-led classes</b><span>Pilates Burn by HiLi, dance cardio, mat classes and more.</span></div></li>
-            <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Biohacking and AI fitness</b><span>Red-light, recovery tools and AI trainers with real-time form feedback.</span></div></li>
-            <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Fitness challenges with prizes</b><span>Strength tests and race-the-clock workouts. Win medals and merch.</span></div></li>
-            <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Healthy food and a live DJ</b><span>Fuel up and keep the energy high all afternoon.</span></div></li>
-            <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>A crowd that levels you up</b><span>Meet your next workout partner, or your next best friend.</span></div></li>
+        <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Unlimited barrel sauna and cold plunge, all afternoon</b></div></li>
+        <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Expert-led classes: <span data-ev="classesComma"></span></b></div></li>
+        <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Biohacking and AI fitness: red light, recovery tools, AI trainers that coach your form in real time</b></div></li>
+        <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Fitness challenges for medals and merch</b><span>Bragging rights you can't buy</span></div></li>
+        <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b><span data-ev="brands"></span> wellness brands with free demos and samples</b><span>Free with your ticket</span></div></li>
+        <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Live DJ all afternoon</b><span>Included</span></div></li>
+        <li class="rv"><span class="vs-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><div><b>A crowd that levels you up. Your next workout partner might be in the plunge line</b><span>Included</span></div></li>
       </ul>
+      <p class="vs-note rv">Hungry? Local food vendors serve healthy plates all afternoon (purchased separately).</p>
       <div class="vs-total rv">
-        <div><p>All of it. One ticket.</p><b>$49.97</b></div>
-        <a class="btn b-lime btn-xl" href="#tickets" data-cta="stack">Get my ticket · $49.97 <span class="arr" aria-hidden="true">→</span></a>
+        <div><p>Your ticket:</p><b data-ev="price"></b></div>
+        <div class="buy-stack">
+          <a class="btn b-lime btn-xl" href="#tickets" data-cta="stack">Get my ticket · <span data-ev="price"></span> <span class="arr" aria-hidden="true">→</span></a>
+          <ul class="guar"><li>Full refund within 24 hours</li><li>Something came up? Move your ticket to the next WOW</li><li>If we cancel, you're refunded automatically</li></ul>
+        </div>
       </div>
     </div>
   </section>
@@ -487,7 +554,7 @@ img{max-width:100%}
   <section class="wrap sec" aria-labelledby="proof-title">
     <div class="flex" style="justify-content:space-between;align-items:flex-end;gap:24px">
       <h2 id="proof-title" class="cap h2 rv" style="max-width:12ch">This is WOW</h2>
-      <p class="lede rv d1">Real photos from our last event. Same energy, new location: Central Park, Winter Park.</p>
+      <p class="lede rv d1">Real photos from real WOW events. No stock, no actors. <span data-ev="totalGuests"></span> people have already felt it.</p>
     </div>
     <div class="proof">
       <figure class="pf pf-a rv"><img src="img/p64.jpg" alt="A packed mat class on the lawn at WOW" loading="lazy"></figure>
@@ -496,12 +563,15 @@ img{max-width:100%}
       <figure class="pf rv"><img src="img/p141.jpg" alt="Rows of riders in a spin class" loading="lazy"></figure>
       <figure class="pf rv d1"><img src="img/p163.jpg" alt="A trampoline fitness challenge" loading="lazy"></figure>
       <figure class="pf rv d2"><img src="img/p93.jpg" alt="Healthy tacos from a food vendor" loading="lazy"></figure>
-      <figure class="pf rv"><img src="img/sauna.jpg" alt="Friends laughing together in the sauna" loading="lazy"></figure>
+      <figure class="pf rv"><img src="img/p118.jpg" alt="A guest in the cold plunge in front of the barrel sauna" loading="lazy"></figure>
       <figure class="pf rv d1"><img src="img/p72.jpg" alt="Two friends smiling at WOW" loading="lazy"></figure>
       <figure class="pf rv d2"><img src="img/p55.jpg" alt="A mat class on the lawn" loading="lazy"></figure>
       <figure class="pf rv"><img src="img/p45.jpg" alt="Guests making heart hands during a class" loading="lazy"></figure>
     </div>
-    <div style="display:flex;justify-content:center;margin-top:36px"><a class="btn b-lime btn-xl rv" href="#tickets" data-cta="proof">Don't miss November · $49.97 <span class="arr" aria-hidden="true">→</span></a></div>
+    <div class="buy-center rv">
+      <a class="btn b-lime btn-xl" href="#tickets" data-cta="proof">Don't miss <span data-ev="month"></span> · <span data-ev="price"></span> <span class="arr" aria-hidden="true">→</span></a>
+      <ul class="guar"><li>Full refund within 24 hours</li><li>Something came up? Move your ticket to the next WOW</li><li>If we cancel, you're refunded automatically</li></ul>
+    </div>
   </section>
 
   <section class="sec" aria-labelledby="story-title">
@@ -510,10 +580,10 @@ img{max-width:100%}
         <h2 id="story-title" class="cap h2 rv" style="max-width:12ch">Your afternoon at WOW</h2>
         <div class="story" style="margin-top:20px">
           <div class="steps">
-            <div class="step on" data-badge="Heat" data-color="#00FFFF"><p class="cap" style="color:var(--orange)">Heat</p><p>Start in the barrel sauna. Sweat out the stress, loosen up and let the week melt off. Unlimited sessions with every ticket.</p></div>
-            <div class="step" data-badge="Cold" data-color="#FFFFFF"><p class="cap" style="color:var(--cyan)">Cold</p><p>Then brave the plunge. Energy spikes, inflammation drops and you earn the bragging rights. Unlimited plunges too.</p></div>
-            <div class="step" data-badge="Move" data-color="#00FFFF"><p class="cap" style="color:var(--mag)">Move</p><p>Spin, dance cardio, trampoline challenges and mat classes. Every fitness level welcome.</p></div>
-            <div class="step" data-badge="Refuel" data-color="#FFFFFF"><p class="cap" style="color:var(--lime)">Refuel</p><p>Performance food, supplement samples and the live DJ keeping the energy up until the last rep.</p></div>
+            <div class="step on" data-badge="Heat" data-color="#00FFFF"><p class="cap" style="color:var(--orange)">Heat</p><p>Start in the barrel sauna. Let the week melt off. Go back as many times as you want.</p></div>
+            <div class="step" data-badge="Cold" data-color="#FFFFFF"><p class="cap" style="color:var(--cyan)">Cold</p><p>Then the plunge. It's a shock, it's a rush, and most people climb out grinning and go right back in. Athletes have used cold water to recover from hard training for decades, and early research links regular plunging to lower stress and better sleep. Our crew walks first-timers through it. Unlimited plunges.</p></div>
+            <div class="step" data-badge="Move" data-color="#00FFFF"><p class="cap" style="color:var(--mag)">Move</p><p>Spin, dance cardio, trampoline challenges and mat classes. Every level welcome. Classes are first come, first served, so get there early.</p></div>
+            <div class="step" data-badge="Refuel" data-color="#FFFFFF"><p class="cap" style="color:var(--lime)">Refuel</p><p>Samples from <span data-ev="brands"></span> brands, healthy food from local vendors, and a live DJ keeping the energy up until the last rep.</p></div>
           </div>
           <div class="media" aria-hidden="true">
             <span class="badge" id="badge" style="background:var(--orange)">Heat</span>
@@ -523,14 +593,17 @@ img{max-width:100%}
             <img src="img/p93.jpg" alt="">
           </div>
         </div>
-        <div style="display:flex;justify-content:center;margin-top:28px"><a class="btn b-lime btn-xl" href="#tickets" data-cta="story">I want this afternoon · $49.97 <span class="arr" aria-hidden="true">→</span></a></div>
+        <div class="buy-center">
+          <a class="btn b-lime btn-xl" href="#tickets" data-cta="story">I want this afternoon · <span data-ev="price"></span> <span class="arr" aria-hidden="true">→</span></a>
+          <ul class="guar"><li>Full refund within 24 hours</li><li>Something came up? Move your ticket to the next WOW</li><li>If we cancel, you're refunded automatically</li></ul>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="sec" id="experiences" aria-labelledby="exp-title">
     <div class="wrap" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px">
-      <h2 id="exp-title" class="cap h2 rv" style="max-width:10ch">Seven experiences</h2>
+      <h2 id="exp-title" class="cap h2 rv" style="max-width:12ch">Seven experiences</h2>
       <div class="rail-ctl">
         <button class="round" type="button" id="prev" aria-label="Previous experiences"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
         <button class="round" type="button" id="next" aria-label="Next experiences"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
@@ -542,11 +615,24 @@ img{max-width:100%}
   <section class="wrap sec" aria-labelledby="who-title" style="padding-top:clamp(40px,6vw,90px)">
     <h2 id="who-title" class="cap h2 rv" style="max-width:12ch">WOW is for you if</h2>
     <div class="blocks" style="margin-top:36px">
-      <div class="blk rv" style="background:var(--cyan)">You've always wanted to try a cold plunge but never had the chance</div>
+      <div class="blk rv" style="background:var(--cyan)">You've always wanted to try a cold plunge and never had the chance</div>
       <div class="blk rv d1" style="background:var(--orange)">You train hard and want to recover smarter</div>
-      <div class="blk rv d2" style="background:var(--mag)">You're curious about biohacking and the newest wellness tech</div>
-      <div class="blk rv" style="background:var(--yellow)">You want a healthy, fun Sunday with friends or your partner</div>
-      <div class="blk rv d1" style="background:var(--volt)">You're new to fitness and want a welcoming place to start</div>
+      <div class="blk rv d2" style="background:var(--mag)">You're curious about biohacking and want to try it before you buy it</div>
+      <div class="blk rv" style="background:var(--yellow)">You want a Sunday with your partner or friends that isn't brunch</div>
+      <div class="blk rv d1" style="background:var(--volt)">You're just getting started and want a place where nobody judges</div>
+    </div>
+    <p class="belong rv">You don't need to be fit to belong here. You just need to want to feel better.</p>
+    <p class="squad-call rv" data-if="squadPrice" hidden>Bringing your crew? Grab a Squad of 4 for <span data-ev="squadPrice"></span> and save. <a href="#tickets">Get the squad deal <span aria-hidden="true">→</span></a></p>
+  </section>
+
+  <section class="sec" aria-labelledby="sp-title" style="padding-top:clamp(60px,7vw,110px)">
+    <div class="wrap flex" style="justify-content:space-between;align-items:flex-end;gap:24px">
+      <h2 id="sp-title" class="cap h2 rv" style="max-width:11ch"><span data-ev="brands"></span> brands on the lawn</h2>
+      <p class="lede rv d1">Free demos and samples from the names shaping how Central Florida trains and recovers.</p>
+    </div>
+    <div class="wrap">
+      <div class="logos" data-if="brandsThisEvent" hidden><p class="logos-h">Brands at <span data-ev="month"></span>'s WOW</p><div class="logo-grid" data-logos="brandsThisEvent"></div></div>
+      <div class="logos" data-if="brandsPast" hidden><p class="logos-h">Brands that have activated at WOW</p><div class="logo-grid" data-logos="brandsPast"></div></div>
     </div>
   </section>
 
@@ -555,47 +641,43 @@ img{max-width:100%}
       <div class="tix-left" style="justify-content:flex-start">
         <div>
           <h2 id="tix-title" class="cap h3 rv">Lock in your spot</h2>
-          <p class="price rv d1">$49.97</p>
+          <p class="tix-cap rv d1">Capped at <span data-ev="capacity"></span>. Prices rise as we get closer. <span data-if="priceStepNote" hidden><span data-ev="priceStepNote"></span></span></p>
         </div>
-        <ul class="chk rv d2">
-          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00FFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Full event access</li>
-          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00FFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Unlimited cold plunge and sauna</li>
-          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00FFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Free sponsor samples</li>
-          <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00FFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Classes, challenges and a live DJ</li>
-        </ul>
-        <p style="margin:0;font-size:17px">Pick your quantity, tap Buy Ticket and check out securely on this page. No account needed to browse.</p>
+        <div class="tcard rv d1">
+          <p class="tcard-h">General Admission · <span data-ev="price"></span></p>
+          <ul class="chk">
+            <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00FFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Unlimited sauna and cold plunge, all afternoon</li>
+            <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00FFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Every class and fitness challenge (first come, first served)</li>
+            <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00FFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><span data-ev="brands"></span> brands with free demos and samples</span></li>
+            <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00FFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Biohacking, recovery tech and AI fitness</li>
+            <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00FFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Live DJ all afternoon</li>
+          </ul>
+        </div>
+        <div class="tcard tcard-sq rv d2" data-if="squadPrice" hidden>
+          <p class="tcard-h">Squad of 4 · <span data-ev="squadPrice"></span> <span class="tbadge">Best value</span></p>
+          <p style="margin:0;font-size:18px">Everything above for you and three friends. Wellness is better with your people.</p>
+        </div>
+        <p style="margin:0;font-size:17px">Have a code? Enter it at checkout. Pick your tickets, check out right here, done in about a minute.</p>
       </div>
       <div class="tk-wrap rv d1">
         <div class="tk">
           <dl class="tk-facts">
-            <div class="tk-fact"><dt>When</dt><dd>Sun, Nov 22<small>12:00–4:00pm EST</small></dd></div>
-            <div class="tk-fact"><dt>Where</dt><dd>Central Park<small>W Morse Blvd, Winter Park, FL</small></dd></div>
-            <div class="tk-fact"><dt>Price</dt><dd>$49.97<small>General admission</small></dd></div>
+            <div class="tk-fact"><dt>When</dt><dd><span data-ev="dateDay"></span><small data-ev="time"></small></dd></div>
+            <div class="tk-fact"><dt>Where</dt><dd><span data-ev="venueName"></span><small data-ev="address"></small></dd></div>
+            <div class="tk-fact"><dt>Price</dt><dd><span data-ev="price"></span><small>General admission</small></dd></div>
           </dl>
           <iframe class="tk-buy" title="Choose quantity and buy WOW tickets" allowtransparency="true" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=00FFFF&backgroundHex=000000&fontFamily=Poppins&loader=false"></iframe>
-          <button type="button" class="tk-more" id="tk-more" aria-expanded="false" aria-controls="tk-drawer"><span id="tk-more-label">See event details</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-          <div class="tk-drawer" id="tk-drawer"><div><div class="tk-inner">
-            <p><strong>Sauna, cold plunge, biohacking, great food, fitness challenges, live DJ, premium experiences and AI fitness.</strong> At WOW you're not just browsing booths, you're leveling up: interactive experiences, expert-led workshops and classes like Pilates Burn by HiLi, AI equipment and live demos.</p>
-            <ul>
-              <li>Discover new ways to train and recover</li>
-              <li>Learn from elite coaches and performance leaders</li>
-              <li>Try the newest fitness, biohacking and wellness tech</li>
-              <li>Build community with like-minded achievers</li>
-              <li>Meet your next workout buddy</li>
-              <li>Great healthy food options</li>
-            </ul>
-            <p>All classes are first come, first served. Entry to a group class isn't guaranteed.</p>
-            <p>Questions about refunds or transfers? See the <a href="https://sweatpals.com/event/wow-winter-park-nov-22/2026-11-22" style="color:var(--lime);font-weight:800">full ticket policy on SweatPals</a>.</p>
-          </div></div></div>
         </div>
       </div>
       <div class="risk">
         <p class="risk-h"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Your ticket is protected</p>
         <ul>
-          <li><b>Can't make it?</b> Transfer your ticket to a friend for free, up to 48 hours before.</li>
-          <li><b>If we cancel,</b> you get a full refund automatically. No need to ask.</li>
-          <li><b>If we reschedule,</b> your ticket carries over, or you can ask for your money back.</li>
+          <li><b>Change your mind?</b> Full refund within 24 hours of buying. Just email info@wowlakenona.com.</li>
+          <li><b>Something came up?</b> Life happens. Email us at least 48 hours before doors and we'll move your ticket to the next WOW, free. Or transfer it to a friend.</li>
+          <li><b>If we cancel,</b> you're refunded automatically. You don't have to ask.</li>
+          <li><b>If we reschedule,</b> your ticket moves with it, or you can ask for a refund within 7 days.</li>
         </ul>
+        <a class="risk-link" href="#policy">Full ticket policy <span aria-hidden="true">→</span></a>
       </div>
 <!-- Sweatpals widget begin (checkout popup) -->
 <script src="https://sweatpals.com/static/embed/event/checkout/script.js?enableAutoEmbed=false&eventAlias=wow-winter-park-nov-22&colorHex=ebebeb&backgroundHex=000000&fontFamily=Poppins&priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4"></script>
@@ -603,33 +685,18 @@ img{max-width:100%}
     </div>
   </section>
 
-  <section class="sec" aria-labelledby="sp-title" style="padding-top:clamp(60px,7vw,110px)">
-    <div class="wrap flex" style="justify-content:space-between;align-items:flex-end;gap:24px">
-      <h2 id="sp-title" class="cap h2 rv" style="max-width:11ch">30+ brands on the lawn</h2>
-      <p class="lede rv d1">Free demos, samples and classes from the names shaping how Central Florida trains and recovers.</p>
-    </div>
-    <div class="band-clip">
-    <div class="marq-wrap" style="margin-top:44px;background:var(--pink);padding-block:30px;transform:rotate(-1.5deg);margin-inline:-40px">
-      <div class="marq" style="font-size:clamp(44px,6vw,90px);gap:56px;animation-duration:24s;color:var(--ink)">
-        <span>Spartan</span><span>AG1</span><span>OXEFIT</span><span>Upgrade Labs</span><span>LNPC</span><span>Serotonin Centers</span><span>Monster Energy</span><span>Herbalist Farm</span>
-        <span aria-hidden="true">Spartan</span><span aria-hidden="true">AG1</span><span aria-hidden="true">OXEFIT</span><span aria-hidden="true">Upgrade Labs</span><span aria-hidden="true">LNPC</span><span aria-hidden="true">Serotonin Centers</span><span aria-hidden="true">Monster Energy</span><span aria-hidden="true">Herbalist Farm</span>
-      </div>
-    </div>
-    </div>
-  </section>
-
-  <section class="wrap sec flex" id="faq" aria-labelledby="faq-title">
+  <section class="wrap sec flex apply" id="faq" aria-labelledby="faq-title">
     <h2 id="faq-title" class="cap h2 rv" style="flex:1 1 320px">Good to know</h2>
     <div class="qa" id="qa"></div>
   </section>
 
   <section class="wrap sec" aria-labelledby="final-title">
     <div class="block final" style="background:var(--ink-2);color:var(--white);box-shadow:inset 0 0 0 2px var(--ink-3)">
-      <h2 id="final-title" class="cap h2 rv" style="max-width:14ch">Nov 22 is happening with or without you</h2>
-      <p class="lede rv d1" style="margin-top:20px;max-width:46ch">Unlimited sauna and cold plunge, 30+ brands, classes, challenges and a live DJ, for less than a night out. Grab your ticket now so you don't forget.</p>
-      <div class="flex" style="align-items:center;gap:20px;margin-top:30px">
-        <a class="btn b-ink btn-xl rv d2" href="#tickets" data-cta="final" style="background:var(--hot);color:var(--ink)">Get my ticket · $49.97 <span class="arr" aria-hidden="true">→</span></a>
-        <p style="margin:0;font-weight:700">Sun, Nov 22 · 12–4pm · Central Park, Winter Park</p>
+      <h2 id="final-title" class="cap h2 rv" style="max-width:14ch"><span data-ev="dateShort"></span> is happening with or without you</h2>
+      <p class="lede rv d1" style="margin-top:20px;max-width:52ch">Unlimited sauna and cold plunge, <span data-ev="brands"></span> brands, classes, challenges and a live DJ, for less than a night out. Capped at <span data-ev="capacity"></span> people. Prices rise as the day gets closer, so today's price is the best one you'll see.</p>
+      <div class="buy-stack rv d2" style="margin-top:30px">
+        <a class="btn b-ink btn-xl" href="#tickets" data-cta="final" style="background:var(--hot);color:var(--ink)">Get my ticket · <span data-ev="price"></span> <span class="arr" aria-hidden="true">→</span></a>
+        <ul class="guar"><li>Full refund within 24 hours</li><li>Something came up? Move your ticket to the next WOW</li><li>If we cancel, you're refunded automatically</li></ul>
       </div>
     </div>
   </section>
@@ -638,15 +705,15 @@ img{max-width:100%}
     <h2 id="gi-title" class="cap h2 rv">Be part of it</h2>
     <div style="display:flex;flex-direction:column;gap:14px;margin-top:40px">
       <article class="panel rv">
-        <div><p class="kicker" style="--k:var(--orange)">Sponsors and vendors</p><h3 class="cap h3">Put your brand on the lawn</h3><p>Demos, sampling and face time with Central Florida's most health-focused crowd.</p><a class="pill" href="#sponsor">Sponsor WOW <span aria-hidden="true">↗</span></a></div>
+        <div><h3 class="cap h3">Sponsors and vendors</h3><p>Put your product in the hands of Central Florida's most health-focused crowd.</p><a class="pill" href="#sponsor">Partner with WOW <span aria-hidden="true">→</span></a></div>
         <div class="shot"><img src="img/p106.jpg" alt="A brand booth with guests at WOW" loading="lazy"></div>
       </article>
       <article class="panel rv">
-        <div><p class="kicker" style="--k:var(--cyan)">Volunteers</p><h3 class="cap h3">Join the crew</h3><p>Earn a free ticket, volunteer-only merch and behind-the-scenes access.</p><a class="pill" href="#volunteer">Volunteer <span aria-hidden="true">↗</span></a></div>
+        <div><h3 class="cap h3">Volunteers</h3><p>Work half the event. Enjoy the other half free.</p><a class="pill" href="#volunteer">Join the crew <span aria-hidden="true">→</span></a></div>
         <div class="shot"><img src="img/p110.jpg" alt="WOW crew members in matching red shirts" loading="lazy"></div>
       </article>
       <article class="panel rv">
-        <div><p class="kicker" style="--k:var(--mag)">Creators</p><h3 class="cap h3">Join the creator squad</h3><p>Share WOW with your followers and earn commission on every ticket through your link.</p><a class="pill" href="#creators">Apply <span aria-hidden="true">↗</span></a></div>
+        <div><h3 class="cap h3">Creators</h3><p>Earn 30% of every ticket your followers buy.</p><a class="pill" href="#creators">Join the creator squad <span aria-hidden="true">→</span></a></div>
         <div class="shot"><img src="img/p101.jpg" alt="Two guests posing for a photo at WOW" loading="lazy"></div>
       </article>
     </div>
@@ -655,13 +722,15 @@ img{max-width:100%}
   <section class="wrap sec" aria-labelledby="su-title">
     <div class="block flex" style="background:var(--bone);align-items:center">
       <div style="flex:1 1 400px">
-        <h2 id="su-title" class="cap h2 rv">Not ready yet?</h2>
-        <p class="lede rv d1" style="margin-top:18px">Drop your email and we'll send you a reminder before Nov 22, plus first access to future WOW events.</p>
+        <h2 id="su-title" class="cap h2 rv">Not ready to buy yet?</h2>
+        <p class="lede rv d1" style="margin-top:18px">Get a heads-up before prices go up.</p>
       </div>
       <div style="flex:1 1 400px">
-        <form class="form" data-form="Early access list" data-to="info@wowlakenona.com" novalidate>
-          <div class="f full"><label for="su-email">Email address <span class="req" aria-hidden="true">*</span></label><input id="su-email" name="Email" type="email" autocomplete="email" required placeholder="you@email.com"></div>
-          <div class="full"><button class="btn b-ink" type="submit">Remind me <span class="arr" aria-hidden="true">→</span></button></div>
+        <form class="form" data-form="Reminder list" data-tag="lead" data-to="info@wowlakenona.com" novalidate>
+          <div class="f full"><label for="su-email">Email <span class="req" aria-hidden="true">*</span></label><input id="su-email" name="Email" type="email" autocomplete="email" required placeholder="you@email.com"></div>
+          <div class="f full"><label for="su-phone">Phone (optional, for a text reminder)</label><input id="su-phone" name="Phone" type="tel" autocomplete="tel"></div>
+          <div class="f full"><label class="cbx"><input type="checkbox" id="su-sms" name="SMS consent" value="Yes"><span>Yes, text me a reminder about WOW. Reply STOP to opt out.</span></label></div>
+          <div class="full"><button class="btn b-ink" type="submit">Remind me <span class="arr" aria-hidden="true">→</span></button><p class="form-small">A few emails per event. No spam. Unsubscribe anytime.</p></div>
         </form>
       </div>
     </div>
@@ -672,46 +741,71 @@ img{max-width:100%}
 <div class="page" data-page="sponsor" hidden>
   <section class="wrap" aria-labelledby="sp-h1">
     <div class="phero">
-      <p class="intro in">Your brand, felt, tasted and tried by Central Florida's most health-focused crowd. At WOW you're part of the experience, not another booth.</p>
+      <p class="intro in">WOW isn't a trade show. Guests come to try things. They sweat, plunge, train and sample, which makes your booth the place they test you, not a table they walk past.</p>
       <div class="shot"><img src="img/p30.jpg" alt="The HI Fitness booth at WOW"></div>
       <div>
-        <h1 id="sp-h1" class="big words" data-words>Sponsor WOW</h1>
-        <div class="row" style="margin-top:22px"><a class="btn b-lime" href="#sponsor-apply">Apply to sponsor <span class="arr" aria-hidden="true">→</span></a></div>
+        <h1 id="sp-h1" class="big long">Put your product in the hands of <span data-ev="capacity"></span> health-focused buyers in one afternoon.</h1>
+        <div class="row" style="margin-top:22px"><a class="btn b-lime" href="#sponsor-apply">Get the partner deck <span class="arr" aria-hidden="true">→</span></a></div>
+        <p class="under"><span data-ev="dateLong"></span> · <span data-ev="venue"></span> · Limited brand spots per event</p>
       </div>
     </div>
   </section>
-  <section class="wrap sec" aria-labelledby="gain-title">
-    <h2 id="gain-title" class="cap h2 rv">What your brand gets</h2>
+  <section class="wrap sec" aria-labelledby="room-title">
+    <h2 id="room-title" class="cap h2 rv">The room you're buying into</h2>
     <div class="blocks" style="margin-top:40px">
-      <div class="blk rv" style="background:var(--lime)">A targeted, health-focused audience</div>
-      <div class="blk rv d1" style="background:var(--cyan)">Hands-on demos, trials and sampling</div>
-      <div class="blk rv d2" style="background:var(--pink)">Face time with people ready to buy</div>
-      <div class="blk rv" style="background:var(--yellow)">A seat beside leading wellness brands</div>
-      <div class="blk rv d1" style="background:var(--ink-2);color:var(--white)">Leads, email sign-ups and repeat customers</div>
-      <div class="blk rv d2" style="background:var(--orange)">Trust built in person, not in an ad</div>
+      <div class="blk rv" style="background:var(--cyan)"><span><span data-ev="totalGuests"></span> guests across our first <span data-ev="eventsHeld"></span> events</span></div>
+      <div class="blk rv d1" style="background:var(--mag)"><span><span data-ev="lastEventGuests"></span> guests at our last event</span></div>
+      <div class="blk rv d2" style="background:var(--volt)"><span><span data-ev="brands"></span> brands on the lawn every event</span></div>
+    </div>
+  </section>
+  <section class="wrap sec" aria-labelledby="prod-title">
+    <h2 id="prod-title" class="cap h2 rv">What a WOW activation produces</h2>
+    <ol class="flow" style="margin-top:40px">
+      <li class="rv" style="--c:var(--heat)"><b>Hands-on trial.</b> Hundreds of people try your product, not just see it.</li>
+      <li class="rv d1" style="--c:var(--mag)"><b>Credibility by association.</b> Your brand beside the names shaping wellness in Central Florida.</li>
+    </ol>
+  </section>
+  <section class="wrap sec" aria-labelledby="std-title">
+    <div class="block" style="background:var(--ink-2);color:var(--white);box-shadow:inset 0 0 0 2px var(--ink-3)">
+      <h2 id="std-title" class="cap h2 rv" style="max-width:14ch">We say no to some brands</h2>
+      <p class="lede rv d1" style="margin-top:20px;max-width:56ch">Every sponsor and vendor is reviewed. We turn away brands that make claims they can't back up, hide risks or push gimmicks. That's why our guests trust what they find at WOW, and why your booth gets real attention instead of polite nods.</p>
+    </div>
+  </section>
+  <section class="wrap sec" aria-labelledby="ways-title">
+    <div class="block" style="background:var(--cyan)">
+      <h2 id="ways-title" class="cap h2 rv">Ways to partner</h2>
+      <div class="blocks" style="margin-top:36px">
+        <div class="role rv"><h3>Vendor booth</h3><p>Sample and sell on the spot.</p></div>
+        <div class="role rv d1"><h3>Sponsorship</h3><p>Visibility, leads and content across the event.</p></div>
+        <div class="role rv d2"><h3>Presenting partner</h3><p>One brand at the center of the whole experience.</p></div>
+      </div>
+      <p class="rv" style="margin:28px 0 0;font-size:20px;font-weight:700;color:var(--ink);max-width:52ch">Every package is built around what you want out of the day. Tell us your goal and we'll show you the fit.</p>
     </div>
   </section>
   <section class="wrap sec" aria-labelledby="fit-title">
     <article class="panel">
-      <div><p class="kicker" style="--k:var(--lime)">Built for</p><h2 id="fit-title" class="cap h3">Launches, content and partnerships</h2><p>Product launches and showcases, creator content on the spot, B2B relationships, and credibility in the wellness space.</p></div>
+      <div><p class="kicker" style="--k:var(--lime)">Built for</p><h2 id="fit-title" class="cap h3">Launches, content and partnerships</h2><p>Launch a product to people who'll actually use it. Shoot content with real customers on the spot. Meet the coaches, clinics and brands you want to partner with, all in one afternoon.</p></div>
       <div class="shot"><img src="img/p86.jpg" alt="The Waters of Olympus booth at WOW" loading="lazy"></div>
     </article>
   </section>
   <section class="wrap sec flex apply" id="sponsor-apply" aria-labelledby="spa-title">
     <div style="flex:1 1 360px">
-      <h2 id="spa-title" class="cap h2 rv">Apply to sponsor</h2>
-      <p class="lede rv d1" style="margin-top:20px">Tell us about your brand. Approved sponsors get the full event deck with every promotional benefit.</p>
+      <h2 id="spa-title" class="cap h2 rv">Let's see if WOW fits your brand</h2>
+      <p class="lede rv d1" style="margin-top:20px">Tell us about your brand.</p>
     </div>
     <div style="flex:999 1 520px;min-width:0">
-      <form class="form" data-form="Sponsor application" data-to="info@wowlakenona.com" novalidate>
+      <form class="form" data-form="Sponsor inquiry" data-tag="sponsor" data-to="info@wowlakenona.com" novalidate>
         <div class="f"><label for="sp-first">First name <span class="req" aria-hidden="true">*</span></label><input id="sp-first" name="First name" required autocomplete="given-name"></div>
         <div class="f"><label for="sp-last">Last name <span class="req" aria-hidden="true">*</span></label><input id="sp-last" name="Last name" required autocomplete="family-name"></div>
         <div class="f"><label for="sp-email">Email <span class="req" aria-hidden="true">*</span></label><input id="sp-email" name="Email" type="email" required autocomplete="email"></div>
         <div class="f"><label for="sp-phone">Phone</label><input id="sp-phone" name="Phone" type="tel" autocomplete="tel"></div>
-        <div class="f"><label for="sp-ig">Instagram</label><input id="sp-ig" name="Instagram" placeholder="@yourbrand"></div>
-        <div class="f"><label for="sp-li">LinkedIn</label><input id="sp-li" name="LinkedIn"></div>
-        <div class="f full"><label for="sp-why">Why do you want to sponsor WOW? <span class="req" aria-hidden="true">*</span></label><textarea id="sp-why" name="Why sponsor" required></textarea></div>
-        <div class="full"><button class="btn b-lime" type="submit">Send application <span class="arr" aria-hidden="true">→</span></button></div>
+        <div class="f"><label for="sp-co">Company <span class="req" aria-hidden="true">*</span></label><input id="sp-co" name="Company" required autocomplete="organization"></div>
+        <div class="f"><label for="sp-web">Website or Instagram <span class="req" aria-hidden="true">*</span></label><input id="sp-web" name="Website or Instagram" required></div>
+        <div class="f"><label for="sp-cat">Category <span class="req" aria-hidden="true">*</span></label><select id="sp-cat" name="Category" required><option value="">Choose one</option><option>Fitness</option><option>Recovery</option><option>Supplements</option><option>Nutrition and food</option><option>Biohacking and tech</option><option>Clinic or practitioner</option><option>Apparel</option><option>Other</option></select></div>
+        <div class="f"><label for="sp-int">Interested in <span class="req" aria-hidden="true">*</span></label><select id="sp-int" name="Interested in" required><option value="">Choose one</option><option>Vendor booth</option><option>Sponsorship</option><option>Not sure yet</option></select></div>
+        <div class="f full"><label for="sp-bud">Estimated budget (optional)</label><select id="sp-bud" name="Estimated budget"><option value="">Choose one</option><option>Under $1,000</option><option>$1,000 to $5,000</option><option>$5,000+</option><option>Not sure</option></select></div>
+        <div class="f full"><label for="sp-goal">What do you want WOW to do for your brand?</label><textarea id="sp-goal" name="Goal"></textarea></div>
+        <div class="full"><button class="btn b-lime" type="submit">Send it · Get the deck <span class="arr" aria-hidden="true">→</span></button></div>
       </form>
     </div>
   </section>
@@ -721,49 +815,59 @@ img{max-width:100%}
 <div class="page" data-page="volunteer" hidden>
   <section class="wrap" aria-labelledby="vo-h1">
     <div class="phero">
-      <p class="intro in">Volunteer at WOW, earn a free ticket and exclusive crew swag, and help your community level up.</p>
+      <p class="intro in">Join the WOW crew. Help run a <span data-ev="capacity"></span>-person wellness afternoon, then plunge, sweat and train on us. Every volunteer gets a $50 WOW store credit and crew-only merch.</p>
       <div class="shot"><img src="img/p110.jpg" alt="WOW crew members in matching red shirts"></div>
       <div>
-        <h1 id="vo-h1" class="big words" data-words>Join the crew</h1>
-        <div class="row" style="margin-top:22px"><a class="btn b-lime" href="#volunteer-apply">Apply to volunteer <span class="arr" aria-hidden="true">→</span></a></div>
+        <h1 id="vo-h1" class="big long">Work half the event. Enjoy the other half free.</h1>
+        <div class="row" style="margin-top:22px"><a class="btn b-lime" href="#volunteer-apply">Apply to the crew <span class="arr" aria-hidden="true">→</span></a></div>
+        <p class="under">Half-event shifts · No experience needed · Training provided</p>
       </div>
     </div>
   </section>
   <section class="wrap sec" aria-labelledby="vperk-title">
     <h2 id="vperk-title" class="cap h2 rv">What you get</h2>
     <div class="blocks" style="margin-top:40px">
-      <div class="blk rv" style="background:var(--lime)">Free admission to WOW</div>
-      <div class="blk rv d1" style="background:var(--orange)">Volunteer-only merch</div>
-      <div class="blk rv d2" style="background:var(--mag)">Behind-the-scenes access</div>
-      <div class="blk rv" style="background:var(--yellow)">Meet brands, experts and athletes</div>
-      <div class="blk rv d1" style="background:var(--ink-2);color:var(--white)">A community that gets it</div>
+      <div class="blk rv" style="background:var(--cyan)">Free access to WOW for the half you're not working</div>
+      <div class="blk rv d1" style="background:var(--volt)">A $50 WOW store credit</div>
+      <div class="blk rv d2" style="background:var(--mag)">Crew-only merch you can't buy</div>
+      <div class="blk rv" style="background:var(--yellow)"><span>A behind-the-scenes look at how a <span data-ev="capacity"></span>-person event comes together</span></div>
+      <div class="blk rv d1" style="background:var(--ink-2);color:var(--white)">Face time with the brands, coaches and athletes on site</div>
+      <div class="blk rv d2" style="background:var(--white)">A crew that shows up for each other</div>
     </div>
   </section>
   <section class="wrap sec" aria-labelledby="roles-title">
     <div class="block" style="background:var(--cyan)">
       <h2 id="roles-title" class="cap h2 rv">Pick your role</h2>
       <div class="blocks" style="margin-top:36px">
-        <div class="role rv"><h3>Check-in</h3><p>Greet guests, hand out passes and get people settled. No experience needed; training in your first 30 minutes.</p></div>
-        <div class="role rv d1"><h3>Setup and teardown</h3><p>Build stations, vendor areas, tents and signage. Includes lunch and a $50 online store credit.</p></div>
-        <div class="role rv d2"><h3>Event operations</h3><p>Keep the plunges cold, manage lines, referee fitness challenges and help wherever needed.</p></div>
-        <div class="role rv"><h3>Merch team</h3><p>Run the merch displays, help guests find sizes, handle sales and keep the booth tidy.</p></div>
+        <div class="role rv"><h3>Check-in</h3><p>Greet guests, scan tickets and get people settled. We train you in 30 minutes.</p></div>
+        <div class="role rv d1"><h3>Setup and teardown</h3><p>Build stations, vendor areas, tents and signage.</p></div>
+        <div class="role rv d2"><h3>Event operations</h3><p>Keep the plunges cold, run the lines, referee fitness challenges and jump in wherever you're needed.</p></div>
+        <div class="role rv"><h3>Merch team</h3><p>Run the merch booth, help guests find sizes and handle sales.</p></div>
       </div>
     </div>
   </section>
   <section class="wrap sec flex apply" id="volunteer-apply" aria-labelledby="voa-title">
     <div style="flex:1 1 360px">
-      <h2 id="voa-title" class="cap h2 rv">Apply to volunteer</h2>
-      <p class="lede rv d1" style="margin-top:20px">You'll hear back with role options, schedules and next steps. Questions? <span style="font-weight:800;user-select:all">volunteer@wowlakenona.com</span></p>
+      <h2 id="voa-title" class="cap h2 rv">Apply to the crew</h2>
+      <p class="lede rv d1" style="margin-top:20px">Questions? <span style="font-weight:800;user-select:all">volunteer@wowlakenona.com</span></p>
     </div>
     <div style="flex:999 1 520px;min-width:0">
-      <form class="form" data-form="Volunteer application" data-to="volunteer@wowlakenona.com" novalidate>
+      <form class="form" data-form="Volunteer application" data-tag="volunteer" data-to="volunteer@wowlakenona.com" novalidate>
         <div class="f"><label for="vo-first">First name <span class="req" aria-hidden="true">*</span></label><input id="vo-first" name="First name" required autocomplete="given-name"></div>
         <div class="f"><label for="vo-last">Last name <span class="req" aria-hidden="true">*</span></label><input id="vo-last" name="Last name" required autocomplete="family-name"></div>
         <div class="f"><label for="vo-email">Email <span class="req" aria-hidden="true">*</span></label><input id="vo-email" name="Email" type="email" required autocomplete="email"></div>
-        <div class="f"><label for="vo-phone">Phone</label><input id="vo-phone" name="Phone" type="tel" autocomplete="tel"></div>
+        <div class="f"><label for="vo-phone">Phone <span class="req" aria-hidden="true">*</span></label><input id="vo-phone" name="Phone" type="tel" required autocomplete="tel"></div>
         <div class="f full"><label for="vo-ig">Instagram</label><input id="vo-ig" name="Instagram" placeholder="@you"></div>
-        <div class="f full"><label for="vo-why">Why do you want to volunteer? <span class="req" aria-hidden="true">*</span></label><textarea id="vo-why" name="Why volunteer" required></textarea></div>
-        <div class="full"><button class="btn b-lime" type="submit">Send application <span class="arr" aria-hidden="true">→</span></button></div>
+        <fieldset class="f full cbx-group" data-required id="vo-roles"><legend>Roles you'd like <span class="req" aria-hidden="true">*</span></legend>
+          <label class="cbx"><input type="checkbox" name="Roles" value="Check-in"><span>Check-in</span></label>
+          <label class="cbx"><input type="checkbox" name="Roles" value="Setup and teardown"><span>Setup and teardown</span></label>
+          <label class="cbx"><input type="checkbox" name="Roles" value="Event operations"><span>Event operations</span></label>
+          <label class="cbx"><input type="checkbox" name="Roles" value="Merch team"><span>Merch team</span></label>
+        </fieldset>
+        <div class="f"><label for="vo-shift">Shift preference <span class="req" aria-hidden="true">*</span></label><select id="vo-shift" name="Shift preference" required><option value="">Choose one</option><option>First half</option><option>Second half</option><option>Either</option></select></div>
+        <div class="f"><label for="vo-size">Shirt size <span class="req" aria-hidden="true">*</span></label><select id="vo-size" name="Shirt size" required><option value="">Choose one</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></div>
+        <div class="f full"><label for="vo-why">Why do you want to join the crew?</label><textarea id="vo-why" name="Why join"></textarea></div>
+        <div class="full"><button class="btn b-lime" type="submit">Send my application <span class="arr" aria-hidden="true">→</span></button></div>
       </form>
     </div>
   </section>
@@ -773,59 +877,62 @@ img{max-width:100%}
 <div class="page" data-page="creators" hidden>
   <section class="wrap" aria-labelledby="cr-h1">
     <div class="phero">
-      <p class="intro in">Live the lifestyle and create content? Share WOW with your followers and earn commission on every ticket sold through your link.</p>
+      <p class="intro in">That's about <span data-ev="creatorPerTicket"></span> a ticket at today's price. Plus a free pass, a WOW merch pack, and backstage content your audience can't get anywhere else.</p>
       <div class="shot"><img src="img/p20.jpg" alt="Two guests posing with drinks at WOW"></div>
       <div>
-        <h1 id="cr-h1" class="big words" data-words>Creator squad</h1>
-        <div class="row" style="margin-top:22px"><a class="btn b-lime" href="#creators-apply">Apply now <span class="arr" aria-hidden="true">→</span></a></div>
+        <h1 id="cr-h1" class="big long">Earn 30% of every WOW ticket your followers buy.</h1>
+        <div class="row" style="margin-top:22px"><a class="btn b-lime" href="#creators-apply">Apply to the creator squad <span class="arr" aria-hidden="true">→</span></a></div>
+        <p class="under">Takes 2 minutes</p>
       </div>
     </div>
   </section>
   <section class="wrap sec" aria-labelledby="how-title">
     <h2 id="how-title" class="cap h2 rv">How it works</h2>
     <ol class="flow" style="margin-top:40px">
-      <li class="rv" style="--c:var(--mag)">Apply. It takes two minutes.</li>
-      <li class="rv d1" style="--c:var(--orange)">Get approved and receive your Influencer Pack and affiliate link.</li>
-      <li class="rv d2" style="--c:var(--yellow)">Share WOW content and your ticket link.</li>
-      <li class="rv" style="--c:var(--cyan)">Earn commission on every sale.</li>
+      <li class="rv" style="--c:var(--mag)"><b>Apply.</b> Two minutes.</li>
+      <li class="rv d1" style="--c:var(--heat)"><b>Get approved.</b> You get your personal link, a discount code for your followers and a content pack with photos, video and talking points.</li>
+      <li class="rv d2" style="--c:var(--volt)"><b>Share.</b> Post, story, go live. Every ticket through your link is tracked.</li>
+      <li class="rv" style="--c:var(--white)"><b>Get paid.</b> 30% of every ticket sold through your link. No caps, no tiers.</li>
     </ol>
+    <p class="example rv">Sell 25 tickets and you earn about <span data-ev="creator25"></span>. Sell 100 and it's about <span data-ev="creator100"></span>.</p>
   </section>
   <section class="wrap sec" aria-labelledby="crp-title">
     <div class="block" style="background:var(--mag)">
       <h2 id="crp-title" class="cap h2 rv">The perks</h2>
       <div class="blocks" style="margin-top:36px">
-        <div class="blk rv" style="background:var(--white)">Commission on every ticket, plus a bonus at 21 sales</div>
+        <div class="blk rv" style="background:var(--white)">30% commission on every ticket</div>
         <div class="blk rv d1" style="background:var(--white)">A free ticket and a WOW merch pack</div>
-        <div class="blk rv d2" style="background:var(--white)">VIP and backstage content, activations and interviews</div>
-        <div class="blk rv" style="background:var(--white)">Partner perks: InBody scans, fitness passes, recovery sessions</div>
-        <div class="blk rv d1" style="background:var(--ink-2);color:var(--white)">Shoutouts on WOW's channels and a code for your followers</div>
+        <div class="blk rv d2" style="background:var(--white)">Backstage access for content: activations, interviews, behind the scenes</div>
+        <div class="blk rv d1" style="background:var(--ink-2);color:var(--white)">Shoutouts on WOW's channels</div>
       </div>
     </div>
   </section>
   <section class="wrap sec" aria-labelledby="fitc-title">
     <h2 id="fitc-title" class="cap h2 rv">You're a fit if you</h2>
     <div class="blocks" style="margin-top:40px">
-      <div class="blk rv" style="background:var(--cyan)">Have 5K–100K followers on any platform</div>
-      <div class="blk rv d1" style="background:var(--yellow)">Live in or near Lake Nona or Orlando</div>
-      <div class="blk rv d2" style="background:var(--orange)">Create fitness, wellness or growth content</div>
-      <div class="blk rv" style="background:var(--lime)">Share positive, healthy messaging</div>
+      <div class="blk rv" style="background:var(--cyan)">Have 5K to 100K followers on any platform</div>
+      <div class="blk rv d1" style="background:var(--yellow)">Live in or near Central Florida</div>
+      <div class="blk rv d2" style="background:var(--volt)">Create fitness, wellness or personal growth content</div>
+      <div class="blk rv" style="background:var(--white)">Share positive, healthy messages</div>
     </div>
+    <p class="rv" style="margin:28px 0 0;font-size:20px;font-weight:700;max-width:56ch">We don't work with creators who make medical claims about products. Keep it real and keep it honest.</p>
   </section>
   <section class="wrap sec flex apply" id="creators-apply" aria-labelledby="cra-title">
     <div style="flex:1 1 360px">
       <h2 id="cra-title" class="cap h2 rv">Apply to the squad</h2>
-      <p class="lede rv d1" style="margin-top:20px">Approved creators get next steps, a personal affiliate link, perks and a media kit.</p>
     </div>
     <div style="flex:999 1 520px;min-width:0">
-      <form class="form" data-form="Creator application" data-to="info@wowlakenona.com" novalidate>
+      <form class="form" data-form="Creator application" data-tag="creator" data-to="info@wowlakenona.com" novalidate>
         <div class="f"><label for="cr-first">First name <span class="req" aria-hidden="true">*</span></label><input id="cr-first" name="First name" required autocomplete="given-name"></div>
         <div class="f"><label for="cr-last">Last name <span class="req" aria-hidden="true">*</span></label><input id="cr-last" name="Last name" required autocomplete="family-name"></div>
         <div class="f"><label for="cr-email">Email <span class="req" aria-hidden="true">*</span></label><input id="cr-email" name="Email" type="email" required autocomplete="email"></div>
         <div class="f"><label for="cr-phone">Phone</label><input id="cr-phone" name="Phone" type="tel" autocomplete="tel"></div>
-        <div class="f"><label for="cr-ig">Instagram</label><input id="cr-ig" name="Instagram" placeholder="@you"></div>
-        <div class="f"><label for="cr-tt">TikTok or other platform</label><input id="cr-tt" name="Other platform"></div>
-        <div class="f full"><label for="cr-why">Why do you want to join? <span class="req" aria-hidden="true">*</span></label><textarea id="cr-why" name="Why join" required></textarea></div>
-        <div class="full"><button class="btn b-lime" type="submit">Send application <span class="arr" aria-hidden="true">→</span></button></div>
+        <div class="f"><label for="cr-plat">Main platform <span class="req" aria-hidden="true">*</span></label><input id="cr-plat" name="Main platform" required></div>
+        <div class="f"><label for="cr-handle">Handle <span class="req" aria-hidden="true">*</span></label><input id="cr-handle" name="Handle" required placeholder="@you"></div>
+        <div class="f"><label for="cr-count">Follower count <span class="req" aria-hidden="true">*</span></label><input id="cr-count" name="Follower count" required inputmode="numeric"></div>
+        <div class="f"><label for="cr-post">Link to your best recent post <span class="req" aria-hidden="true">*</span></label><input id="cr-post" name="Best recent post" type="url" required placeholder="https://"></div>
+        <div class="f full"><label for="cr-why">Why do you want to join?</label><textarea id="cr-why" name="Why join"></textarea></div>
+        <div class="full"><button class="btn b-lime" type="submit">Apply now <span class="arr" aria-hidden="true">→</span></button></div>
       </form>
     </div>
   </section>
@@ -835,29 +942,28 @@ img{max-width:100%}
 <div class="page" data-page="about" hidden>
   <section class="wrap" aria-labelledby="ab-h1">
     <div class="phero">
-      <p class="intro in">What if the best wellness experiences in the world came together in one high-energy, community-driven day? We built it.</p>
       <div class="shot"><img src="img/p9.jpg" alt="A big outdoor class on the lawn at WOW"></div>
-      <h1 id="ab-h1" class="big words" data-words>Born from a bold idea</h1>
+      <h1 id="ab-h1" class="big long">Born in Lake Nona. Built for anyone who wants to feel better.</h1>
     </div>
   </section>
   <section class="wrap sec" aria-labelledby="what-title">
     <div class="block" style="background:var(--yellow)">
       <h2 id="what-title" class="loud rv">Not an expo <span class="pic"><img src="img/p64.jpg" alt="" loading="lazy"></span> not a gym <span class="pic"><img src="img/p123.jpg" alt="" loading="lazy"></span></h2>
-      <p class="lede rv d1" style="margin:32px auto 0;text-align:center">A full-scale wellness experience. Try new modalities, push your limits, eat well, recover, and connect with people who are serious about growth.</p>
+      <p class="lede rv d1" style="margin:32px auto 0;text-align:center;max-width:60ch">Central Florida is full of gyms, clinics, recovery studios and wellness brands, but they're scattered across town and you have to find each one yourself. WOW started in Lake Nona to bring them onto one lawn for one afternoon, so you can try everything, meet the people behind it, and leave knowing what works for you. Now we take that afternoon across Central Florida.</p>
     </div>
   </section>
   <section class="wrap sec" aria-labelledby="mission-title">
     <article class="panel">
-      <div><p class="kicker" style="--k:var(--lime)">Our mission</p><h2 id="mission-title" class="cap h3">Tools to live stronger, one event at a time</h2><p>Cold plunges, biohacking labs, fitness classes, live DJs, premium food and AI-powered fitness, all in one place, for everyone.</p><a class="pill" href="#tickets">Get tickets <span aria-hidden="true">↗</span></a></div>
+      <div><p class="kicker" style="--k:var(--heat)">Mission</p><h2 id="mission-title" class="cap h3">Make it easy and fun to build a healthier life.</h2><p>Movement, recovery, good food and good people, all in one place, for everyone.</p></div>
       <div class="shot"><img src="img/p75.jpg" alt="A group class at WOW" loading="lazy"></div>
     </article>
   </section>
-  <section class="wrap sec" aria-labelledby="team-title">
-    <h2 id="team-title" class="cap h2 rv">The co-founders</h2>
-    <div class="team" style="margin-top:40px">
-      <div class="mate rv" style="background:var(--mag)"><p class="cap">Mike</p><p style="margin:8px 0 0;font-weight:700">Co-founder</p></div>
-      <div class="mate rv d1" style="background:var(--orange)"><p class="cap">Graham</p><p style="margin:8px 0 0;font-weight:700">Co-founder</p></div>
-      <div class="mate rv d2" style="background:var(--cyan)"><p class="cap">Duncan</p><p style="margin:8px 0 0;font-weight:700">Co-founder</p></div>
+  <section class="wrap sec" aria-label="Who WOW is for">
+    <p class="belong big-belong rv">You don't need to be fit to belong here. You just need to want to feel better.</p>
+    <p class="proofbar rv" style="margin-top:36px"><span><b data-ev="eventsHeld"></b> events</span><span><b data-ev="totalGuests"></b> guests</span><span><b data-ev="brands"></b> brands every event</span></p>
+    <div class="buy-center rv">
+      <a class="btn b-lime btn-xl" href="#tickets" data-cta="about">Get my ticket · <span data-ev="price"></span> <span class="arr" aria-hidden="true">→</span></a>
+      <ul class="guar"><li>Full refund within 24 hours</li><li>Something came up? Move your ticket to the next WOW</li><li>If we cancel, you're refunded automatically</li></ul>
     </div>
   </section>
 </div>
@@ -866,7 +972,7 @@ img{max-width:100%}
 <div class="page" data-page="contact" hidden>
   <section class="wrap" aria-labelledby="ct-h1">
     <div class="phero">
-      <p class="intro in">Questions, collaborations, or want in on the movement? Attendees, sponsors, vendors, volunteers and creators all welcome.</p>
+      <p class="intro in">Want to sponsor or vend? Use the <a href="#sponsor-apply" style="color:var(--heat);font-weight:800">partner form</a> and we'll send the deck faster.</p>
       <div class="shot"><img src="img/p58.jpg" alt="An instructor leading a class on the lawn at WOW"></div>
       <div>
         <h1 id="ct-h1" class="big words" data-words>Talk to WOW</h1>
@@ -880,13 +986,19 @@ img{max-width:100%}
   <section class="wrap sec flex apply" aria-labelledby="msg-title">
     <div style="flex:1 1 360px">
       <h2 id="msg-title" class="cap h2 rv">Send a message</h2>
-      <p class="lede rv d1" style="margin-top:20px">We reply fast. Let's make wellness WOW together.</p>
+      <ul class="quick rv d1">
+        <li>Ticket questions? <a href="#faq">See the FAQ</a></li>
+        <li><a href="#sponsor-apply">Partner with WOW</a></li>
+        <li><a href="#volunteer">Volunteer</a></li>
+        <li><a href="#creators">Creators</a></li>
+      </ul>
     </div>
     <div style="flex:999 1 520px;min-width:0">
-      <form class="form" data-form="Message" data-to="info@wowlakenona.com" novalidate>
+      <form class="form" data-form="Message" data-tag="lead" data-to="info@wowlakenona.com" novalidate>
         <div class="f"><label for="ct-name">Name</label><input id="ct-name" name="Name" autocomplete="name"></div>
         <div class="f"><label for="ct-email">Email <span class="req" aria-hidden="true">*</span></label><input id="ct-email" name="Email" type="email" required autocomplete="email"></div>
-        <div class="f full"><label for="ct-phone">Phone</label><input id="ct-phone" name="Phone" type="tel" autocomplete="tel"></div>
+        <div class="f"><label for="ct-phone">Phone</label><input id="ct-phone" name="Phone" type="tel" autocomplete="tel"></div>
+        <div class="f"><label for="ct-topic">Topic</label><select id="ct-topic" name="Topic"><option value="">Choose one</option><option>Tickets</option><option>Sponsorship</option><option>Vendor</option><option>Volunteer</option><option>Press</option><option>Other</option></select></div>
         <div class="f full"><label for="ct-msg">Message <span class="req" aria-hidden="true">*</span></label><textarea id="ct-msg" name="Message" required></textarea></div>
         <div class="full"><button class="btn b-lime" type="submit">Send message <span class="arr" aria-hidden="true">→</span></button></div>
       </form>
@@ -894,19 +1006,42 @@ img{max-width:100%}
   </section>
 </div>
 
+<!-- ================= TICKET POLICY ================= -->
+<div class="page" data-page="policy" hidden>
+  <section class="wrap sec" aria-labelledby="pol-h1" style="padding-top:clamp(40px,6vw,80px)">
+    <h1 id="pol-h1" class="cap h2">Ticket policy</h1>
+    <div class="risk" style="margin-top:32px">
+      <p class="risk-h">Your ticket is protected</p>
+      <ul class="pol">
+        <li><b>Change your mind?</b> Full refund within 24 hours of buying. Just email info@wowlakenona.com.</li>
+        <li><b>Something came up?</b> Life happens. Email us at least 48 hours before doors open and we'll move your ticket to the next WOW, free. Or transfer it to a friend. Limit: one move per ticket.</li>
+        <li><b>If we cancel,</b> you're refunded automatically. You don't have to ask.</li>
+        <li><b>If we reschedule,</b> your ticket moves with it, or you can ask for a refund within 7 days.</li>
+      </ul>
+    </div>
+    <div class="buy-stack" style="margin-top:32px">
+      <a class="btn b-lime btn-xl" href="#tickets" data-cta="policy">Get my ticket · <span data-ev="price"></span> <span class="arr" aria-hidden="true">→</span></a>
+      <ul class="guar"><li>Full refund within 24 hours</li><li>Something came up? Move your ticket to the next WOW</li><li>If we cancel, you're refunded automatically</li></ul>
+    </div>
+  </section>
+</div>
+
 </main>
 
 <div class="buybar" id="buybar" aria-hidden="true">
-  <div><b>$49.97</b><span>Sun, Nov 22 · Winter Park</span></div>
-  <a class="btn b-lime" href="#tickets" tabindex="-1" data-cta="sticky">Get my ticket <span class="arr" aria-hidden="true">→</span></a>
+  <div><b><span data-ev="dateShort"></span> · <span data-ev="city"></span></b></div>
+  <a class="btn b-lime" href="#tickets" tabindex="-1" data-cta="sticky">Get my ticket · <span data-ev="price"></span></a>
 </div>
 
 <footer class="wrap foot">
   <div class="stripe" aria-hidden="true" style="margin-bottom:40px"><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="flex" style="justify-content:space-between;align-items:flex-end;gap:24px">
-    <p style="margin:0;font-size:20px;max-width:30ch;font-weight:700">Where wellness comes to life. Lake Nona, Orlando.</p>
+    <div>
+      <p style="margin:0;font-size:20px;max-width:34ch;font-weight:700">Where wellness comes to life. Born in Lake Nona, now across Central Florida.</p>
+      <p style="margin:10px 0 0;font-size:17px;color:var(--heat);font-weight:700">Next up: <span data-ev="venue"></span>, <span data-ev="dateLong"></span></p>
+    </div>
     <div style="display:flex;gap:4px;flex-wrap:wrap">
-      <a class="nl" href="#home">Event</a><a class="nl" href="#sponsor">Sponsors</a><a class="nl" href="#volunteer">Volunteer</a><a class="nl" href="#creators">Creators</a><a class="nl" href="#about">About</a><a class="nl" href="#contact">Contact</a><a class="nl" href="https://wowlakenona.com/policies/privacy-policy">Privacy</a>
+      <a class="nl" href="#home">Event</a><a class="nl" href="#sponsor">Partners</a><a class="nl" href="#volunteer">Volunteer</a><a class="nl" href="#creators">Creators</a><a class="nl" href="#about">About</a><a class="nl" href="#contact">Contact</a><a class="nl" href="#policy">Ticket policy</a><a class="nl" href="https://wowlakenona.com/policies/privacy-policy">Privacy</a><a class="nl" data-href="instagram" href="#" hidden>Instagram</a>
     </div>
   </div>
   <img class="wordmark" src="img/wow-white.png" alt="WOW World of Wellness" width="1400" height="389" loading="lazy">
@@ -915,25 +1050,6 @@ img{max-width:100%}
 
 <script>
 (function(){
-  var EXPS=[
-    {n:'Biohacking',t:'Unlock your potential',c:'#FF00FF',i:'img/p135.jpg',d:'Red-light therapy, recovery tools and tech stations you can test on the spot.'},
-    {n:'Sauna',t:'Heat that heals',c:'#00FFFF',i:'img/sauna.jpg',d:'Sweat out the stress in the barrel sauna. Unlimited sessions with every ticket.'},
-    {n:'Cold plunge',t:'The chill that thrills',c:'#FFFFFF',i:'img/p123.jpg',d:'Energy up, inflammation down, bragging rights included. Unlimited plunges.'},
-    {n:'Great food',t:'Fuel to feel amazing',c:'#EDEDED',i:'img/p93.jpg',d:'Performance snacks, functional treats and supplement samples everywhere.'},
-    {n:'Fitness challenges',t:'Compete. Improve. Win.',c:'#CCFF00',i:'img/p163.jpg',d:'Strength tests, race-the-clock workouts and surprise challenges, with prizes.'},
-    {n:'Live DJ',t:'Energy you can feel',c:'#FF00FF',i:'img/p143.jpg',d:'Beats from doors open to last rep. Part fitness fest, part party.'},
-    {n:'AI fitness',t:'Train smarter',c:'#FFFFFF',i:'img/p141.jpg',d:'AI trainers, real-time form feedback and workouts that adapt to you.'}
-  ];
-  var FAQS=[
-    ['When and where is it?','Sunday, November 22, from 12 to 4pm at Central Park on West Morse Boulevard in Winter Park.'],
-    ['What does my ticket include?','Full event access, unlimited sauna and cold plunge, free samples from 30+ brands, classes, fitness challenges and a live DJ.'],
-    ['Do I need to be fit to come?','No. Classes, challenges and recovery are open to every fitness level, from first-timers to athletes.'],
-    ['What if I can\'t make it?','You can transfer your ticket to someone else for free up to 48 hours before the event. Just email us their name and email address.'],
-    ['What if it rains?','WOW happens rain or shine. If we ever cancel the event, every ticket holder gets a full refund automatically.'],
-    ['Are classes guaranteed?','Classes are first come, first served, so arrive early for the ones you want most.'],
-    ['What should I bring?','Workout clothes you can move in, a towel, and swimwear if you plan to plunge.'],
-    ['Is there a waiver?','Yes. Every attendee signs the WOW participant waiver before joining activities.']
-  ];
   function $(s,r){return (r||document).querySelector(s)}
   function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
   function el(tag,attrs,text){var e=document.createElement(tag);for(var k in attrs){e.setAttribute(k,attrs[k])}if(text!=null)e.textContent=text;return e}
@@ -941,7 +1057,7 @@ img{max-width:100%}
 
   $$('[data-words]').forEach(function(n){var words=n.textContent.trim().split(/\s+/);n.textContent='';words.forEach(function(w,i){var s=el('span',{class:'w'},w);s.style.setProperty('--i',i);n.appendChild(s);n.appendChild(document.createTextNode(' '))})});
 
-  var PAGES=['home','sponsor','volunteer','creators','about','contact'];
+  var PAGES=['home','sponsor','volunteer','creators','about','contact','policy'];
   var SUB={'sponsor-apply':'sponsor','volunteer-apply':'volunteer','creators-apply':'creators'};
   function route(){
     var h=(location.hash||'#home').slice(1);
@@ -960,12 +1076,12 @@ img{max-width:100%}
   function closeMenu(){links.classList.remove('open');burger.setAttribute('aria-expanded','false')}
   burger.addEventListener('click',function(){var o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o?'true':'false')});
 
-  var TARGET=new Date('2026-11-22T12:00:00-05:00').getTime();
+  var TARGET=null;
   function pad(n){return (n<10?'0':'')+n}
-  function tick(){var d=Math.max(0,TARGET-Date.now());
+  function tick(){if(TARGET==null)return;var d=Math.max(0,TARGET-Date.now());
     $('#cd-d').textContent=pad(Math.floor(d/864e5));$('#cd-h').textContent=pad(Math.floor(d/36e5)%24);
     $('#cd-m').textContent=pad(Math.floor(d/6e4)%60);$('#cd-s').textContent=pad(Math.floor(d/1e3)%60)}
-  tick();setInterval(tick,1000);
+  setInterval(tick,1000);
 
   if('IntersectionObserver' in window && !reduce){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);
@@ -987,28 +1103,55 @@ img{max-width:100%}
   var ticking=false;window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;storyTick()})}},{passive:true});
 
   var rail=$('#rail');
-  EXPS.forEach(function(e){
-    var dark=e.c==='#0A0A0A';
-    var card=el('article',{class:'card'});card.style.background=e.c;card.style.color=dark?'#FFFFFF':'#0A0A0A';
-    var ph=el('div',{class:'ph'+(e.i?'':' jj')});
-    ph.appendChild(el('img',{src:e.i,alt:e.n+' at WOW',loading:'lazy'}))
-    var tx=el('div',{class:'tx'});tx.appendChild(el('h3',{class:'cap'},e.n));tx.appendChild(el('p',{class:'tagline'},e.t));tx.appendChild(el('p',{},e.d));
-    card.appendChild(ph);card.appendChild(tx);rail.appendChild(card);
-  });
+  function buildRail(T){
+    var EXPS=[
+      {n:'Barrel sauna',c:'#00FFFF',i:'img/sauna.jpg',d:'Real heat, unlimited sessions.'},
+      {n:'Cold plunge',c:'#FFFFFF',i:'img/p123.jpg',d:'The rush everyone talks about on the drive home.'},
+      {n:'Expert-led classes',c:'#FF00FF',i:'img/p55.jpg',d:T.classesAnd+'.'},
+      {n:'Fitness challenges',c:'#CCFF00',i:'img/p163.jpg',d:'Strength tests and race-the-clock workouts for medals and merch.'},
+      {n:'Biohacking and AI fitness',c:'#EDEDED',i:'img/p135.jpg',d:'Red light, recovery tools and AI trainers that coach your form.'},
+      {n:T.brands+' wellness brands',c:'#00FFFF',i:'img/p106.jpg',d:'Demos, samples and the newest gear to try before you buy.'},
+      {n:'Live DJ',c:'#FF00FF',i:'img/p143.jpg',d:'The soundtrack to your whole afternoon.'}
+    ];
+    rail.textContent='';
+    EXPS.forEach(function(e){
+      var card=el('article',{class:'card'});card.style.background=e.c;card.style.color='#0A0A0A';
+      var ph=el('div',{class:'ph'});ph.appendChild(el('img',{src:e.i,alt:e.n+' at WOW',loading:'lazy'}));
+      var tx=el('div',{class:'tx'});tx.appendChild(el('h3',{class:'cap'},e.n));tx.appendChild(el('p',{},e.d));
+      card.appendChild(ph);card.appendChild(tx);rail.appendChild(card);
+    });
+  }
   function slide(dir){rail.scrollBy({left:dir*Math.min(rail.clientWidth*0.8,760),behavior:reduce?'auto':'smooth'})}
   $('#prev').addEventListener('click',function(){slide(-1)});$('#next').addEventListener('click',function(){slide(1)});
   rail.addEventListener('keydown',function(ev){if(ev.key==='ArrowRight'){ev.preventDefault();slide(1)}if(ev.key==='ArrowLeft'){ev.preventDefault();slide(-1)}});
 
 
   var qa=$('#qa');
-  FAQS.forEach(function(f,i){
-    var w=el('div');var b=el('button',{type:'button','aria-expanded':i===0?'true':'false','aria-controls':'ans-'+i});
-    b.appendChild(el('span',{},f[0]));
-    b.insertAdjacentHTML('beforeend','<svg class="pl" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>');
-    var p=el('p',{class:'ans pop',id:'ans-'+i},f[1]);p.hidden=i!==0;
-    b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',o?'false':'true');p.hidden=o});
-    w.appendChild(b);w.appendChild(p);qa.appendChild(w);
-  });
+  function buildFaq(T,L){
+    var F=[
+      ['Is this for beginners?','Yes. Half the fun is trying something for the first time. Every class has options for every level, and our crew walks first-timers through the plunge.'],
+      ['What should I bring?','A swimsuit or workout clothes you don\'t mind getting wet, a towel, flip-flops, a change of clothes and a water bottle.'+(L.changingArea?' '+L.changingArea:'')],
+      ['Is food included?','Food isn\'t included in your ticket, but you won\'t go hungry. Local vendors serve healthy plates all afternoon, and brands hand out free samples.'],
+      L.parking?['Where do I park?',L.parking]:null,
+      L.kidsPolicy?['Can I bring my kids?',L.kidsPolicy]:null,
+      ['Do I need to sign anything?','Yes. Every guest signs a quick participant waiver before joining activities.'+(L.waiverHow?' '+L.waiverHow:'')],
+      ['Are classes guaranteed?','Classes are first come, first served, and the popular ones fill up. Get there early for the best shot.'],
+      ['What if it rains?','WOW happens rain or shine. You\'re getting in a cold plunge anyway.'],
+      ['Is sauna and cold plunge safe for me?','Our crew is at every station and will walk you through it. If you\'re pregnant or have a heart condition, high blood pressure or another medical concern, check with your doctor first.'],
+      ['What if something comes up?','Within 24 hours of buying, you get a full refund. After that, email us at least 48 hours before doors and we\'ll move your ticket to the next WOW, or you can transfer it to a friend for free.'],
+      L.reentry?['Can I come and go?',L.reentry]:null,
+      ['Where is WOW?','WOW was born in Lake Nona and now runs events across Central Florida. This one is at '+T.venue+'.']
+    ].filter(Boolean);
+    qa.textContent='';
+    F.forEach(function(f,i){
+      var w=el('div');var b=el('button',{type:'button','aria-expanded':i===0?'true':'false','aria-controls':'ans-'+i});
+      b.appendChild(el('span',{},f[0]));
+      b.insertAdjacentHTML('beforeend','<svg class="pl" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>');
+      var p=el('p',{class:'ans pop',id:'ans-'+i},f[1]);p.hidden=i!==0;
+      b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',o?'false':'true');p.hidden=o});
+      w.appendChild(b);w.appendChild(p);qa.appendChild(w);
+    });
+  }
 
   function copy(text,btn){
     function done(){var o=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=o},1600)}
@@ -1021,13 +1164,16 @@ img{max-width:100%}
       ev.preventDefault();
       var old=$('.err',f);if(old)old.remove();
       var bad=$$('[required]',f).filter(function(x){return !x.value.trim()||(x.type==='email'&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(x.value.trim()))});
+      $$('fieldset[data-required]',f).forEach(function(g){if(!$$('input:checked',g).length)bad.push(g)});
       if(bad.length){
-        var lab=$('label[for="'+bad[0].id+'"]',f).firstChild.nodeValue.trim();
-        f.insertBefore(el('p',{class:'err',role:'alert'},'Fill in '+lab.toLowerCase()+(bad[0].type==='email'?' with a valid address':'')+' to continue.'),f.lastElementChild);
-        bad[0].focus();return;
+        var x=bad[0],isG=x.tagName==='FIELDSET';
+        var lab=(isG?$('legend',x):$('label[for="'+x.id+'"]',f)).firstChild.nodeValue.trim();
+        f.insertBefore(el('p',{class:'err',role:'alert'},(isG||x.tagName==='SELECT'?'Choose ':'Fill in ')+lab.toLowerCase()+(x.type==='email'?' with a valid address':'')+' to continue.'),f.lastElementChild);
+        (isG?$('input',x):x).focus();return;
       }
-      var kind=f.getAttribute('data-form'),to=f.getAttribute('data-to');
-      var body=$$('input,textarea',f).filter(function(x){return x.value.trim()}).map(function(x){return x.name+': '+x.value.trim()}).join('\n');
+      var kind=f.getAttribute('data-form'),to=f.getAttribute('data-to'),tag=f.getAttribute('data-tag')||'';
+      var vals={};$$('input,textarea,select',f).forEach(function(x){if(x.type==='checkbox'&&!x.checked)return;var v=x.value.trim();if(!v)return;vals[x.name]=vals[x.name]?vals[x.name]+', '+v:v});
+      var body=(tag?'Tag: '+tag+'\n':'')+Object.keys(vals).map(function(k){return k+': '+vals[k]}).join('\n');
       var box=el('div',{class:'done pop',role:'status'});
       box.appendChild(el('p',{class:'cap',style:'font-size:clamp(36px,4vw,56px)'},'Ready to send'));
       box.appendChild(el('p',{style:'margin:0;font-size:18px'},'Send this '+kind.toLowerCase()+' to:'));
@@ -1074,11 +1220,55 @@ img{max-width:100%}
   var bar=$('#buybar');
   if(bar&&'IntersectionObserver' in window){
     var heroCta=$('[data-cta="hero"]'),tix=$('#tickets'),pastHero=false,atTix=false;
-    function upd(){var on=pastHero&&!atTix&&!$('[data-page="home"]').hidden;bar.classList.toggle('show',on);bar.setAttribute('aria-hidden',on?'false':'true');bar.querySelector('a').tabIndex=on?0:-1}
+    function upd(){var home=!$('[data-page="home"]').hidden;var on=home?(pastHero&&!atTix):true;bar.classList.toggle('show',on);bar.setAttribute('aria-hidden',on?'false':'true');bar.querySelector('a').tabIndex=on?0:-1}
     new IntersectionObserver(function(es){es.forEach(function(e){pastHero=!e.isIntersecting&&e.boundingClientRect.top<0;upd()})}).observe(heroCta);
     new IntersectionObserver(function(es){es.forEach(function(e){atTix=e.isIntersecting;upd()})},{threshold:.15}).observe(tix);
     window.addEventListener('hashchange',upd);
   }
+
+  /* event config: event.json is the single source for every event detail on the site */
+  function money(n){return '$'+Number(n).toFixed(2).replace(/\.00$/,'')}
+  function andList(a){return a.length<2?a.join(''):a.slice(0,-1).join(', ')+' and '+a[a.length-1]}
+  function tokens(e){
+    var d=new Date(e.date+'T12:00:00-05:00'),tz={timeZone:'America/New_York'};
+    function f(o){var k;for(k in tz)o[k]=tz[k];return new Intl.DateTimeFormat('en-US',o).format(d)}
+    var per=Math.round(e.price*0.3);
+    var L=e.logistics||{},P=e.proof||{};
+    var cls=(e.classes||[]).slice();cls[0]=cls[0]?cls[0].charAt(0).toUpperCase()+cls[0].slice(1):'';
+    return {
+      dateLong:f({weekday:'long',month:'short',day:'numeric',year:'numeric'}),
+      dateDay:f({weekday:'short',month:'short',day:'numeric'}),
+      dateShort:f({month:'short',day:'numeric'}),
+      month:f({month:'long'}),
+      time:e.time,venueName:e.venueName,city:e.city,venue:e.venueName+', '+e.city,address:e.address,
+      price:money(e.price),squadPrice:e.squadPrice!=null?money(e.squadPrice):'',
+      capacity:Number(e.capacity).toLocaleString('en-US'),priceStepNote:e.priceStepNote||'',
+      classesComma:cls.join(', '),classesAnd:andList(cls),
+      totalGuests:P.totalGuests,eventsHeld:String(P.eventsHeld),lastEventGuests:Number(P.lastEventGuests).toLocaleString('en-US'),brands:P.brands,
+      creatorPerTicket:'$'+per,creator25:'$'+(per*25).toLocaleString('en-US'),creator100:'$'+(per*100).toLocaleString('en-US'),
+      brandsThisEvent:e.brandsThisEvent||[],brandsPast:e.brandsPast||[],
+      parking:L.parking,changingArea:L.changingArea,kidsPolicy:L.kidsPolicy,reentry:L.reentry
+    };
+  }
+  function splitWords(n){var nodes=Array.prototype.slice.call(n.childNodes),i=0;n.textContent='';
+    nodes.forEach(function(c){(c.textContent||'').trim().split(/\s+/).forEach(function(w){if(!w)return;var s=el('span',{class:'w'},w);s.style.setProperty('--i',i++);n.appendChild(s);n.appendChild(document.createTextNode(' '))})})}
+  function applyEvent(e){
+    var T=tokens(e);
+    $$('[data-ev]').forEach(function(n){var v=T[n.getAttribute('data-ev')];n.textContent=v==null?'':v});
+    $$('[data-if]').forEach(function(n){var v=T[n.getAttribute('data-if')];n.hidden=!(Array.isArray(v)?v.length:v)});
+    $$('[data-logos]').forEach(function(g){g.textContent='';(T[g.getAttribute('data-logos')]||[]).forEach(function(b){g.appendChild(el('img',{src:b.logo,alt:b.name,loading:'lazy'}))})});
+    var ig=e.links&&e.links.instagram;$$('[data-href="instagram"]').forEach(function(a){if(ig){a.href=ig;a.hidden=false}});
+    var desc='Unlimited sauna and cold plunge, '+T.brands+' wellness brands, expert-led classes, fitness challenges and a live DJ. One afternoon, one ticket. Next event: '+T.dateLong+', '+T.venue+'.';
+    $$('meta[name="description"],meta[property="og:description"]').forEach(function(m){m.setAttribute('content',desc)});
+    TARGET=new Date(e.countdownTarget).getTime();tick();
+    buildRail(T);buildFaq(T,e.logistics||{});
+    $$('[data-words-after]').forEach(splitWords);
+    document.documentElement.classList.remove('ev-wait');
+  }
+  function loadEvent(n){
+    fetch('event.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(applyEvent).catch(function(){if(n<2)setTimeout(function(){loadEvent(n+1)},800)});
+  }
+  loadEvent(0);
 
   route();
 })();

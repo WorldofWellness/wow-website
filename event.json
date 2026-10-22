@@ -1,0 +1,43 @@
+{
+  "_readme": "The only file to edit for a new event. Every page reads from it. Use null for anything not confirmed yet and that line stays hidden on the site.",
+
+  "eventNumber": 4,
+  "date": "2026-11-22",
+  "time": "12 to 4pm",
+  "venueName": "Central Park",
+  "city": "Winter Park",
+  "address": "W Morse Blvd, Winter Park, FL",
+  "price": 49.97,
+  "squadPrice": null,
+  "capacity": 600,
+  "priceStepNote": null,
+  "countdownTarget": "2026-11-22T12:00:00-05:00",
+  "ticketLink": "https://sweatpals.com/event/wow-winter-park-nov-22/2026-11-22",
+  "_ticketLinkNote": "Reference only. The live checkout embed in index.html (event alias wow-winter-park-nov-22, price tier 0695c93d-49fb-4671-a49f-8367e821a9a4) is left exactly as it is.",
+
+  "classes": ["Pilates", "dance cardio", "spin", "mat"],
+  "headlinerClass": null,
+
+  "brandsThisEvent": [],
+  "brandsPast": [],
+  "_brandsNote": "Logos only with permission. Each entry: { \"name\": \"Brand\", \"logo\": \"img/logos/brand.png\" }",
+
+  "logistics": {
+    "parking": null,
+    "changingArea": null,
+    "kidsPolicy": null,
+    "reentry": null,
+    "waiverHow": null
+  },
+
+  "proof": {
+    "totalGuests": "1,600+",
+    "eventsHeld": 3,
+    "lastEventGuests": 625,
+    "brands": "30+"
+  },
+
+  "links": {
+    "instagram": null
+  }
+}
