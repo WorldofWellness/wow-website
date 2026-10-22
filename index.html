@@ -11,10 +11,8 @@
 /* Layout: 1440 frame, 32px gutters. Dark ink stages alternate with logo-rainbow colour blocks; giant condensed caps carry the voice. */
 :root{
   --ink:#0A090D; --ink-2:#17151D; --ink-3:#262330; --cream:#FFF8EE; --page:#0A090D; --white:#FFFFFF;
-  --mag:#C86BFF; --pink:#FF5BC8; --orange:#FF3D9A; --yellow:#9D6BFF; --lime:#22E3FF; --cyan:#3D8BFF;
-  --hot:#FF3D9A; --blue:#3D8BFF; --violet:#9D6BFF; --aqua:#22E3FF;
-  --grad:linear-gradient(120deg,#22E3FF 0%,#3D8BFF 32%,#9D6BFF 64%,#FF3D9A 100%);
-  --grad-hot:linear-gradient(120deg,#FF3D9A 0%,#C86BFF 55%,#9D6BFF 100%);
+  --mag:#C86BFF; --pink:#FF4FB8; --orange:#FF1F8E; --yellow:#9D6BFF; --lime:#22E3FF; --cyan:#0A8CFF;
+  --hot:#FF1F8E; --blue:#0A8CFF; --violet:#9D6BFF; --aqua:#22E3FF;
   --scrim:rgba(15,14,19,.5);
   --display:'Anton','Impact','Arial Narrow Bold',sans-serif;
   --body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -41,7 +39,7 @@ img{max-width:100%}
 .flex>*{min-width:0}
 .block{border-radius:44px;padding:clamp(28px,5vw,80px);color:var(--ink)}
 .dark{background:var(--ink-2);color:var(--white)}
-.stripe{display:flex;height:10px;border-radius:999px;overflow:hidden;background:var(--grad)}
+.stripe{display:flex;height:10px;border-radius:999px;overflow:hidden;background:linear-gradient(90deg,var(--aqua) 0 25%,var(--blue) 0 50%,var(--violet) 0 75%,var(--hot) 0)}
 .stripe i{display:none}
 .stripe i{flex:1}
 .stripe i:nth-child(1){background:var(--mag)}.stripe i:nth-child(2){background:var(--pink)}.stripe i:nth-child(3){background:var(--orange)}.stripe i:nth-child(4){background:var(--yellow)}.stripe i:nth-child(5){background:var(--lime)}.stripe i:nth-child(6){background:var(--cyan)}
@@ -52,7 +50,7 @@ img{max-width:100%}
 .btn:active{transform:translateY(1px) scale(.96)}
 .btn .arr{display:inline-block;transition:transform .25s}
 .btn:hover .arr{transform:translate(4px,-4px) rotate(-45deg)}
-.b-lime{background:linear-gradient(135deg,#FF3D9A,#FF5BC8);color:var(--ink);box-shadow:0 10px 30px -10px rgba(255,61,154,.7)}.b-lime:hover{background:var(--blue);box-shadow:0 10px 30px -10px rgba(61,139,255,.8)}
+.b-lime{background:var(--hot);color:var(--ink)}.b-lime:hover{background:var(--blue)}
 .b-blue{background:var(--blue);color:var(--ink)}.b-blue:hover{background:var(--white)}
 .b-ink{background:var(--ink);color:var(--white)}.b-ink:hover{background:var(--mag)}
 .b-out{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2.5px var(--ink)}.b-out:hover{background:var(--ink);color:var(--white)}
@@ -105,14 +103,13 @@ img{max-width:100%}
 /* video hero */
 .hv{position:relative;overflow:hidden;isolation:isolate;padding-block:clamp(28px,4vw,56px) clamp(40px,5vw,72px)}
 .hv-bg{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;opacity:.22;z-index:-1;animation:drift 26s ease-in-out infinite alternate}
-.hv::after{content:"";position:absolute;inset:auto 0 0 0;height:10px;background:var(--grad)}
-.hv::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(120deg,rgba(34,227,255,.22) 0%,rgba(61,139,255,.10) 35%,rgba(157,107,255,.16) 65%,rgba(255,61,154,.30) 100%)}
+.hv::after{content:"";position:absolute;inset:auto 0 0 0;height:10px;background:linear-gradient(90deg,var(--aqua) 0 25%,var(--blue) 0 50%,var(--violet) 0 75%,var(--hot) 0)}
 .hv-grid{position:relative;z-index:1}
 @keyframes drift{from{transform:scale(1.04)}to{transform:scale(1.14) translate(-1.5%,-1%)}}
 .hv-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(24px,4vw,64px);align-items:center}
 .hv-copy{display:flex;flex-direction:column;gap:clamp(18px,2.4vw,30px);min-width:0}
 .hv .hero-logo{margin:0}
-.reel{position:relative;margin:0;justify-self:end;width:100%;max-width:420px;aspect-ratio:9/16;max-height:82vh;border-radius:36px;overflow:hidden;transform:rotate(3deg);box-shadow:0 0 0 4px var(--hot),0 0 60px -6px rgba(157,107,255,.7),0 40px 80px rgba(0,0,0,.6);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.reel{position:relative;margin:0;justify-self:end;width:100%;max-width:420px;aspect-ratio:9/16;max-height:82vh;border-radius:36px;overflow:hidden;transform:rotate(3deg);box-shadow:0 0 0 4px var(--hot),0 40px 80px rgba(0,0,0,.6);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
 .reel:hover{transform:rotate(0) scale(1.02);box-shadow:0 0 0 4px var(--mag),0 40px 80px rgba(0,0,0,.6)}
 .reel video{width:100%;height:100%;object-fit:cover;display:block;background:var(--ink-2)}
 .reel-tag{position:absolute;left:16px;top:16px;background:var(--cyan);color:var(--ink);font-weight:800;font-size:14px;padding:6px 12px;border-radius:999px}
@@ -151,7 +148,7 @@ img{max-width:100%}
 .vs-ic{flex:0 0 40px;height:40px;border-radius:50%;background:var(--lime);color:var(--ink);display:flex;align-items:center;justify-content:center}
 .vs-list b{display:block;font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(24px,2.2vw,32px);line-height:1}
 .vs-list div>span{display:block;margin-top:6px;font-size:17px;line-height:1.45;color:#D4D1DC}
-.vs-total{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;background:var(--grad-hot);color:var(--ink);border-radius:30px;padding:clamp(20px,3vw,32px)}
+.vs-total{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;background:var(--hot);color:var(--ink);border-radius:30px;padding:clamp(20px,3vw,32px)}
 .vs-total p{margin:0;font-weight:800;font-size:18px}
 .vs-total b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(64px,8vw,120px);line-height:.9}
 .vs-total .btn{background:var(--blue);color:var(--ink);box-shadow:none}.vs-total .btn:hover{background:var(--white)}
@@ -248,7 +245,7 @@ img{max-width:100%}
 .tix-grid{display:flex;flex-wrap:wrap;gap:12px}
 .tix-left{flex:1 1 420px;display:flex;flex-direction:column;justify-content:space-between;gap:30px}
 .tix-right{flex:1 1 420px;background:var(--ink-3);border-radius:32px;padding:clamp(22px,3.4vw,40px);display:flex;flex-direction:column;gap:24px}
-.price{font-family:var(--display);font-size:clamp(110px,15vw,240px);line-height:.85;margin:0;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.price{font-family:var(--display);font-size:clamp(110px,15vw,240px);line-height:.85;margin:0;color:var(--hot)}
 .chk{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;font-size:20px;font-weight:700}
 .chk li{display:flex;gap:12px;align-items:center}
 .meter{height:14px;border-radius:999px;background:var(--ink);overflow:hidden}
@@ -434,7 +431,7 @@ img{max-width:100%}
   </div>
 
   <section class="wrap sec" style="padding-top:clamp(56px,7vw,100px)" aria-labelledby="loud-title">
-    <div class="block" style="background:linear-gradient(120deg,#22E3FF 0%,#3D8BFF 50%,#9D6BFF 100%)">
+    <div class="block" style="background:var(--blue)">
       <h2 id="loud-title" class="loud rv">Sweat <span class="pic"><img src="img/p118.jpg" alt="" loading="lazy"></span> plunge <span class="pic"><img src="img/p163.jpg" alt="" loading="lazy"></span> move <span class="pic"><img src="img/p143.jpg" alt="" loading="lazy"></span> refuel <span class="pic"><img src="img/p93.jpg" alt="" loading="lazy"></span> repeat</h2>
       <div style="display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:40px;text-align:center">
         <p class="lede rv d1">This isn't a booth crawl. You don't walk around collecting flyers. You plunge, sweat, train, taste and leave feeling better than when you walked in.</p>
@@ -488,8 +485,8 @@ img{max-width:100%}
         <h2 id="story-title" class="cap h2 rv" style="max-width:12ch">Your afternoon at WOW</h2>
         <div class="story" style="margin-top:20px">
           <div class="steps">
-            <div class="step on" data-badge="Heat" data-color="#FF3D9A"><p class="cap" style="color:var(--orange)">Heat</p><p>Start in the barrel sauna. Sweat out the stress, loosen up and let the week melt off. Unlimited sessions with every ticket.</p></div>
-            <div class="step" data-badge="Cold" data-color="#3D8BFF"><p class="cap" style="color:var(--cyan)">Cold</p><p>Then brave the plunge. Energy spikes, inflammation drops and you earn the bragging rights. Unlimited plunges too.</p></div>
+            <div class="step on" data-badge="Heat" data-color="#FF1F8E"><p class="cap" style="color:var(--orange)">Heat</p><p>Start in the barrel sauna. Sweat out the stress, loosen up and let the week melt off. Unlimited sessions with every ticket.</p></div>
+            <div class="step" data-badge="Cold" data-color="#0A8CFF"><p class="cap" style="color:var(--cyan)">Cold</p><p>Then brave the plunge. Energy spikes, inflammation drops and you earn the bragging rights. Unlimited plunges too.</p></div>
             <div class="step" data-badge="Move" data-color="#C86BFF"><p class="cap" style="color:var(--mag)">Move</p><p>Spin, dance cardio, trampoline challenges and mat classes. Every fitness level welcome.</p></div>
             <div class="step" data-badge="Refuel" data-color="#22E3FF"><p class="cap" style="color:var(--lime)">Refuel</p><p>Performance food, supplement samples and the live DJ keeping the energy up until the last rep.</p></div>
           </div>
@@ -550,7 +547,7 @@ img{max-width:100%}
             <div class="tk-fact"><dt>Where</dt><dd>Central Park<small>W Morse Blvd, Winter Park, FL</small></dd></div>
             <div class="tk-fact"><dt>Price</dt><dd>$49.97<small>General admission</small></dd></div>
           </dl>
-          <iframe class="tk-buy" title="Choose quantity and buy WOW tickets" allowtransparency="true" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=FF3D9A&backgroundHex=000000&fontFamily=Poppins&loader=false"></iframe>
+          <iframe class="tk-buy" title="Choose quantity and buy WOW tickets" allowtransparency="true" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=FF1F8E&backgroundHex=000000&fontFamily=Poppins&loader=false"></iframe>
           <button type="button" class="tk-more" id="tk-more" aria-expanded="false" aria-controls="tk-drawer"><span id="tk-more-label">See event details</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="tk-drawer" id="tk-drawer"><div><div class="tk-inner">
             <p><strong>Sauna, cold plunge, biohacking, great food, fitness challenges, live DJ, premium experiences and AI fitness.</strong> At WOW you're not just browsing booths, you're leveling up: interactive experiences, expert-led workshops and classes like Pilates Burn by HiLi, AI equipment and live demos.</p>
@@ -602,7 +599,7 @@ img{max-width:100%}
   </section>
 
   <section class="wrap sec" aria-labelledby="final-title">
-    <div class="block final" style="background:var(--grad)">
+    <div class="block final" style="background:var(--aqua)">
       <h2 id="final-title" class="cap h2 rv" style="max-width:14ch">Nov 22 is happening with or without you</h2>
       <p class="lede rv d1" style="margin-top:20px;max-width:46ch">Unlimited sauna and cold plunge, 30+ brands, classes, challenges and a live DJ, for less than a night out. Grab your ticket now so you don't forget.</p>
       <div class="flex" style="align-items:center;gap:20px;margin-top:30px">
@@ -631,7 +628,7 @@ img{max-width:100%}
   </section>
 
   <section class="wrap sec" aria-labelledby="su-title">
-    <div class="block flex" style="background:var(--grad-hot);align-items:center">
+    <div class="block flex" style="background:var(--violet);align-items:center">
       <div style="flex:1 1 400px">
         <h2 id="su-title" class="cap h2 rv">Not ready yet?</h2>
         <p class="lede rv d1" style="margin-top:18px">Drop your email and we'll send you a reminder before Nov 22, plus first access to future WOW events.</p>
@@ -895,12 +892,12 @@ img{max-width:100%}
 (function(){
   var EXPS=[
     {n:'Biohacking',t:'Unlock your potential',c:'#C86BFF',i:'img/p135.jpg',d:'Red-light therapy, recovery tools and tech stations you can test on the spot.'},
-    {n:'Sauna',t:'Heat that heals',c:'#FF3D9A',i:'img/p118.jpg',d:'Sweat out the stress in the barrel sauna. Unlimited sessions with every ticket.'},
-    {n:'Cold plunge',t:'The chill that thrills',c:'#3D8BFF',i:'img/p123.jpg',d:'Energy up, inflammation down, bragging rights included. Unlimited plunges.'},
+    {n:'Sauna',t:'Heat that heals',c:'#FF1F8E',i:'img/p118.jpg',d:'Sweat out the stress in the barrel sauna. Unlimited sessions with every ticket.'},
+    {n:'Cold plunge',t:'The chill that thrills',c:'#0A8CFF',i:'img/p123.jpg',d:'Energy up, inflammation down, bragging rights included. Unlimited plunges.'},
     {n:'Great food',t:'Fuel to feel amazing',c:'#9D6BFF',i:'img/p93.jpg',d:'Performance snacks, functional treats and supplement samples everywhere.'},
     {n:'Fitness challenges',t:'Compete. Improve. Win.',c:'#22E3FF',i:'img/p163.jpg',d:'Strength tests, race-the-clock workouts and surprise challenges, with prizes.'},
-    {n:'Live DJ',t:'Energy you can feel',c:'#FF5BC8',i:'img/p143.jpg',d:'Beats from doors open to last rep. Part fitness fest, part party.'},
-    {n:'AI fitness',t:'Train smarter',c:'#3D8BFF',i:'img/p141.jpg',d:'AI trainers, real-time form feedback and workouts that adapt to you.'}
+    {n:'Live DJ',t:'Energy you can feel',c:'#FF4FB8',i:'img/p143.jpg',d:'Beats from doors open to last rep. Part fitness fest, part party.'},
+    {n:'AI fitness',t:'Train smarter',c:'#0A8CFF',i:'img/p141.jpg',d:'AI trainers, real-time form feedback and workouts that adapt to you.'}
   ];
   var FAQS=[
     ['When and where is it?','Sunday, November 22, from 12 to 4pm at Central Park on West Morse Boulevard in Winter Park.'],
