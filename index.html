@@ -275,10 +275,7 @@ img{max-width:100%}
 .page[hidden]{display:none!important}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.step{opacity:1}}
 </style>
-<style>.sp-buy{width:min(100%,340px);border-radius:12px;overflow:hidden}.sp-nav{width:190px}@media (max-width:420px){.sp-nav{display:none}}</style>
-<!-- Sweatpals widget begin -->
-<script src="https://sweatpals.com/static/embed/event/checkout/script.js?enableAutoEmbed=false&eventAlias=wow-winter-park-nov-22&colorHex=000000&fontFamily=Poppins&priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4"></script>
-<!-- Sweatpals widget end -->
+<style>.sp-widget{flex:1 1 460px;min-width:0;background:#FFFFFF;border-radius:32px;padding:clamp(10px,1.6vw,18px);overflow:hidden}.sp-widget iframe{display:block;width:100%;border:0}</style>
 </head>
 <body>
 
@@ -296,7 +293,7 @@ img{max-width:100%}
         <a class="nl" href="#contact" data-nav="contact">Contact</a>
       </div>
       <div style="display:flex;gap:8px;align-items:center">
-        <div class="sp-buy sp-nav"><!-- Sweatpals widget begin --><iframe title="Buy WOW tickets" style="width: 100%; max-height: 50px; height: 50px; border: 0;" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=000000&fontFamily=Poppins&loader=false"></iframe><!-- Sweatpals widget end --></div>
+        <a class="btn b-lime nav-cta" href="#tickets">Get tickets <span class="arr" aria-hidden="true">→</span></a>
         <button class="btn b-outw burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="links">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
@@ -318,7 +315,7 @@ img{max-width:100%}
         <h1 id="hero-title" class="in d1" style="margin:0"><img class="hero-logo" src="img/logo-white.png" alt="WOW World of Wellness" width="2323" height="797"></h1>
         <p class="when in d2">Sun, Nov 22 · Winter Park<span>12–4pm · Central Park</span></p>
         <div class="cta-row in d3">
-          <div class="sp-buy"><!-- Sweatpals widget begin --><iframe title="Buy WOW tickets" style="width: 100%; max-height: 50px; height: 50px; border: 0;" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=000000&fontFamily=Poppins&loader=false"></iframe><!-- Sweatpals widget end --></div>
+          <a class="btn b-lime" href="#tickets">Get tickets · $49.97 <span class="arr" aria-hidden="true">→</span></a>
           <a class="btn b-outw" href="#sponsor">Become a sponsor</a>
         </div>
         <div class="cd in d3" role="timer" aria-label="Time until doors open">
@@ -403,20 +400,23 @@ img{max-width:100%}
 
   <section class="wrap sec" id="tickets" aria-labelledby="tix-title" style="padding-top:clamp(40px,6vw,90px)">
     <div class="block dark tix-grid">
-      <div class="tix-left">
+      <div class="tix-left" style="justify-content:flex-start">
         <div>
-          <h2 id="tix-title" class="cap h3 rv">General admission</h2>
+          <h2 id="tix-title" class="cap h3 rv">Get your tickets</h2>
           <p class="price rv d1">$49.97</p>
         </div>
-        <p class="lede rv d2">Sunday, Nov 22, 12–4pm at Central Park, West Morse Blvd, Winter Park. Checkout is handled securely by SweatPals.</p>
-      </div>
-      <div class="tix-right rv d1">
-        <ul class="chk">
+        <p class="lede rv d2">Sunday, Nov 22, 12–4pm at Central Park, West Morse Blvd, Winter Park. Pick your ticket and check out right here, securely through SweatPals.</p>
+        <ul class="chk rv d2">
           <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B8F45A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Full event access</li>
           <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B8F45A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Unlimited cold plunge and sauna</li>
           <li><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B8F45A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Free sponsor samples</li>
         </ul>
-        <div class="sp-buy"><!-- Sweatpals widget begin --><iframe title="Buy WOW tickets" style="width: 100%; max-height: 50px; height: 50px; border: 0;" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=000000&fontFamily=Poppins&loader=false"></iframe><!-- Sweatpals widget end --></div>
+        <p style="margin:0;font-size:16px">Widget not loading? <a href="https://sweatpals.com/event/wow-winter-park-nov-22/2026-11-22" style="font-weight:800;color:var(--lime)">Buy on SweatPals</a></p>
+      </div>
+      <div class="sp-widget">
+<!-- Sweatpals widget begin -->
+<script src="https://sweatpals.com/static/embed/event/checkout/script.js?priceMode=several&enableAutoEmbed=true&eventAlias=wow-winter-park-nov-22&size=lg&colorHex=000000&fontFamily=Poppins&priceTiersJson=%255B%25220695c93d-49fb-4671-a49f-8367e821a9a4%2522%255D"></script>
+<!-- Sweatpals widget end -->
       </div>
     </div>
   </section>
@@ -653,7 +653,7 @@ img{max-width:100%}
   </section>
   <section class="wrap sec" aria-labelledby="mission-title">
     <article class="panel">
-      <div><p class="kicker" style="--k:var(--lime)">Our mission</p><h2 id="mission-title" class="cap h3">Tools to live stronger, one event at a time</h2><p>Cold plunges, biohacking labs, fitness classes, live DJs, premium food and AI-powered fitness, all in one place, for everyone.</p><div class="sp-buy"><!-- Sweatpals widget begin --><iframe title="Buy WOW tickets" style="width: 100%; max-height: 50px; height: 50px; border: 0;" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=000000&fontFamily=Poppins&loader=false"></iframe><!-- Sweatpals widget end --></div></div>
+      <div><p class="kicker" style="--k:var(--lime)">Our mission</p><h2 id="mission-title" class="cap h3">Tools to live stronger, one event at a time</h2><p>Cold plunges, biohacking labs, fitness classes, live DJs, premium food and AI-powered fitness, all in one place, for everyone.</p><a class="pill" href="#tickets">Get tickets <span aria-hidden="true">↗</span></a></div>
       <div class="shot"><img src="img/p143.jpg" alt="A dance cardio class at WOW" loading="lazy"></div>
     </article>
   </section>
@@ -751,6 +751,7 @@ img{max-width:100%}
     if(page==='home'){requestAnimationFrame(storyTick)}
   }
   window.addEventListener('hashchange',route);
+  document.addEventListener('click',function(ev){var a=ev.target.closest('a[href="#tickets"]');if(a&&location.hash==='#tickets'){ev.preventDefault();route()}});
 
   var burger=$('#burger'),links=$('#links');
   function closeMenu(){links.classList.remove('open');burger.setAttribute('aria-expanded','false')}
