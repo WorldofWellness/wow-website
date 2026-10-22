@@ -417,6 +417,9 @@ img{max-width:100%}
 #tickets .tk{align-self:stretch;justify-content:space-between}
 .tix-code{flex-basis:100%;margin:6px 0;padding:0 clamp(6px,1vw,12px);font-size:17px}
 @media (max-width:600px){.tix-head,.tix-code{padding-inline:6px}}
+.foot-base{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-top:24px}
+.ig{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:var(--ink-2);box-shadow:inset 0 0 0 1px var(--ink-3);color:var(--white);font-weight:800;font-size:16px;text-decoration:none;transition:background-color .2s,color .2s}
+.ig:hover{background:var(--mag);color:var(--ink)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.step{opacity:1}}
 </style>
 <style>
@@ -1047,11 +1050,14 @@ img{max-width:100%}
       <p style="margin:10px 0 0;font-size:17px;color:var(--heat);font-weight:700">Next up: <span data-ev="venue"></span>, <span data-ev="dateLong"></span></p>
     </div>
     <div style="display:flex;gap:4px;flex-wrap:wrap">
-      <a class="nl" href="#home">Event</a><a class="nl" href="#sponsor">Partners</a><a class="nl" href="#volunteer">Volunteer</a><a class="nl" href="#creators">Creators</a><a class="nl" href="#about">About</a><a class="nl" href="#contact">Contact</a><a class="nl" href="#policy">Ticket policy</a><a class="nl" href="https://wowlakenona.com/policies/privacy-policy">Privacy</a><a class="nl" data-href="instagram" href="#" hidden>Instagram</a>
+      <a class="nl" href="#home">Event</a><a class="nl" href="#sponsor">Partners</a><a class="nl" href="#volunteer">Volunteer</a><a class="nl" href="#creators">Creators</a><a class="nl" href="#about">About</a><a class="nl" href="#contact">Contact</a><a class="nl" href="#policy">Ticket policy</a><a class="nl" href="https://wowlakenona.com/policies/privacy-policy">Privacy</a><a class="nl" data-href="instagram" href="#" target="_blank" rel="noopener" hidden>Instagram</a>
     </div>
   </div>
   <img class="wordmark" src="img/wow-white.png" alt="WOW World of Wellness" width="1400" height="389" loading="lazy">
-  <p style="margin:24px 0 0;font-size:15px">© 2026 WOW · World of Wellness</p>
+  <div class="foot-base">
+    <p style="margin:0;font-size:15px">© 2026 WOW · World of Wellness</p>
+    <a class="ig" data-href="instagram" href="#" target="_blank" rel="noopener" hidden><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span data-ig-handle>Instagram</span></a>
+  </div>
 </footer>
 
 <script>
@@ -1264,6 +1270,7 @@ img{max-width:100%}
     $$('[data-if]').forEach(function(n){var v=T[n.getAttribute('data-if')];n.hidden=!(Array.isArray(v)?v.length:v)});
     $$('[data-logos]').forEach(function(g){g.textContent='';(T[g.getAttribute('data-logos')]||[]).forEach(function(b){g.appendChild(el('img',{src:b.logo,alt:b.name,loading:'lazy'}))})});
     var ig=e.links&&e.links.instagram;$$('[data-href="instagram"]').forEach(function(a){if(ig){a.href=ig;a.hidden=false}});
+    if(ig){var hd=ig.replace(/\/+$/,'').split('/').pop();$$('[data-ig-handle]').forEach(function(n){n.textContent='@'+hd})}
     var desc='Unlimited sauna and cold plunge, '+T.brands+' wellness brands, expert-led classes, fitness challenges and a live DJ. One afternoon, one ticket. Next event: '+T.dateLong+', '+T.venue+'.';
     $$('meta[name="description"],meta[property="og:description"]').forEach(function(m){m.setAttribute('content',desc)});
     TARGET=new Date(e.countdownTarget).getTime();tick();
