@@ -414,8 +414,7 @@ img{max-width:100%}
         </div>
       </div>
       <figure class="reel in d2">
-        <video id="reel" src="img/recap.mp4" poster="img/recap-poster.jpg" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-label="WOW May 2026 recap video"></video>
-        <figcaption class="reel-tag">May 2026 recap</figcaption>
+        <video id="reel" src="img/recap.mp4" poster="img/recap-poster.jpg" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-label="WOW event recap video"></video>
         <button type="button" class="reel-tap" id="reel-tap" hidden><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>Play the recap</button>
         <div class="reel-ctl">
           <button type="button" class="reel-btn" id="reel-sound" aria-pressed="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path id="snd-on" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" style="display:none"/><path id="snd-off" d="M17 9l5 6M22 9l-5 6"/></svg><span id="reel-sound-label">Sound on</span></button>
@@ -467,11 +466,11 @@ img{max-width:100%}
 
   <section class="wrap sec" aria-labelledby="proof-title">
     <div class="flex" style="justify-content:space-between;align-items:flex-end;gap:24px">
-      <h2 id="proof-title" class="cap h2 rv" style="max-width:12ch">This was WOW in May</h2>
+      <h2 id="proof-title" class="cap h2 rv" style="max-width:12ch">This is WOW</h2>
       <p class="lede rv d1">Real photos from our last event. Same energy, new location: Central Park, Winter Park.</p>
     </div>
     <div class="proof">
-      <figure class="pf pf-a rv"><img src="img/p64.jpg" alt="A packed mat class on the lawn at WOW in May 2026" loading="lazy"></figure>
+      <figure class="pf pf-a rv"><img src="img/p64.jpg" alt="A packed mat class on the lawn at WOW" loading="lazy"></figure>
       <figure class="pf rv d1"><img src="img/p123.jpg" alt="A guest jumping into the cold plunge" loading="lazy"></figure>
       <figure class="pf rv d2"><img src="img/p143.jpg" alt="A dance cardio class" loading="lazy"></figure>
       <figure class="pf rv"><img src="img/p141.jpg" alt="Rows of riders in a spin class" loading="lazy"></figure>
@@ -968,7 +967,7 @@ img{max-width:100%}
     var dark=e.c==='#0A0A0A';
     var card=el('article',{class:'card'});card.style.background=e.c;card.style.color=dark?'#FFFFFF':'#0A0A0A';
     var ph=el('div',{class:'ph'+(e.i?'':' jj')});
-    ph.appendChild(el('img',{src:e.i,alt:e.n+' at WOW in May 2026',loading:'lazy'}))
+    ph.appendChild(el('img',{src:e.i,alt:e.n+' at WOW',loading:'lazy'}))
     var tx=el('div',{class:'tx'});tx.appendChild(el('h3',{class:'cap'},e.n));tx.appendChild(el('p',{class:'tagline'},e.t));tx.appendChild(el('p',{},e.d));
     card.appendChild(ph);card.appendChild(tx);rail.appendChild(card);
   });
