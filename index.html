@@ -329,6 +329,26 @@ img{max-width:100%}
 .wordmark:hover{transform:scale(1.015) rotate(-.5deg)}
 
 .page[hidden]{display:none!important}
+/* layout fixes: headings never run under photos or out of their column */
+.phero{display:grid;grid-template-columns:minmax(0,1fr) clamp(220px,26vw,380px);grid-template-rows:auto 1fr;column-gap:clamp(28px,4vw,64px);row-gap:28px;align-items:start}
+.phero>.intro{grid-column:1;grid-row:1}
+.phero>.shot{position:relative;right:auto;top:auto;width:100%;grid-column:2;grid-row:1/3;align-self:center}
+.phero>:last-child{grid-column:1;grid-row:2;align-self:end}
+.phero .big{font-size:clamp(60px,8.4vw,150px);text-wrap:balance}
+@media (max-width:760px){
+  .phero{grid-template-columns:minmax(0,1fr);grid-template-rows:auto;min-height:0;row-gap:24px}
+  .phero>.shot,.phero>:last-child{grid-column:1;grid-row:auto}
+  .phero>.shot{width:58%;justify-self:end;margin:4px 6px 0 0}
+}
+@media (min-width:1100px){
+  .apply{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,4.5vw,72px);align-items:start}
+  .apply .h2{font-size:clamp(56px,6.4vw,100px)}
+}
+@media (max-width:860px){
+  .step{min-height:46vh;justify-content:flex-start;padding-top:40px}
+  .steps>.step:first-child{padding-top:28px}
+  .step .cap{font-size:clamp(56px,16vw,96px)}
+}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.step{opacity:1}}
 </style>
 <style>
@@ -677,7 +697,7 @@ img{max-width:100%}
       <div class="shot"><img src="img/p86.jpg" alt="The Waters of Olympus booth at WOW" loading="lazy"></div>
     </article>
   </section>
-  <section class="wrap sec flex" id="sponsor-apply" aria-labelledby="spa-title">
+  <section class="wrap sec flex apply" id="sponsor-apply" aria-labelledby="spa-title">
     <div style="flex:1 1 360px">
       <h2 id="spa-title" class="cap h2 rv">Apply to sponsor</h2>
       <p class="lede rv d1" style="margin-top:20px">Tell us about your brand. Approved sponsors get the full event deck with every promotional benefit.</p>
@@ -730,7 +750,7 @@ img{max-width:100%}
       </div>
     </div>
   </section>
-  <section class="wrap sec flex" id="volunteer-apply" aria-labelledby="voa-title">
+  <section class="wrap sec flex apply" id="volunteer-apply" aria-labelledby="voa-title">
     <div style="flex:1 1 360px">
       <h2 id="voa-title" class="cap h2 rv">Apply to volunteer</h2>
       <p class="lede rv d1" style="margin-top:20px">You'll hear back with role options, schedules and next steps. Questions? <span style="font-weight:800;user-select:all">volunteer@wowlakenona.com</span></p>
@@ -791,7 +811,7 @@ img{max-width:100%}
       <div class="blk rv" style="background:var(--lime)">Share positive, healthy messaging</div>
     </div>
   </section>
-  <section class="wrap sec flex" id="creators-apply" aria-labelledby="cra-title">
+  <section class="wrap sec flex apply" id="creators-apply" aria-labelledby="cra-title">
     <div style="flex:1 1 360px">
       <h2 id="cra-title" class="cap h2 rv">Apply to the squad</h2>
       <p class="lede rv d1" style="margin-top:20px">Approved creators get next steps, a personal affiliate link, perks and a media kit.</p>
@@ -857,7 +877,7 @@ img{max-width:100%}
       </div>
     </div>
   </section>
-  <section class="wrap sec flex" aria-labelledby="msg-title">
+  <section class="wrap sec flex apply" aria-labelledby="msg-title">
     <div style="flex:1 1 360px">
       <h2 id="msg-title" class="cap h2 rv">Send a message</h2>
       <p class="lede rv d1" style="margin-top:20px">We reply fast. Let's make wellness WOW together.</p>
