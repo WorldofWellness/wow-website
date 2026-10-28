@@ -422,6 +422,12 @@ img{max-width:100%}
 .foot-base{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-top:24px}
 .ig{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:var(--ink-2);box-shadow:inset 0 0 0 1px var(--ink-3);color:var(--white);font-weight:800;font-size:16px;text-decoration:none;transition:background-color .2s,color .2s}
 .ig:hover{background:var(--mag);color:var(--ink)}
+/* event details switch: showEventDetails in event.json */
+[data-nodetails]{display:none}
+.no-details [data-details]{display:none!important}
+.no-details [data-nodetails]{display:inline}
+.no-details .tk-facts{grid-template-columns:minmax(0,1fr)}
+.no-details .buybar .btn{flex:1;justify-content:center}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.step{opacity:1}}
 </style>
 <style>
@@ -488,14 +494,14 @@ img{max-width:100%}
     <div class="wrap hv-grid">
       <div class="hv-copy">
         <img class="hero-logo-sm in" src="img/wow-white.png" alt="WOW World of Wellness" width="1400" height="389">
-        <p class="eyebrow in"><span data-ev="dateLong"></span> · <span data-ev="time"></span> · <span data-ev="venue"></span></p>
+        <p class="eyebrow in" data-details><span data-ev="dateLong"></span> · <span data-ev="time"></span> · <span data-ev="venue"></span></p>
         <h1 id="hero-title" class="cap hv-h1 words" data-words-after>Unlimited sauna. Unlimited cold plunge. <span data-ev="brands"></span> wellness brands. One afternoon, one ticket.</h1>
         <p class="hv-sub in d1">Sweat, plunge, train and eat well alongside hundreds of people who want to feel better too. Expert-led classes, fitness challenges with prizes, biohacking and a live DJ.</p>
         <div class="cta-row in d3">
           <a class="btn b-lime btn-xl" href="#tickets" data-cta="hero">Get my ticket · <span data-ev="price"></span> <span class="arr" aria-hidden="true">→</span></a>
         </div>
         <ul class="guar"><li>Full refund within 24 hours</li><li>Something came up? Move your ticket to the next WOW</li><li>If we cancel, you're refunded automatically</li></ul>
-        <div class="in d3">
+        <div class="in d3" data-details>
           <p class="cd-label">Doors open in</p>
           <div class="cd" role="timer" aria-label="Time until doors open">
             <div class="tick"><b id="cd-d">00</b><span>days</span></div>
@@ -580,7 +586,7 @@ img{max-width:100%}
       <figure class="pf rv d2"><img src="img/p55.jpg" alt="A mat class on the lawn" loading="lazy"></figure>
     </div>
     <div class="buy-center rv">
-      <a class="btn b-lime btn-xl" href="#tickets" data-cta="proof">Don't miss <span data-ev="month"></span> · <span data-ev="price"></span> <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn b-lime btn-xl" href="#tickets" data-cta="proof">Don't miss <span data-details><span data-ev="month"></span></span><span data-nodetails>the next WOW</span> · <span data-ev="price"></span> <span class="arr" aria-hidden="true">→</span></a>
       <ul class="guar"><li>Full refund within 24 hours</li><li>Something came up? Move your ticket to the next WOW</li><li>If we cancel, you're refunded automatically</li></ul>
     </div>
   </section>
@@ -672,8 +678,8 @@ img{max-width:100%}
       <div class="tk-wrap rv d1">
         <div class="tk">
           <dl class="tk-facts">
-            <div class="tk-fact"><dt>When</dt><dd><span data-ev="dateDay"></span><small data-ev="time"></small></dd></div>
-            <div class="tk-fact"><dt>Where</dt><dd><span data-ev="venueName"></span><small data-ev="address"></small></dd></div>
+            <div class="tk-fact" data-details><dt>When</dt><dd><span data-ev="dateDay"></span><small data-ev="time"></small></dd></div>
+            <div class="tk-fact" data-details><dt>Where</dt><dd><span data-ev="venueName"></span><small data-ev="address"></small></dd></div>
             <div class="tk-fact"><dt>Price</dt><dd><span data-ev="price"></span><small>General admission</small></dd></div>
           </dl>
           <iframe class="tk-buy" title="Choose quantity and buy WOW tickets" allowtransparency="true" src="https://sweatpals.com/embed/wow-winter-park-nov-22/buy-ticket?priceTierId=0695c93d-49fb-4671-a49f-8367e821a9a4&size=lg&colorHex=00FFFF&backgroundHex=000000&fontFamily=Poppins&loader=false"></iframe>
@@ -703,7 +709,7 @@ img{max-width:100%}
 
   <section class="wrap sec" aria-labelledby="final-title">
     <div class="block final" style="background:var(--ink-2);color:var(--white);box-shadow:inset 0 0 0 2px var(--ink-3)">
-      <h2 id="final-title" class="cap h2 rv" style="max-width:14ch"><span data-ev="dateShort"></span> is happening with or without you</h2>
+      <h2 id="final-title" class="cap h2 rv" style="max-width:14ch"><span data-details><span data-ev="dateShort"></span></span><span data-nodetails>The next WOW</span> is happening with or without you</h2>
       <p class="lede rv d1" style="margin-top:20px;max-width:52ch">Unlimited sauna and cold plunge, <span data-ev="brands"></span> brands, classes, challenges and a live DJ, for less than a night out. Capped at <span data-ev="capacity"></span> people. Prices rise as the day gets closer, so today's price is the best one you'll see.</p>
       <div class="buy-stack rv d2" style="margin-top:30px">
         <a class="btn b-ink btn-xl" href="#tickets" data-cta="final" style="background:var(--hot);color:var(--ink)">Get my ticket · <span data-ev="price"></span> <span class="arr" aria-hidden="true">→</span></a>
@@ -757,7 +763,7 @@ img{max-width:100%}
       <div>
         <h1 id="sp-h1" class="big long">Put your product in the hands of <span data-ev="capacity"></span> health-focused buyers in one afternoon.</h1>
         <div class="row" style="margin-top:22px"><a class="btn b-lime" href="#sponsor-apply">Get the partner deck <span class="arr" aria-hidden="true">→</span></a></div>
-        <p class="under"><span data-ev="dateLong"></span> · <span data-ev="venue"></span> · Limited brand spots per event</p>
+        <p class="under"><span data-details><span data-ev="dateLong"></span> · <span data-ev="venue"></span> · </span>Limited brand spots per event</p>
       </div>
     </div>
   </section>
@@ -1040,7 +1046,7 @@ img{max-width:100%}
 </main>
 
 <div class="buybar" id="buybar" aria-hidden="true">
-  <div><b><span data-ev="dateShort"></span> · <span data-ev="city"></span></b></div>
+  <div data-details><b><span data-ev="dateShort"></span> · <span data-ev="city"></span></b></div>
   <a class="btn b-lime" href="#tickets" tabindex="-1" data-cta="sticky">Get my ticket · <span data-ev="price"></span></a>
 </div>
 
@@ -1049,7 +1055,7 @@ img{max-width:100%}
   <div class="flex" style="justify-content:space-between;align-items:flex-end;gap:24px">
     <div>
       <p style="margin:0;font-size:20px;max-width:34ch;font-weight:700">Where wellness comes to life. Born in Lake Nona, now across Central Florida.</p>
-      <p style="margin:10px 0 0;font-size:17px;color:var(--heat);font-weight:700">Next up: <span data-ev="venue"></span>, <span data-ev="dateLong"></span></p>
+      <p data-details style="margin:10px 0 0;font-size:17px;color:var(--heat);font-weight:700">Next up: <span data-ev="venue"></span>, <span data-ev="dateLong"></span></p>
     </div>
     <div style="display:flex;gap:4px;flex-wrap:wrap">
       <a class="nl" href="#home">Event</a><a class="nl" href="#sponsor">Partners</a><a class="nl" href="#volunteer">Volunteer</a><a class="nl" href="#creators">Creators</a><a class="nl" href="#about">About</a><a class="nl" href="#contact">Contact</a><a class="nl" href="#policy">Ticket policy</a><a class="nl" href="https://wowlakenona.com/policies/privacy-policy">Privacy</a><a class="nl" data-href="instagram" href="#" target="_blank" rel="noopener" hidden>Instagram</a>
@@ -1154,7 +1160,7 @@ img{max-width:100%}
       ['Is sauna and cold plunge safe for me?','Our crew is at every station and will walk you through it. If you\'re pregnant or have a heart condition, high blood pressure or another medical concern, check with your doctor first.'],
       ['What if something comes up?','Within 24 hours of buying, you get a full refund. After that, email us at least 48 hours before doors and we\'ll move your ticket to the next WOW, or you can transfer it to a friend for free.'],
       L.reentry?['Can I come and go?',L.reentry]:null,
-      ['Where is WOW?','WOW was born in Lake Nona and now runs events across Central Florida. This one is at '+T.venue+'.']
+      ['Where is WOW?','WOW was born in Lake Nona and now runs events across Central Florida.'+(SHOW?' This one is at '+T.venue+'.':'')]
     ].filter(Boolean);
     qa.textContent='';
     F.forEach(function(f,i){
@@ -1266,14 +1272,16 @@ img{max-width:100%}
   }
   function splitWords(n){var nodes=Array.prototype.slice.call(n.childNodes),i=0;n.textContent='';
     nodes.forEach(function(c){(c.textContent||'').trim().split(/\s+/).forEach(function(w){if(!w)return;var s=el('span',{class:'w'},w);s.style.setProperty('--i',i++);n.appendChild(s);n.appendChild(document.createTextNode(' '))})})}
+  var SHOW=true;
   function applyEvent(e){
+    SHOW=e.showEventDetails!==false;document.documentElement.classList.toggle('no-details',!SHOW);
     var T=tokens(e);
     $$('[data-ev]').forEach(function(n){var v=T[n.getAttribute('data-ev')];n.textContent=v==null?'':v});
     $$('[data-if]').forEach(function(n){var v=T[n.getAttribute('data-if')];n.hidden=!(Array.isArray(v)?v.length:v)});
     $$('[data-logos]').forEach(function(g){g.textContent='';(T[g.getAttribute('data-logos')]||[]).forEach(function(b){g.appendChild(el('img',{src:b.logo,alt:b.name,loading:'lazy'}))})});
     var ig=e.links&&e.links.instagram;$$('[data-href="instagram"]').forEach(function(a){if(ig){a.href=ig;a.hidden=false}});
     if(ig){var hd=ig.replace(/\/+$/,'').split('/').pop();$$('[data-ig-handle]').forEach(function(n){n.textContent='@'+hd})}
-    var desc='Unlimited sauna and cold plunge, '+T.brands+' wellness brands, expert-led classes, fitness challenges and a live DJ. One afternoon, one ticket. Next event: '+T.dateLong+', '+T.venue+'.';
+    var desc='Unlimited sauna and cold plunge, '+T.brands+' wellness brands, expert-led classes, fitness challenges and a live DJ. One afternoon, one ticket.'+(SHOW?' Next event: '+T.dateLong+', '+T.venue+'.':'');
     $$('meta[name="description"],meta[property="og:description"]').forEach(function(m){m.setAttribute('content',desc)});
     TARGET=new Date(e.countdownTarget).getTime();tick();
     buildRail(T);buildFaq(T,e.logistics||{});

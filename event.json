@@ -1,6 +1,9 @@
 {
   "_readme": "The only file to edit for a new event. Every page reads from it. Use null for anything not confirmed yet and that line stays hidden on the site.",
 
+  "showEventDetails": false,
+  "_showEventDetailsNote": "false hides every date, time, location and the countdown across the site. Set to true to bring them all back in their original layout.",
+
   "eventNumber": 4,
   "date": "2026-11-22",
   "time": "12 to 4pm",
